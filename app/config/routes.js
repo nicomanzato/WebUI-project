@@ -1,4 +1,4 @@
-import HomeScreen from '../screens/homeScreen'
+import HomeScreen from '../screens/HomeScreen'
 import CategoriesScreen from '../screens/categoriesScreen'
 
 const Routes ={
