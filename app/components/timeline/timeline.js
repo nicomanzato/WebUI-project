@@ -36,8 +36,8 @@ class Timeline extends Component {
 
     if(data && !this.props.loadingMorePost){
       this.props.startLoadingMorePost();
-      const maxID = data[data.length - 1 ].id;
-      this.props.fetchMoreTimeline(maxID - 1);
+      const maxID = (data[data.length - 1 ].id);
+      this.props.fetchMoreTimeline(maxID);
     }
   }
 

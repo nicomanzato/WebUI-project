@@ -32,7 +32,7 @@ export function fetchMoreTimeline(maxID){
       .then((response) => response.json())
       .then((responseJson) => {
         const data = responseJson;
-        dispatch({type: TIMELINE_APPEND_POST, data: data});
+        dispatch({type: TIMELINE_APPEND_POST, data: data.slice(1)}); // drop first result which is already loaded.
       })
       .catch((error) => {
         console.error(error);
