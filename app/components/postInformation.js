@@ -11,7 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const postInformation = (props) => {
 
-  var media;
+  let media;
 
   if (props.item.entities.media) {
     media = props.item.entities.media.map((image) => {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   profilePic: {
     resizeMode: 'contain',
     height: 50,
-    borderRadius: 50,
+    borderRadius: 25,
   },
 
   post: {

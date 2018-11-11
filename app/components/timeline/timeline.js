@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 
 import * as Actions from '../../actions'; //Import your actions
 
-import PostInformation from './postInformation'
+import PostInformation from './../postInformation'
 
 class Timeline extends Component {
   constructor(props) {
@@ -26,11 +26,22 @@ class Timeline extends Component {
     this.renderItem = this.renderItem.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.props.getTimeline();
   }
 
-  render() {
+  handleOnEndReached = () => {
+
+    const data = this.props.data;
+
+    if(data && !this.props.loadingMorePost){
+      this.props.startLoadingMorePost();
+      const maxID = data[data.length - 1 ].id;
+      this.props.fetchMoreTimeline(maxID - 1);
+    }
+  }
+
+  render = () => {
     if (this.props.loading) {
       return (
         <View style={styles.activityIndicatorContainer}>
@@ -44,6 +55,8 @@ class Timeline extends Component {
             ref='listRef'
             data={this.props.data}
             renderItem={this.renderItem}
+            onEndReachedThreshold={10}
+            onEndReached={this.handleOnEndReached}
             keyExtractor={(item, index) => index.toString()}/>
         </View>
       );
@@ -65,6 +78,7 @@ class Timeline extends Component {
 function mapStateToProps(state, props) {
     return {
         loading: state.timelineReducer.loading,
+        loadingMorePost: state.timelineReducer.loadingMorePost,
         data: state.timelineReducer.timeline
     }
 }
@@ -91,30 +105,5 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#FFFFFF',
     paddingTop:20
-  },
-
-  row:{
-    borderBottomWidth: 1,
-    borderColor: "#ccc",
-    padding: 10,
-  },
-
-  usernameTitle: {
-    flexDirection: 'row',
-    padding: 1,
-  },
-
-  tweetUsername: {
-    fontWeight: "600",
-
-  },
-
-  tweetScreenName: {
-    color: 'grey'
-  },
-
-  tweetContent:{
-    fontSize: 15,
-    fontWeight: "400"
   },
 });
