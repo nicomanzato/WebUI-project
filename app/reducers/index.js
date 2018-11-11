@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import dataReducer from './dataReducer';
+import timelineReducer from './timelineReducer';
 import nav from './navReducer';
 
 const AppReducer = combineReducers({
   nav,
-  dataReducer
+  timelineReducer
 });
 
 export default AppReducer;

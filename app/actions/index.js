@@ -1,18 +1,21 @@
-export const DATA_AVAILABLE = 'DATA_AVAILABLE';
+export const TIMELINE_AVAILABLE = 'TIMELINE_AVAILABLE';
 
-//Import the sample data
-import Data from '../instructions.json';
- 
-export function getData(){
-    return (dispatch) => {
- 
-        //Make API Call
-        //For this example, I will be using the sample data in the json file
-        //delay the retrieval [Sample reasons only]
-        setTimeout(() => {
-            const data  = Data.instructions;
-            dispatch({type: DATA_AVAILABLE, data:data});
-        }, 2000);
- 
-    };
+const serverIP = '192.168.0.111:8080';
+
+export function getTimeline(){
+  return (dispatch) => {
+
+    const count = 100;
+    const url = `http://${serverIP}/timeline?count=${count}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        const data = responseJson;
+        dispatch({type: TIMELINE_AVAILABLE, data: data});
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 }
