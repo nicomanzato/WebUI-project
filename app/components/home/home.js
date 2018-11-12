@@ -25,7 +25,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.props.getData(); //call our action
+        this.props.getTimeline(); //call our action
     }
 
     render() {
