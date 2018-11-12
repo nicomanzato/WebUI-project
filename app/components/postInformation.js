@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
   profilePic: {
     resizeMode: 'contain',
     height: 50,
+    width: 50,
     borderRadius: 25,
   },
 
