@@ -3,22 +3,22 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 
-const CategoriesScreen = ({ navigation }) => (
+const ConfigScreen = ({ navigation }) => (
   <View style={styles.container}>
       <Button
-        title='Back to Home'  
-        onPress={() => navigation.dispatch({ type: 'Home' })}  
+        title='Back to Home 2'
+        onPress={() => navigation.dispatch({ type: 'Home' })}
       />
-      <Text> Categories Screen </Text>
+      <Text> Config Screen </Text>
     </View>
 );
 
-CategoriesScreen.propTypes = {
+ConfigScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
 
-CategoriesScreen.navigationOptions = {
-  title: 'Categories',
+ConfigScreen.navigationOptions = {
+
 };
 
 const styles = StyleSheet.create({
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CategoriesScreen;
+export default ConfigScreen;
