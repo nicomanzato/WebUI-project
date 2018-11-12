@@ -14,7 +14,7 @@ HomeScreen.propTypes = {
 };
 
 HomeScreen.navigationOptions = {
-  title: 'Home',
+  
 };
 
 const styles = StyleSheet.create({
