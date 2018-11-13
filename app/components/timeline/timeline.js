@@ -6,7 +6,8 @@ import {
   FlatList,
   View,
   Text,
-  ActivityIndicator
+  ActivityIndicator,
+  TouchableHighlight
 } from 'react-native';
 
 import {bindActionCreators} from 'redux';
@@ -14,9 +15,34 @@ import { connect } from 'react-redux';
 
 import * as Actions from '../../actions'; //Import your actions
 
-import PostInformation from './../postInformation'
+import Post from '../Post'
+
+
+class ListItem extends Component {
+
+  constructor(props) {
+    super(props);
+    this.onPress = this.onPress.bind(this);
+  }
+
+  onPress() {
+    this.props.onPressItem(this.props.item);
+  };
+
+  render() {
+    const item = this.props.item;
+    return (
+     <TouchableHighlight
+      onPress={this.onPress}
+      underlayColor='#dddddd'>
+      <Post item={item}/>
+     </TouchableHighlight>
+    );
+  }
+}
 
 class Timeline extends Component {
+
   constructor(props) {
     super(props);
 
@@ -24,6 +50,7 @@ class Timeline extends Component {
     };
 
     this.renderItem = this.renderItem.bind(this);
+
   }
 
   componentDidMount = () => {
@@ -63,9 +90,13 @@ class Timeline extends Component {
     }
   }
 
+  onPressItem = (item) => {
+    this.props.navigation.dispatch({ type: 'Post', data: item});
+  };
+
   renderItem({item, index}) {
     return (
-      <PostInformation item={item} />
+      <ListItem item={item} onPressItem={this.onPressItem} />
     )
   }
 };

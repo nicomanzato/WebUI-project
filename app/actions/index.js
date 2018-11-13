@@ -2,7 +2,7 @@ export const TIMELINE_AVAILABLE = 'TIMELINE_AVAILABLE';
 export const TIMELINE_APPEND_POST = 'TIMELINE_APPEND_POST';
 export const TIMELINE_LOADING_MORE_POST = 'TIMELINE_LOADING_MORE_POST';
 
-const serverIP = 'localhost:8080';
+const serverIP = '192.168.1.33:8080';
 
 export function getTimeline(){
   return (dispatch) => {
