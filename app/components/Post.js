@@ -6,15 +6,19 @@ import {
   View,
   Text,
   Image,
+  TouchableHighlight
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const postInformation = (props) => {
+const post = (props) => {
 
+
+
+  const {item} = props;
   let media;
 
-  if (props.item.entities.media) {
-    media = props.item.entities.media.map((image) => {
+  if (item.entities.media) {
+    media = item.entities.media.map((image) => {
       return(
         <Image
           source={{uri: image.media_url_https}}
@@ -25,23 +29,29 @@ const postInformation = (props) => {
   }
 
   return (
-    <View style={styles.post}>
+
+    <View style={[styles.post, props.singlePost ? {height: 300} : null]}>
       <View style={styles.row}>
         <View style={styles.profileView}>
           <Image
-            source={{uri: props.item.user.profile_image_url_https}}
+            source={{uri: item.user.profile_image_url_https}}
             style={styles.profilePic}/>
         </View>
         <View style={styles.contentView}>
           <View style={styles.usernameTitle}>
+<<<<<<< HEAD:app/components/Post.js
+            <Text style={styles.profileUsername}>{item.user.name}</Text>
+            <Text style={styles.profileScreenName}> @{item.user.screen_name}</Text>
+=======
             <Text style={styles.profileUsername}>{props.item.user.name}</Text>
             {props.item.user.verified == true &&
               <Ionicons name="ios-checkmark-circle" size={16} color="blue" />
             }
             <Text style={styles.profileScreenName}> @{props.item.user.screen_name}</Text>
+>>>>>>> master:app/components/postInformation.js
           </View>
           <Text style={styles.postContent}>
-            {props.item.text}
+            {item.text}
           </Text>
           <View>
             { media }
@@ -51,7 +61,7 @@ const postInformation = (props) => {
       <View style={styles.socialInteractionContainer}>
         <View style={styles.socialInteractionElement}>
           <Ionicons name="ios-heart-outline" size={32} color="grey" />
-          <Text style={styles.socialInteractionText}>{props.item.favorite_count}</Text>
+          <Text style={styles.socialInteractionText}>{item.favorite_count}</Text>
         </View>
         <View style={styles.socialInteractionElement}>
           <Ionicons name="ios-chatboxes-outline" size={32} color="grey" />
@@ -59,14 +69,15 @@ const postInformation = (props) => {
         </View>
         <View style={styles.socialInteractionElement}>
           <Ionicons name="ios-share-alt" size={32} color="grey" />
-          <Text style={styles.socialInteractionText}>{props.item.retweet_count}</Text>
+          <Text style={styles.socialInteractionText}>{item.retweet_count}</Text>
         </View>
       </View>
     </View>
+
   );
 }
 
-export default postInformation;
+export default post;
 
 const styles = StyleSheet.create({
   row:{
