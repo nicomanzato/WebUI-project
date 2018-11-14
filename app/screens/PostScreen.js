@@ -3,7 +3,7 @@
  */
 'use strict';
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   View,
@@ -12,28 +12,25 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Post from '../components/Post'
 
 class PostScreen extends Component {
 
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    console.log(this.props);
-    console.log('post screen wacho');
   }
 
 
   render() {
 
-    return(
+    return (
      <View style={styles.container}>
-      <Post item={this.props.navigation.state.params.data}/>
+       <Post item={this.props.navigation.state.params.data} singlePost={true}/>
      </View>
     );
   }
-
 
 
 }
@@ -42,6 +39,7 @@ export default PostScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FF44'
+    backgroundColor: '#ff9f38',
+    paddingTop: 20
   },
 });

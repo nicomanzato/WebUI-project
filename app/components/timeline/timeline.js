@@ -35,7 +35,7 @@ class ListItem extends Component {
      <TouchableHighlight
       onPress={this.onPress}
       underlayColor='#dddddd'>
-      <Post item={item}/>
+      <Post item={item} singlePost={false}/>
      </TouchableHighlight>
     );
   }

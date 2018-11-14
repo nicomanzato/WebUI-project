@@ -30,7 +30,7 @@ const post = (props) => {
 
   return (
 
-    <View style={styles.post}>
+    <View style={[styles.post, props.singlePost ? {height: 300} : null]}>
       <View style={styles.row}>
         <View style={styles.profileView}>
           <Image
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
   post: {
     borderBottomWidth: 1,
     borderColor: "#ccc",
+    backgroundColor: "#bccc57",
     padding: 10,
   },
 

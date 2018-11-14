@@ -5,8 +5,8 @@ import PostScreen from '../screens/PostScreen'
 
 
 export const timelineStackRoutes = {
-  Home:  {screen:HomeScreen},
-  Post: {screen: PostScreen}
+  Home:  {screen: HomeScreen},
+  Post:  {screen: PostScreen}
 }
 
 export const Routes = {

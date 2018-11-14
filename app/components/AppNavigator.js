@@ -42,6 +42,7 @@ Routes.home = timelineStack;
 
 console.log(Routes);
 
+
 //const RootNavigator = createStackNavigator(Routes);
 const RootNavigator = createMaterialTopTabNavigator({
 
