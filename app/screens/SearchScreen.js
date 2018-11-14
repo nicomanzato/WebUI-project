@@ -2,15 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
+import Trends from './../components/trends/trends'
 
 const SearchScreen = ({ navigation }) => (
   <View style={styles.container}>
-      <Button
-        title='Back to Home'
-        onPress={() => navigation.dispatch({ type: 'Home' })}
-      />
-      <Text> Categories Screen </Text>
-    </View>
+    <Trends />
+  </View>
 );
 
 SearchScreen.propTypes = {
