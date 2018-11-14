@@ -20,7 +20,7 @@ const SearchReducer = (state = timelineState, action) => {
     case START_SEARCH_FOR_RESULTS:
       state = Object.assign({}, state, { hasSearched: true, loadingSearch: true });
       return state;
-    case START_SEARCH_FOR_RESULTS:
+    case SEARCH_RESULTS_AVAILABLE:
       state = Object.assign({}, state, { searchResult: action.data, loadingSearch: false });
       return state;
     default:

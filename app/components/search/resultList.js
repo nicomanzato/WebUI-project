@@ -15,6 +15,8 @@ import Trends from './../trends/trends'
 
 import * as Actions from '../../actions';
 
+import PostInformation from './../postInformation';
+
 class ResultList extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ class ResultList extends Component {
   }
 
   handleOnEndReached = () => {
-
+/*
     const data = this.props.data;
 
     if(data && !this.props.loadingMorePost){
@@ -37,6 +39,7 @@ class ResultList extends Component {
       const maxID = (data[data.length - 1 ].id);
       this.props.fetchMoreTimeline(maxID, this.props.configuration);
     }
+*/
   }
 
   render = () => {
@@ -79,6 +82,7 @@ function mapStateToProps(state, props) {
         hasSearched: state.searchReducer.hasSearched,
         loadingSearch: state.searchReducer.loadingSearch,
         searchResult: state.searchReducer.searchResult,
+        data: state.searchReducer.searchResult,
     }
 }
 

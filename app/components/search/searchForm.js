@@ -6,17 +6,21 @@ import {StackNavigator} from 'react-navigation';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import * as Actions from '../../actions/configurationActions';
+import * as Actions from '../../actions/searchActions';
 
 class SearchForm extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      searchValue: 'placeholder',
+      searchValue: '',
     }
   }
 
+  handleOnPress = () => {
+    this.props.startSearch();
+    this.props.searchForValue(this.state.searchValue);
+  }
 
   render = () => {
     return (
@@ -28,7 +32,8 @@ class SearchForm extends React.Component {
           value={this.state.searchValue}
         />
         <TouchableHighlight
-          style={styles.searchButton}>
+          style={styles.searchButton}
+          onPress={this.handleOnPress}>
           <Text style={styles.searchButtonText}> Search </Text>
         </TouchableHighlight>
       </View>
@@ -44,11 +49,7 @@ class SearchForm extends React.Component {
 function mapStateToProps(state, props) {
 
     return {
-      configVerifiedOnly: state.configurationReducer.configVerifiedOnly,
-      configDoNotFollow: state.configurationReducer.configDoNotFollow,
-      configHaveDefaultInformation: state.configurationReducer.configHaveDefaultInformation,
-      configContainsLink: state.configurationReducer.configContainsLink,
-      configTextTruncated: state.configurationReducer.configTextTruncated,
+
     }
 }
 
