@@ -9,9 +9,9 @@ const serverIP = '192.168.0.111:8080';
 export function getTimeline(configuration){
   return (dispatch) => {
 
-    const count = 800;
+    const count = 20;
     const url = `http://${serverIP}/timeline?count=${count}`;
-
+/*
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -21,7 +21,7 @@ export function getTimeline(configuration){
       .catch((error) => {
         console.error(error);
       });
-
+*/
   }
 }
 
