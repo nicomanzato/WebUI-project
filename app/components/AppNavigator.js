@@ -6,14 +6,51 @@ import {
   reduxifyNavigator,
   createReactNavigationReduxMiddleware,
 } from 'react-navigation-redux-helpers';
-import Routes from '../config/routes';
+import {Routes, timelineStackRoutes} from '../config/routes';
 import { Ionicons } from '@expo/vector-icons';
+import HomeScreen from '../screens/HomeScreen'
+import SearchScreen from '../screens/SearchScreen'
+import ConfigScreen from '../screens/ConfigScreen'
+import PostScreen from '../screens/PostScreen'
+
+
+
 const middleware = createReactNavigationReduxMiddleware(
   'root',
   state => state.nav
 );
 
-const RootNavigator = createMaterialTopTabNavigator(Routes,{
+const timelineStack = createStackNavigator({
+  Home:  HomeScreen,
+  Post: PostScreen
+});
+
+timelineStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
+
+console.log(Routes);
+
+Routes.home = timelineStack;
+
+console.log(Routes);
+
+
+//const RootNavigator = createStackNavigator(Routes);
+const RootNavigator = createMaterialTopTabNavigator({
+
+  Home: timelineStack,
+  Search: { screen: SearchScreen},
+  Config: { screen: ConfigScreen},
+
+},{
   navigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
       const { routeName } = navigation.state;
