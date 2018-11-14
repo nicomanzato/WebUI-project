@@ -10,7 +10,7 @@ let configurationState = {
   configVerifiedOnly: false,
   configDoNotFollow: false,
   configHaveDefaultInformation: false,
-  configContainsLink: true,
+  configContainsLink: false,
   configTextTruncated: false,
 };
 

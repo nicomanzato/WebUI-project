@@ -19,3 +19,27 @@ export function getTrends(){
 
   }
 }
+
+export function searchForValue(searchValue){
+  return (dispatch) => {
+
+    const url = `http://${serverIP}/search?q=${searchValue}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        const data = responseJson;
+        dispatch({type: SEARCH_RESULTS_AVAILABLE, data: data});
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+  }
+}
+
+export function startSearch(){
+  return (dispatch) => {
+    dispatch({type: START_SEARCH_FOR_RESULTS});
+  }
+}

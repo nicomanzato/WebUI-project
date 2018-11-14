@@ -2,11 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
-import Trends from './../components/trends/trends'
+import SearchForm from './../components/search/searchForm'
+import ResultList from './../components/search/resultList'
 
 const SearchScreen = ({ navigation }) => (
   <View style={styles.container}>
-    <Trends />
+    <SearchForm />
+    <ResultList />
   </View>
 );
 
