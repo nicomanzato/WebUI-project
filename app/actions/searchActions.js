@@ -1,4 +1,6 @@
 export const TRENDS_AVAILABLE = 'TRENDS_AVAILABLE';
+export const SEARCH_RESULTS_AVAILABLE = 'SEARCH_RESULTS_AVAILABLE';
+export const START_SEARCH_FOR_RESULTS = 'START_SEARCH_FOR_RESULTS';
 
 const serverIP = '192.168.0.111:8080';
 
@@ -17,5 +19,29 @@ export function getTrends(){
         console.error(error);
       });
 
+  }
+}
+
+export function searchForValue(searchValue){
+  return (dispatch) => {
+
+    const url = `http://${serverIP}/search?q=${searchValue}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        const data = responseJson;
+        dispatch({type: SEARCH_RESULTS_AVAILABLE, data: data.statuses});
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+  }
+}
+
+export function startSearch(){
+  return (dispatch) => {
+    dispatch({type: START_SEARCH_FOR_RESULTS});
   }
 }
