@@ -13,7 +13,7 @@ import {
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import * as Actions from '../../actions'; //Import your actions
+import * as Actions from '../../actions';
 
 import Post from '../Post'
 
@@ -54,7 +54,7 @@ class Timeline extends Component {
   }
 
   componentDidMount = () => {
-    this.props.getTimeline();
+    this.props.getTimeline(this.props.configuration);
   }
 
   handleOnEndReached = () => {
@@ -64,8 +64,14 @@ class Timeline extends Component {
     if(data && !this.props.loadingMorePost){
       this.props.startLoadingMorePost();
       const maxID = (data[data.length - 1 ].id);
-      this.props.fetchMoreTimeline(maxID);
+      this.props.fetchMoreTimeline(maxID, this.props.configuration);
     }
+  }
+
+  handleOnRefresh = () => {
+    this.props.startRefreshingTimeline();
+    this.props.getTimeline(this.props.configuration);
+    this.props.finishRefreshingTimeline();
   }
 
   render = () => {
@@ -82,6 +88,8 @@ class Timeline extends Component {
             ref='listRef'
             data={this.props.data}
             renderItem={this.renderItem}
+            refreshing={this.props.refreshing}
+            onRefresh={this.handleOnRefresh}
             onEndReachedThreshold={10}
             onEndReached={this.handleOnEndReached}
             keyExtractor={(item, index) => index.toString()}/>
@@ -110,7 +118,16 @@ function mapStateToProps(state, props) {
     return {
         loading: state.timelineReducer.loading,
         loadingMorePost: state.timelineReducer.loadingMorePost,
-        data: state.timelineReducer.timeline
+        refreshing: state.timelineReducer.refreshing,
+        data: state.timelineReducer.timeline,
+
+        configuration: {
+          configVerifiedOnly: state.configurationReducer.configVerifiedOnly,
+          configDoNotFollow: state.configurationReducer.configDoNotFollow,
+          configHaveDefaultInformation: state.configurationReducer.configHaveDefaultInformation,
+          configContainsLink: state.configurationReducer.configContainsLink,
+          configTextTruncated: state.configurationReducer.configTextTruncated,
+        }
     }
 }
 

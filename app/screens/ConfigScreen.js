@@ -1,16 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, CheckBox } from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 
+import ConfigList from './../components/configuration/ConfigList';
+
 const ConfigScreen = ({ navigation }) => (
   <View style={styles.container}>
-      <Button
-        title='Back to Home 2'
-        onPress={() => navigation.dispatch({ type: 'Home' })}
-      />
-      <Text> Config Screen </Text>
-    </View>
+    <ConfigList />
+  </View>
 );
 
 ConfigScreen.propTypes = {

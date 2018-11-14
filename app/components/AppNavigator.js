@@ -77,14 +77,14 @@ const RootNavigator = createMaterialTopTabNavigator({
     showLabel: false,
     showIcon: 'true',
     iconStyle: {
-
+      margin: 0,
       height: 80,
       width: 80,
-      alignItems: 'center'
     },
     style:{
-      flex: .15,
+      padding: 0,
       backgroundColor: 'white',
+      justifyContent: 'center',
     }
   },
 });
