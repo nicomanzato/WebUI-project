@@ -13,7 +13,7 @@ import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import Trends from './../trends/trends'
 
-import * as Actions from '../../actions';
+import * as Actions from '../../actions/searchActions';
 
 import PostInformation from './../postInformation';
 
@@ -31,15 +31,15 @@ class ResultList extends Component {
   }
 
   handleOnEndReached = () => {
-/*
+
     const data = this.props.data;
 
-    if(data && !this.props.loadingMorePost){
-      this.props.startLoadingMorePost();
+    if(data && !this.props.loadingMoreSearchResults){
+      this.props.startLoadingMoreSearchResults();
       const maxID = (data[data.length - 1 ].id);
-      this.props.fetchMoreTimeline(maxID, this.props.configuration);
+      this.props.fetchMoreSearchResults(maxID, this.props.searchValue);
     }
-*/
+
   }
 
   render = () => {
@@ -83,6 +83,8 @@ function mapStateToProps(state, props) {
         loadingSearch: state.searchReducer.loadingSearch,
         searchResult: state.searchReducer.searchResult,
         data: state.searchReducer.searchResult,
+        loadingMoreSearchResults: state.searchReducer.loadingMoreSearchResults,
+        searchValue: state.searchReducer.searchValue,
     }
 }
 
