@@ -35,6 +35,9 @@ const postInformation = (props) => {
         <View style={styles.contentView}>
           <View style={styles.usernameTitle}>
             <Text style={styles.profileUsername}>{props.item.user.name}</Text>
+            {props.item.user.verified == true &&
+              <Ionicons name="ios-checkmark-circle" size={16} color="blue" />
+            }
             <Text style={styles.profileScreenName}> @{props.item.user.screen_name}</Text>
           </View>
           <Text style={styles.postContent}>
@@ -110,6 +113,7 @@ const styles = StyleSheet.create({
 
   profilePic: {
     resizeMode: 'contain',
+    alignSelf: 'center',
     height: 50,
     width: 50,
     borderRadius: 25,
