@@ -13,7 +13,6 @@ const middleware = createReactNavigationReduxMiddleware(
   state => state.nav
 );
 
-//const RootNavigator = createStackNavigator(Routes);
 const RootNavigator = createMaterialTopTabNavigator(Routes,{
   navigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -41,14 +40,14 @@ const RootNavigator = createMaterialTopTabNavigator(Routes,{
     showLabel: false,
     showIcon: 'true',
     iconStyle: {
-
+      margin: 0,
       height: 80,
       width: 80,
-      alignItems: 'center'
     },
     style:{
-      flex: .15,
+      padding: 0,
       backgroundColor: 'white',
+      justifyContent: 'center',
     }
   },
 });
