@@ -13,10 +13,13 @@ import {
 } from 'react-native';
 
 import {connect} from 'react-redux';
-import Post from '../components/Post'
+import PostDetails from '../components/PostDetails'
 
 class PostScreen extends Component {
 
+  static navigationOptions = {
+    title: 'Tweet',
+  };
 
   constructor(props) {
     super(props);
@@ -27,7 +30,7 @@ class PostScreen extends Component {
 
     return (
      <View style={styles.container}>
-       <Post item={this.props.navigation.state.params.data} singlePost={true}/>
+       <PostDetails item={this.props.navigation.state.params.data} singlePost={true}/>
      </View>
     );
   }
@@ -39,7 +42,7 @@ export default PostScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ff9f38',
-    paddingTop: 20
+    backgroundColor: 'white',
+    paddingTop: 10
   },
 });

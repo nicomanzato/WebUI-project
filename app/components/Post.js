@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
   post: {
     borderBottomWidth: 1,
     borderColor: "#ccc",
-    backgroundColor: "#bccc57",
     padding: 10,
   },
 
