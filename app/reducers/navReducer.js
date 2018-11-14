@@ -24,6 +24,12 @@ const NavReducer = (state = initialNavState, action) => {
         state
       );
       break;
+    case 'Post':
+      nextState = RootNavigator.router.getStateForAction(
+       NavigationActions.navigate({ routeName: 'Post' , params: {data: action.data}}),
+       state
+      );
+      break;
     default:
       nextState = RootNavigator.router.getStateForAction(action, state);
       break;
