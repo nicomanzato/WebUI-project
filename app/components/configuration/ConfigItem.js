@@ -22,14 +22,18 @@ class ConfigItem extends React.Component {
 
   render() {
     return(
-      <View style={styles.configItem}>
-        <Text style={styles.configText}>{this.props.title}</Text>
-        <CheckBox
+     <View style={styles.configItem}>
+       <View style={styles.configTextView}>
+         <Text style={styles.configText}>{this.props.title}</Text>
+       </View>
+       <View style={styles.checkboxView}>
+         <CheckBox
           style={styles.configCheckBox}
           onValueChange={this.handleOnValueChange}
           value={this.state.value}
-        />
-      </View>
+         />
+       </View>
+     </View>
     );
   }
 }
@@ -42,13 +46,18 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "#ccc",
     padding: 10,
-    justifyContent: 'space-between',
   },
   configText: {
-    fontSize: 20,
-    alignSelf: 'flex-start'
+    fontSize: 17,
   },
   configCheckBox: {
-    alignSelf: 'flex-end',
   },
+  configTextView: {
+    flex: 0.9,
+    height: 50,
+  },
+  checkboxView:{
+    flex: 0.1,
+    height: 50,
+  }
 });
