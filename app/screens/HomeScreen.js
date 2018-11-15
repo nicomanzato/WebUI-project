@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
-import Timeline from '../components/timeline/Timeline' //Import the component file
+import Timeline from '../components/timeline/timeline' //Import the component file
 
 const HomeScreen = ({ navigation }) => (
   <View style={styles.container}>
@@ -19,7 +19,7 @@ HomeScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FF44'
+    backgroundColor: '#FFFF'
   },
 });
 

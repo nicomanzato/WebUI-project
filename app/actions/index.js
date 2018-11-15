@@ -11,7 +11,7 @@ export function getTimeline(configuration){
 
     const count = 20;
     const url = `http://${serverIP}/timeline?count=${count}`;
-/*
+
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -21,7 +21,7 @@ export function getTimeline(configuration){
       .catch((error) => {
         console.error(error);
       });
-*/
+
   }
 }
 

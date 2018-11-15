@@ -39,16 +39,11 @@ const post = (props) => {
         </View>
         <View style={styles.contentView}>
           <View style={styles.usernameTitle}>
-<<<<<<< HEAD:app/components/Post.js
-            <Text style={styles.profileUsername}>{item.user.name}</Text>
-            <Text style={styles.profileScreenName}> @{item.user.screen_name}</Text>
-=======
             <Text style={styles.profileUsername}>{props.item.user.name}</Text>
             {props.item.user.verified == true &&
               <Ionicons name="ios-checkmark-circle" size={16} color="blue" />
             }
             <Text style={styles.profileScreenName}> @{props.item.user.screen_name}</Text>
->>>>>>> master:app/components/postInformation.js
           </View>
           <Text style={styles.postContent}>
             {item.text}

@@ -15,7 +15,7 @@ import Trends from './../trends/trends'
 
 import * as Actions from '../../actions/searchActions';
 
-import PostInformation from './../postInformation';
+import PostInformation from './../Post';
 
 class ResultList extends Component {
   constructor(props) {

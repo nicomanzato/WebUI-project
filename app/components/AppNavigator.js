@@ -13,8 +13,6 @@ import SearchScreen from '../screens/SearchScreen'
 import ConfigScreen from '../screens/ConfigScreen'
 import PostScreen from '../screens/PostScreen'
 
-
-
 const middleware = createReactNavigationReduxMiddleware(
   'root',
   state => state.nav
@@ -23,27 +21,23 @@ const middleware = createReactNavigationReduxMiddleware(
 const timelineStack = createStackNavigator({
   Home:  HomeScreen,
   Post: PostScreen
-});
+},{
+    initialRouteName: 'Home',
+    headerMode: 'screen',
+  }
+);
 
 timelineStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
     tabBarVisible = false;
   }
-
-  return {
+   return {
     tabBarVisible,
   };
 };
+ Routes.home = timelineStack;
 
-console.log(Routes);
-
-Routes.home = timelineStack;
-
-console.log(Routes);
-
-
-//const RootNavigator = createStackNavigator(Routes);
 const RootNavigator = createMaterialTopTabNavigator({
 
   Home: timelineStack,
@@ -78,6 +72,7 @@ const RootNavigator = createMaterialTopTabNavigator({
     showIcon: 'true',
     iconStyle: {
       margin: 0,
+      padding: 0,
       height: 80,
       width: 80,
     },
