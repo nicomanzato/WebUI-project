@@ -23,8 +23,7 @@ const timelineStack = createStackNavigator({
   Post: PostScreen
 },{
     initialRouteName: 'Home',
-    headerMode: 'screen',
-  }
+  },
 );
 
 timelineStack.navigationOptions = ({ navigation }) => {
