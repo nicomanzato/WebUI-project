@@ -9,7 +9,6 @@ import {
   View,
   Text,
   Image,
-  TouchableHighlight,
   ScrollView
 } from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
@@ -20,9 +19,9 @@ const postDetails = (props) => {
   let media;
 
   if (item.entities.media) {
-    media = item.entities.media.map((image) => {
+    media = item.entities.media.map((image, i) => {
       return (
-       <View style={styles.mediaView}>
+       <View style={styles.mediaView} key={i}>
          <Image
           source={{uri: image.media_url_https}}
           style={styles.postImage}
@@ -31,7 +30,6 @@ const postDetails = (props) => {
       );
     });
   }
-
 
   const date = formatDate(item.created_at);
 
@@ -47,7 +45,10 @@ const postDetails = (props) => {
          </View>
          <View style={styles.usernameTitle}>
            <View>
-             <Text style={styles.profileUsername}>{item.user.name}</Text>
+             <Text style={styles.profileUsername}>{props.item.user.name}</Text>
+             {props.item.user.verified === true &&
+             <Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF"/>
+             }
            </View>
            <View>
              <Text style={styles.profileScreenName}>@{item.user.screen_name}</Text>
@@ -94,12 +95,12 @@ const postDetails = (props) => {
   );
 };
 
-const formatDate = (date) =>{
+const formatDate = (date) => {
 
   let fecha;
 
-  return date.slice(11,16).concat(' - '+date.slice(8,10))
-   .concat(' '+date.slice(4,7)+'.').concat(' '+date.slice(28,30));
+  return date.slice(11, 16).concat(' - ' + date.slice(8, 10))
+   .concat(' ' + date.slice(4, 7) + '.').concat(' ' + date.slice(28, 30));
 
 
 };
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 5,
     justifyContent: 'space-evenly',
-    paddingTop:10,
+    paddingTop: 10,
   },
 
   socialInteractionElement: {
@@ -140,9 +141,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 
-  contentView: {
-
-  },
+  contentView: {},
 
   usernameTitle: {
     paddingLeft: 10
@@ -199,7 +198,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#dddddd'
   },
   interactionsCount: {
-    flexDirection:'row',
+    flexDirection: 'row',
   },
   dateView: {
     paddingTop: 10,

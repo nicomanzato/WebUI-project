@@ -8,7 +8,7 @@ import ResultList from './../components/search/resultList'
 const SearchScreen = ({ navigation }) => (
   <ScrollView style={styles.container}>
     <SearchForm />
-    <ResultList />
+    <ResultList navigation={navigation}/>
   </ScrollView>
 );
 
@@ -17,7 +17,7 @@ SearchScreen.propTypes = {
 };
 
 SearchScreen.navigationOptions = {
-
+  header: null
 };
 
 const styles = StyleSheet.create({

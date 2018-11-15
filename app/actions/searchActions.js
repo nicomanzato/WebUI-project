@@ -4,7 +4,7 @@ export const START_SEARCH_FOR_RESULTS = 'START_SEARCH_FOR_RESULTS';
 export const SEARCH_APPEND_MORE_POST = 'SEARCH_APPEND_MORE_POST';
 export const SEARCH_LOADING_MORE_SEARCH_RESULTS = 'SEARCH_LOADING_MORE_SEARCH_RESULTS';
 
-const serverIP = '192.168.0.111:8080';
+const serverIP = '192.168.1.33:8080';
 
 export function getTrends(){
   return (dispatch) => {

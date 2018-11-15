@@ -40,8 +40,8 @@ const post = (props) => {
         <View style={styles.contentView}>
           <View style={styles.usernameTitle}>
             <Text style={styles.profileUsername}>{props.item.user.name}</Text>
-            {props.item.user.verified == true &&
-              <Ionicons name="ios-checkmark-circle" size={16} color="blue" />
+            {props.item.user.verified === true &&
+              <Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF" />
             }
             <Text style={styles.profileScreenName}> @{props.item.user.screen_name}</Text>
           </View>

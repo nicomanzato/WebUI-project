@@ -4,7 +4,7 @@ export const TIMELINE_LOADING_MORE_POST = 'TIMELINE_LOADING_MORE_POST';
 export const START_REFRESHING_TIMELINE = 'START_REFRESHING_TIMELINE';
 export const FINISH_REFRESHING_TIMELINE = 'FINISH_REFRESHING_TIMELINE';
 
-const serverIP = '192.168.0.111:8080';
+const serverIP = '192.168.1.33:8080';
 
 export function getTimeline(configuration){
   return (dispatch) => {

@@ -6,7 +6,8 @@ import {
   FlatList,
   View,
   Text,
-  ActivityIndicator
+  ActivityIndicator,
+  TouchableHighlight
 } from 'react-native';
 
 import {bindActionCreators} from 'redux';
@@ -15,7 +16,32 @@ import Trends from './../trends/trends'
 
 import * as Actions from '../../actions/searchActions';
 
-import PostInformation from './../Post';
+import Post from '../Post';
+
+
+class ListItem extends Component {
+
+  constructor(props) {
+    super(props);
+    this.onPress = this.onPress.bind(this);
+  }
+
+  onPress() {
+    this.props.onPressItem(this.props.item);
+  };
+
+  render() {
+    const item = this.props.item;
+    return (
+     <TouchableHighlight
+      onPress={this.onPress}
+      underlayColor='#dddddd'>
+       <Post item={item} singlePost={false}/>
+     </TouchableHighlight>
+    );
+  }
+}
+
 
 class ResultList extends Component {
   constructor(props) {
@@ -42,7 +68,8 @@ class ResultList extends Component {
 
   }
 
-  render = () => {
+
+  render(){
     if (!this.props.hasSearched && !this.props.loadingSearch) return <Trends />
     if (this.props.loadingSearch) {
       return (
@@ -65,12 +92,16 @@ class ResultList extends Component {
     }
   }
 
+  onPressItem = (item) => {
+    this.props.navigation.dispatch({ type: 'Post', data: item});
+  };
+
   renderItem({item, index}) {
     return (
-      <PostInformation item={item} />
+     <ListItem item={item} onPressItem={this.onPressItem} />
     )
   }
-};
+}
 
 
 

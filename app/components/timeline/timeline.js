@@ -107,8 +107,7 @@ class Timeline extends Component {
       <ListItem item={item} onPressItem={this.onPressItem} />
     )
   }
-};
-
+}
 
 
 // The function takes data from the app current state,

@@ -26,6 +26,11 @@ const timelineStack = createStackNavigator({
   },
 );
 
+const searchStack = createStackNavigator({
+  Search:  SearchScreen,
+  Post:  PostScreen
+});
+
 timelineStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
@@ -37,10 +42,30 @@ timelineStack.navigationOptions = ({ navigation }) => {
 };
  Routes.home = timelineStack;
 
+
+searchStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
+
+console.log(Routes);
+
+Routes.home = timelineStack;
+
+console.log(Routes);
+
+
+//const RootNavigator = createStackNavigator(Routes);
 const RootNavigator = createMaterialTopTabNavigator({
 
   Home: timelineStack,
-  Search: { screen: SearchScreen},
+  Search: searchStack,
   Config: { screen: ConfigScreen},
 
 },{
@@ -69,6 +94,13 @@ const RootNavigator = createMaterialTopTabNavigator({
     inactiveTintColor: 'grey',
     showLabel: false,
     showIcon: 'true',
+    indicatorStyle: {
+      borderBottomColor: '#1183ff',
+      borderBottomWidth: 2,
+    },
+    labelStyle: {
+      fontSize: 0
+    },
     iconStyle: {
       margin: 0,
       padding: 0,
