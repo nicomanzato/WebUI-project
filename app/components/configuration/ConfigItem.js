@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, CheckBox } from 'react-native';
+import {StyleSheet, Text, View, CheckBox} from 'react-native';
 
 class ConfigItem extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -21,7 +21,7 @@ class ConfigItem extends React.Component {
   }
 
   render() {
-    return(
+    return (
      <View style={styles.configItem}>
        <View style={styles.configTextView}>
          <Text style={styles.configText}>{this.props.title}</Text>
@@ -50,13 +50,12 @@ const styles = StyleSheet.create({
   configText: {
     fontSize: 17,
   },
-  configCheckBox: {
-  },
+  configCheckBox: {},
   configTextView: {
     flex: 0.9,
     height: 50,
   },
-  checkboxView:{
+  checkboxView: {
     flex: 0.1,
     height: 50,
   }

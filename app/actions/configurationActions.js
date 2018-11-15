@@ -4,31 +4,31 @@ export const CONFIG_TOGGLE_HAVE_DEFAULT_INFORMATION = 'CONFIG_TOGGLE_HAVE_DEFAUL
 export const CONFIG_TOGGLE_CONTAINS_LINK = 'CONFIG_TOGGLE_CONTAINS_LINK';
 export const CONFIG_TOGGLE_TEXT_TRUNCATED = 'CONFIG_TOGGLE_TEXT_TRUNCATED';
 
-export function configToggleVerifiedOnly(){
+export function configToggleVerifiedOnly() {
   return (dispatch) => {
     dispatch({type: CONFIG_TOGGLE_VERIFIED_ONLY});
   }
 }
 
-export function configToggleDoNotFollow(){
+export function configToggleDoNotFollow() {
   return (dispatch) => {
     dispatch({type: CONFIG_TOGGLE_DO_NOT_FOLLOW});
   }
 }
 
-export function configToggleHaveDefaultInformation(){
+export function configToggleHaveDefaultInformation() {
   return (dispatch) => {
     dispatch({type: CONFIG_TOGGLE_HAVE_DEFAULT_INFORMATION});
   }
 }
 
-export function configToggleContainsLink(){
+export function configToggleContainsLink() {
   return (dispatch) => {
     dispatch({type: CONFIG_TOGGLE_CONTAINS_LINK});
   }
 }
 
-export function configToggleTextTruncated(){
+export function configToggleTextTruncated() {
   return (dispatch) => {
     dispatch({type: CONFIG_TOGGLE_TEXT_TRUNCATED});
   }

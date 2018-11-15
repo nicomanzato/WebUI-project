@@ -6,56 +6,57 @@ export const FINISH_REFRESHING_TIMELINE = 'FINISH_REFRESHING_TIMELINE';
 
 const serverIP = '192.168.1.33:8080';
 
-export function getTimeline(configuration){
+export function getTimeline(configuration) {
   return (dispatch) => {
 
     const count = 20;
     const url = `http://${serverIP}/timeline?count=${count}`;
 
     fetch(url)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        const data = applyTimelineConfigurations(responseJson, configuration);;
-        dispatch({type: TIMELINE_AVAILABLE, data: data});
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+     .then((response) => response.json())
+     .then((responseJson) => {
+       const data = applyTimelineConfigurations(responseJson, configuration);
+       ;
+       dispatch({type: TIMELINE_AVAILABLE, data: data});
+     })
+     .catch((error) => {
+       console.error(error);
+     });
 
   }
 }
 
-export function fetchMoreTimeline(maxID, configuration){
+export function fetchMoreTimeline(maxID, configuration) {
   return (dispatch) => {
 
     const count = 20;
     const url = `http://${serverIP}/timeline?count=${count}&max_id=${maxID}`;
 
     fetch(url)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        const data = applyTimelineConfigurations(responseJson, configuration);
-        dispatch({type: TIMELINE_APPEND_POST, data: data.slice(1)}); // drop first result which is already loaded.
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+     .then((response) => response.json())
+     .then((responseJson) => {
+       const data = applyTimelineConfigurations(responseJson, configuration);
+       dispatch({type: TIMELINE_APPEND_POST, data: data.slice(1)}); // drop first result which is already loaded.
+     })
+     .catch((error) => {
+       console.error(error);
+     });
   }
 }
 
-export function startLoadingMorePost(){
+export function startLoadingMorePost() {
   return (dispatch) => {
     dispatch({type: TIMELINE_LOADING_MORE_POST});
   }
 }
 
-export function startRefreshingTimeline(){
+export function startRefreshingTimeline() {
   return (dispatch) => {
     dispatch({type: START_REFRESHING_TIMELINE});
   }
 }
 
-export function finishRefreshingTimeline(){
+export function finishRefreshingTimeline() {
   return (dispatch) => {
     dispatch({type: FINISH_REFRESHING_TIMELINE});
   }

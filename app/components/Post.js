@@ -51,20 +51,20 @@ const post = (props) => {
           <View>
             { media }
           </View>
-        </View>
-      </View>
-      <View style={styles.socialInteractionContainer}>
-        <View style={styles.socialInteractionElement}>
-          <Ionicons name="ios-heart-outline" size={32} color="grey" />
-          <Text style={styles.socialInteractionText}>{item.favorite_count}</Text>
-        </View>
-        <View style={styles.socialInteractionElement}>
-          <Ionicons name="ios-chatboxes-outline" size={32} color="grey" />
-          <Text style={styles.socialInteractionText}>0</Text>
-        </View>
-        <View style={styles.socialInteractionElement}>
-          <Ionicons name="ios-share-alt" size={32} color="grey" />
-          <Text style={styles.socialInteractionText}>{item.retweet_count}</Text>
+          <View style={styles.socialInteractionContainer}>
+            <View style={styles.socialInteractionElement}>
+              <Ionicons name="ios-heart-outline" size={32} color="grey" />
+              <Text style={styles.socialInteractionText}>{item.favorite_count}</Text>
+            </View>
+            <View style={styles.socialInteractionElement}>
+              <Ionicons name="ios-chatboxes-outline" size={32} color="grey" />
+              <Text style={styles.socialInteractionText}>0</Text>
+            </View>
+            <View style={styles.socialInteractionElement}>
+              <Ionicons name="ios-share-alt" size={32} color="grey" />
+              <Text style={styles.socialInteractionText}>{item.retweet_count}</Text>
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -82,13 +82,15 @@ const styles = StyleSheet.create({
 
   socialInteractionContainer: {
     flexDirection: 'row',
-    margin: 5,
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
+    paddingTop: 15,
+    paddingLeft: 5,
+    paddingRight: 35,
   },
 
   socialInteractionElement: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   socialInteractionText: {

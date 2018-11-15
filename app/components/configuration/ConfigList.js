@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, CheckBox } from 'react-native';
+import {StyleSheet, Text, View, Button, CheckBox} from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 
 import {bindActionCreators} from 'redux';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import * as Actions from '../../actions/configurationActions';
 
@@ -12,18 +12,22 @@ import ConfigItem from './ConfigItem';
 
 const ConfigList = (props) => (
 
-  <View>
-    <View style={styles.titleView}>
-      <Text style={styles.titleText}>Silence notifications from ... </Text>
-    </View>
-    <ConfigItem title="People who have not verified the account" onChange={props.configToggleVerifiedOnly} value={props.configVerifiedOnly}/>
-    <ConfigItem title="People who do not follow" onChange={props.configToggleDoNotFollow} value={props.configDoNotFollow} />
-    <ConfigItem title="People who have default profile information" onChange={props.configToggleHaveDefaultInformation} value={props.configHaveDefaultInformation} />
-    <ConfigItem title="Tweets that contain a link" onChange={props.configToggleContainsLink} value={props.configContainsLink} />
-    <ConfigItem title="Tweets that have text truncated" onChange={props.configToggleTextTruncated} value={props.configTextTruncated} />
-  </View>
+ <View>
+   <View style={styles.titleView}>
+     <Text style={styles.titleText}>Silence notifications from ... </Text>
+   </View>
+   <ConfigItem title="People who have not verified the account" onChange={props.configToggleVerifiedOnly}
+               value={props.configVerifiedOnly}/>
+   <ConfigItem title="People who do not follow" onChange={props.configToggleDoNotFollow}
+               value={props.configDoNotFollow}/>
+   <ConfigItem title="People who have default profile information" onChange={props.configToggleHaveDefaultInformation}
+               value={props.configHaveDefaultInformation}/>
+   <ConfigItem title="Tweets that contain a link" onChange={props.configToggleContainsLink}
+               value={props.configContainsLink}/>
+   <ConfigItem title="Tweets that have text truncated" onChange={props.configToggleTextTruncated}
+               value={props.configTextTruncated}/>
+ </View>
 );
-
 
 
 // The function takes data from the app current state,
@@ -31,13 +35,13 @@ const ConfigList = (props) => (
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
 
-    return {
-      configVerifiedOnly: state.configurationReducer.configVerifiedOnly,
-      configDoNotFollow: state.configurationReducer.configDoNotFollow,
-      configHaveDefaultInformation: state.configurationReducer.configHaveDefaultInformation,
-      configContainsLink: state.configurationReducer.configContainsLink,
-      configTextTruncated: state.configurationReducer.configTextTruncated,
-    }
+  return {
+    configVerifiedOnly: state.configurationReducer.configVerifiedOnly,
+    configDoNotFollow: state.configurationReducer.configDoNotFollow,
+    configHaveDefaultInformation: state.configurationReducer.configHaveDefaultInformation,
+    configContainsLink: state.configurationReducer.configContainsLink,
+    configTextTruncated: state.configurationReducer.configTextTruncated,
+  }
 }
 
 // Doing this merges our actions into the component’s props,
