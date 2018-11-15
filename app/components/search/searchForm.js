@@ -5,7 +5,7 @@ import {StackNavigator} from 'react-navigation';
 
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-
+import { Ionicons } from '@expo/vector-icons';
 import * as Actions from '../../actions/searchActions';
 
 class SearchForm extends React.Component {
@@ -24,19 +24,22 @@ class SearchForm extends React.Component {
 
   render = () => {
     return (
-      <View style={styles.container}>
-        <TextInput
+     <View style={styles.container}>
+       <View style={styles.textInputView}>
+         <Ionicons name="ios-search" size={32} color="#1183ff"/>
+         <TextInput
           underlineColorAndroid="transparent"
           style={styles.searchTextInput}
           onChangeText={(searchValue) => this.setState({searchValue})}
           value={this.state.searchValue}
-        />
-        <TouchableHighlight
-          style={styles.searchButton}
-          onPress={this.handleOnPress}>
-          <Text style={styles.searchButtonText}> Search </Text>
-        </TouchableHighlight>
-      </View>
+         />
+       </View>
+       <TouchableHighlight
+        style={styles.searchButton}
+        onPress={this.handleOnPress}>
+         <Text style={styles.searchButtonText}> Search </Text>
+       </TouchableHighlight>
+     </View>
     );
   }
 };
@@ -65,27 +68,46 @@ export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
+    height: 80,
     flexDirection: 'row',
     backgroundColor: '#FFFF',
-    margin: 30,
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    paddingTop: 17,
+    paddingLeft: 5,
+    paddingRight: 5,
+
   },
   searchTextInput: {
-    flex: 0.5,
-    fontSize: 20,
-    padding:5,
-    borderWidth: 2,
-    borderColor: 'black',
+    flex: 1,
+    fontSize: 17,
+    padding: 5,
+    marginLeft: 3
   },
   searchButton: {
-    flex: 0.3,
+    flex: 0.25,
+    height: 40,
     alignItems: 'center',
-    backgroundColor: 'blue',
-    padding: 10
+    justifyContent: 'center',
+    backgroundColor: '#1FBFFF',
+    borderRadius: 5,
   },
   searchButtonText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 16,
   },
+  separator: {
+    height: 1,
+    backgroundColor: '#dddddd'
+  },
+  textInputView: {
+    flex: 0.65,
+    height: 40,
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: 'black',
+    padding: 1,
+    paddingLeft: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
