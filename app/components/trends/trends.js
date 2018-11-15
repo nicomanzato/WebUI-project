@@ -35,7 +35,15 @@ class Trends extends Component {
         </View>
       );
     } else {
-      return <TrendList trends={this.props.trends} />
+      return (
+       <View>
+
+         <Text style={styles.trendTitle}>Trends for you</Text>
+         <View style={styles.separator}/>
+         <TrendList trends={this.props.trends}/>
+
+       </View>
+      )
     }
   }
 };
@@ -74,5 +82,15 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: '#FFFFFF',
     paddingTop:20
+  },
+  trendTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginLeft: 10,
+    marginBottom: 15
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#dddddd'
   },
 });
