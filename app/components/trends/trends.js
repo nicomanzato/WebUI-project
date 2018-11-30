@@ -24,11 +24,11 @@ class Trends extends Component {
   }
 
   componentDidMount = () => {
-    this.props.getTrends();
+    this.props.requestTrendsLoad();
   }
 
   render = () => {
-    if (this.props.loading) {
+    if (this.props.loadingTrends) {
       return (
         <View style={styles.activityIndicatorContainer}>
           <ActivityIndicator animating={true}/>

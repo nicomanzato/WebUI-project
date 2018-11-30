@@ -1,11 +1,28 @@
-export const TRENDS_AVAILABLE = 'TRENDS_AVAILABLE';
-export const SEARCH_RESULTS_AVAILABLE = 'SEARCH_RESULTS_AVAILABLE';
-export const START_SEARCH_FOR_RESULTS = 'START_SEARCH_FOR_RESULTS';
-export const SEARCH_APPEND_MORE_POST = 'SEARCH_APPEND_MORE_POST';
-export const SEARCH_LOADING_MORE_SEARCH_RESULTS = 'SEARCH_LOADING_MORE_SEARCH_RESULTS';
+export const REQUEST_TRENDS_LOAD = 'REQUEST_TRENDS_LOAD'
+export const SUCCESS_TRENDS_LOAD = 'SUCCESS_TRENDS_LOAD';
+export const SUCCESS_SEARCH_RESULTS_LOAD = 'SUCCESS_SEARCH_RESULTS_LOAD';
+export const REQUEST_SEARCH_RESULTS_LOAD = 'REQUEST_SEARCH_RESULTS_LOAD';
+export const SUCCESS_SEARCH_APPEND_MORE_POST = 'SUCCESS_SEARCH_APPEND_MORE_POST';
+export const REQUEST_SEARCH_APPEND_MORE_POST = 'REQUEST_SEARCH_APPEND_MORE_POST';
 
-const serverIP = '192.168.1.33:8080';
+const serverIP = '10.160.11.56:8080';
 
+export function requestTrendsLoad() {
+  return { type: REQUEST_TRENDS_LOAD }
+}
+
+export function successTrendsLoad(data) {
+  return { type: SUCCESS_TRENDS_LOAD, data: data }
+}
+
+export function requestSearchResultLoad(keyword) {
+  return { type: REQUEST_SEARCH_RESULTS_LOAD, searchKeyword: keyword }
+}
+
+export function successSearchResultsLoad(data, searchKeyword) {
+  return { type: SUCCESS_SEARCH_RESULTS_LOAD, data: data, searchKeyword: searchKeyword}
+}
+/*
 export function getTrends(){
   return (dispatch) => {
 
@@ -15,7 +32,7 @@ export function getTrends(){
       .then((response) => response.json())
       .then((responseJson) => {
         const data = responseJson;
-        dispatch({type: TRENDS_AVAILABLE, data: data[0].trends});
+        dispatch({type: SUCCESS_TRENDS_LOAD, data: data[0].trends});
       })
       .catch((error) => {
         console.error(error);
@@ -24,16 +41,16 @@ export function getTrends(){
   }
 }
 
-export function searchForValue(searchValue){
+export function searchForValue(searchKeyword){
   return (dispatch) => {
 
-    const url = `http://${serverIP}/search?q=${searchValue}`;
+    const url = `http://${serverIP}/search?q=${searchKeyword}`;
 
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
         const data = responseJson;
-        dispatch({type: SEARCH_RESULTS_AVAILABLE, data: data.statuses, searchValue: searchValue});
+        dispatch({type: SUCCESS_SEARCH_RESULTS_LOAD, data: data.statuses, searchKeyword: searchKeyword});
       })
       .catch((error) => {
         console.error(error);
@@ -42,17 +59,17 @@ export function searchForValue(searchValue){
   }
 }
 
-export function fetchMoreSearchResults(maxID, searchValue){
+export function fetchMoreSearchResults(maxID, searchKeyword){
   return (dispatch) => {
 
     const count = 20;
-    const url = `http://${serverIP}/search?q=${searchValue}&max_id=${maxID}&count=${count}`;
+    const url = `http://${serverIP}/search?q=${searchKeyword}&max_id=${maxID}&count=${count}`;
 
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
         const data = responseJson;
-        dispatch({type: SEARCH_APPEND_MORE_POST, data: data.statuses}); // drop first result which is already loaded.
+        dispatch({type: SUCCESS_SEARCH_APPEND_MORE_POST, data: data.statuses}); // drop first result which is already loaded.
       })
       .catch((error) => {
         console.error(error);
@@ -62,12 +79,13 @@ export function fetchMoreSearchResults(maxID, searchValue){
 
 export function startLoadingMoreSearchResults(){
   return (dispatch) => {
-    dispatch({type: SEARCH_LOADING_MORE_SEARCH_RESULTS});
+    dispatch({type: REQUEST_SEARCH_APPEND_MORE_POST});
   }
 }
 
 export function startSearch(){
   return (dispatch) => {
-    dispatch({type: START_SEARCH_FOR_RESULTS});
+    dispatch({type: REQUEST_SEARCH_RESULTS_LOAD});
   }
 }
+*/

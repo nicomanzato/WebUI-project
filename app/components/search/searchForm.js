@@ -13,13 +13,12 @@ class SearchForm extends React.Component {
     super(props);
 
     this.state = {
-      searchValue: '',
+      searchKeyword: '',
     }
   }
 
   handleOnPress = () => {
-    this.props.startSearch();
-    this.props.searchForValue(this.state.searchValue);
+    this.props.requestSearchResultLoad(this.state.searchKeyword);
   }
 
   render = () => {
@@ -30,8 +29,8 @@ class SearchForm extends React.Component {
          <TextInput
           underlineColorAndroid="transparent"
           style={styles.searchTextInput}
-          onChangeText={(searchValue) => this.setState({searchValue})}
-          value={this.state.searchValue}
+          onChangeText={(searchKeyword) => this.setState({searchKeyword})}
+          value={this.state.searchKeyword}
          />
        </View>
        <TouchableHighlight

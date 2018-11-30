@@ -54,14 +54,9 @@ searchStack.navigationOptions = ({ navigation }) => {
   };
 };
 
-console.log(Routes);
-
 Routes.home = timelineStack;
-
-console.log(Routes);
-
-
 //const RootNavigator = createStackNavigator(Routes);
+
 const RootNavigator = createMaterialTopTabNavigator({
 
   Home: timelineStack,

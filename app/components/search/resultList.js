@@ -57,15 +57,15 @@ class ResultList extends Component {
   }
 
   handleOnEndReached = () => {
-
+/*
     const data = this.props.data;
 
     if(data && !this.props.loadingMoreSearchResults){
       this.props.startLoadingMoreSearchResults();
       const maxID = (data[data.length - 1 ].id);
-      this.props.fetchMoreSearchResults(maxID, this.props.searchValue);
+      this.props.fetchMoreSearchResults(maxID, this.props.searchKeyword);
     }
-
+*/
   }
 
 
@@ -115,7 +115,7 @@ function mapStateToProps(state, props) {
         searchResult: state.searchReducer.searchResult,
         data: state.searchReducer.searchResult,
         loadingMoreSearchResults: state.searchReducer.loadingMoreSearchResults,
-        searchValue: state.searchReducer.searchValue,
+        searchKeyword: state.searchReducer.searchKeyword,
     }
 }
 

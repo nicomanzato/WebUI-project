@@ -7,7 +7,7 @@ import {
 } from "../actions/configurationActions"
 
 let configurationState = {
-  configVerifiedOnly: false,
+  configVerifiedOnly: true,
   configDoNotFollow: false,
   configHaveDefaultInformation: false,
   configContainsLink: false,

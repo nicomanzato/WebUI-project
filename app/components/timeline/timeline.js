@@ -13,7 +13,7 @@ import {
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import * as Actions from '../../actions';
+import * as Actions from '../../actions/timelineActions';
 
 import Post from '../Post'
 
@@ -54,24 +54,15 @@ class Timeline extends Component {
   }
 
   componentDidMount = () => {
-    this.props.getTimeline(this.props.configuration);
+    this.props.requestTimelineLoad();
   }
 
   handleOnEndReached = () => {
-
-    const data = this.props.data;
-
-    if(data && !this.props.loadingMorePost){
-      this.props.startLoadingMorePost();
-      const maxID = (data[data.length - 1 ].id);
-      this.props.fetchMoreTimeline(maxID, this.props.configuration);
-    }
+    this.props.requestTimelineLoadMorePost();
   }
 
   handleOnRefresh = () => {
-    this.props.startRefreshingTimeline();
-    this.props.getTimeline(this.props.configuration);
-    this.props.finishRefreshingTimeline();
+    this.props.requestTimelineLoad();
   }
 
   render = () => {
