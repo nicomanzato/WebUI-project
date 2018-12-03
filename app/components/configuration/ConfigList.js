@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import {StyleSheet, Text, View, Button, CheckBox} from 'react-native';
 import PropTypes from 'prop-types';

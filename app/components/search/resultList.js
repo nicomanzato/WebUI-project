@@ -57,15 +57,7 @@ class ResultList extends Component {
   }
 
   handleOnEndReached = () => {
-/*
-    const data = this.props.data;
-
-    if(data && !this.props.loadingMoreSearchResults){
-      this.props.startLoadingMoreSearchResults();
-      const maxID = (data[data.length - 1 ].id);
-      this.props.fetchMoreSearchResults(maxID, this.props.searchKeyword);
-    }
-*/
+    this.props.requestSearchLoadMorePost();
   }
 
 
@@ -84,7 +76,7 @@ class ResultList extends Component {
             ref='listRef'
             data={this.props.data}
             renderItem={this.renderItem}
-            onEndReachedThreshold={10}
+            onEndReachedThreshold={20}
             onEndReached={this.handleOnEndReached}
             keyExtractor={(item, index) => index.toString()}/>
         </View>

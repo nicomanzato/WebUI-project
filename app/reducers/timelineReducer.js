@@ -1,8 +1,8 @@
 import {
   REQUEST_TIMELINE_LOAD,
   SUCCESS_TIMELINE_LOAD,
-  SUCCESS_TIMELINE_APPEND_MORE_POST,
-  REQUEST_TIMELINE_APPEND_MORE_POST,
+  SUCCESS_TIMELINE_LOAD_MORE_POST,
+  REQUEST_TIMELINE_LOAD_MORE_POST,
   REQUEST_TIMELINE_REFRESH,
   SUCCESS_TIMELINE_REFRESH
 } from "../actions/timelineActions" //Import the actions types constant we defined in our actions
@@ -22,10 +22,10 @@ const TimelineReducer = (state = timelineState, action) => {
     case REQUEST_TIMELINE_LOAD:
       state = Object.assign({}, state, { loading: true });
       return state;
-    case SUCCESS_TIMELINE_APPEND_MORE_POST:
+    case SUCCESS_TIMELINE_LOAD_MORE_POST:
       state = Object.assign({}, state, { timeline: state.timeline.concat(action.data), loadingMorePost: false });
       return state;
-    case REQUEST_TIMELINE_APPEND_MORE_POST:
+    case REQUEST_TIMELINE_LOAD_MORE_POST:
       state = Object.assign({}, state, { loadingMorePost: true });
       return state;
     case REQUEST_TIMELINE_REFRESH:

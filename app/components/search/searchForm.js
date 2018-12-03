@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight } from 'react-native';
 import PropTypes from 'prop-types';
@@ -18,7 +20,7 @@ class SearchForm extends React.Component {
   }
 
   handleOnPress = () => {
-    this.props.requestSearchResultLoad(this.state.searchKeyword);
+    this.props.requestSearchResultLoad(this.state.searchKeyword.replace(/#/, '%23'));
   }
 
   render = () => {
@@ -49,9 +51,7 @@ class SearchForm extends React.Component {
 // and insert/links it into the props of our component.
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
-
     return {
-
     }
 }
 

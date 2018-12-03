@@ -1,10 +1,13 @@
 import { call, all, put, takeEvery, takeLatest, take, select } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
+import {getConfiguration, getLastPostId} from './timelineSelectors'
 
 import {
   successTimelineLoad,
   successTimelineLoadMorePost,
-  REQUEST_TIMELINE_APPEND_MORE_POST,
+  failureTimelineLoad,
+  failureTimelineLoadMorePost,
+  REQUEST_TIMELINE_LOAD_MORE_POST,
   REQUEST_TIMELINE_LOAD
 } from "./../actions/timelineActions.js"
 
@@ -21,22 +24,13 @@ function* loadTimeline() {
     const configuration = yield select(getConfiguration);
     yield put(successTimelineLoad(applyTimelineConfigurations(data.slice(1), configuration)));
   } catch (er) {
-    console.log("something bad happened");
+    failureTimelineLoad(er);
     console.log(er);
   }
 }
 
 function* watchLoadTimeline() {
   yield takeLatest(REQUEST_TIMELINE_LOAD, loadTimeline);
-}
-
-const getLastPostId = state => {
-  const timeline = state.timelineReducer.timeline;
-  return timeline[timeline.length - 1].id;
-}
-
-const getConfiguration = state => {
-  return state.configurationReducer;
 }
 
 function* infiniteScrollTimeline() {
@@ -50,15 +44,13 @@ function* infiniteScrollTimeline() {
     const configuration = yield select(getConfiguration);
     yield put(successTimelineLoadMorePost(applyTimelineConfigurations(data.slice(1), configuration)));
   } catch(er) {
-    console.log("error while doing infinite scroll");
+    failureTimelineLoadMorePost(er);
     console.log(er);
   }
 }
 
 function* watchInfiniteScrollTimeline() {
-  while(true){
-    yield takeLatest(REQUEST_TIMELINE_APPEND_MORE_POST, infiniteScrollTimeline);
-  }
+  yield takeLatest(REQUEST_TIMELINE_LOAD_MORE_POST, infiniteScrollTimeline);
 }
 
 export default function* timelineSagas() {

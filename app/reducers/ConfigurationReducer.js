@@ -1,3 +1,5 @@
+'use strict';
+
 import {
   CONFIG_TOGGLE_VERIFIED_ONLY,
   CONFIG_TOGGLE_DO_NOT_FOLLOW,
@@ -7,7 +9,7 @@ import {
 } from "../actions/configurationActions"
 
 let configurationState = {
-  configVerifiedOnly: true,
+  configVerifiedOnly: false,
   configDoNotFollow: false,
   configHaveDefaultInformation: false,
   configContainsLink: false,

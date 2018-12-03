@@ -3,8 +3,9 @@ import { delay } from 'redux-saga'
 
 import {
   successTrendsLoad,
+  failureTrendsLoad,
   REQUEST_TRENDS_LOAD,
-} from "./../actions/searchActions.js"
+} from "./../actions/trendActions.js"
 
 const serverIP = '10.160.11.56:8080';
 
@@ -16,6 +17,7 @@ function* loadTrends(){
     const data = yield call([response, "json"]);
     yield put(successTrendsLoad(data[0].trends));
   } catch(er) {
+    failureTrendsLoad();
     console.log(er);
   }
 }

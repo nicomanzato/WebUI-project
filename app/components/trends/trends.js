@@ -12,7 +12,9 @@ import {
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import * as Actions from '../../actions/searchActions';
+import * as Actions from '../../actions/trendActions';
+import {requestSearchResultLoad} from '../../actions/searchActions';
+
 import TrendList from './trendList';
 
 class Trends extends Component {
@@ -40,7 +42,9 @@ class Trends extends Component {
 
          <Text style={styles.trendTitle}>Trends for you</Text>
          <View style={styles.separator}/>
-         <TrendList trends={this.props.trends}/>
+         <TrendList
+           trends={this.props.trends}
+           onItemPress={this.props.requestSearchResultLoad}/>
 
        </View>
       )
@@ -55,8 +59,8 @@ class Trends extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
     return {
-        loadingTrends: state.searchReducer.loadingTrends,
-        trends: state.searchReducer.trends,
+        loadingTrends: state.trendReducer.loadingTrends,
+        trends: state.trendReducer.trends,
     }
 }
 
@@ -64,6 +68,7 @@ function mapStateToProps(state, props) {
 // while wrapping them in dispatch() so that they immediately dispatch an Action.
 // Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
 function mapDispatchToProps(dispatch) {
+  Actions.requestSearchResultLoad = requestSearchResultLoad;
   return bindActionCreators(Actions, dispatch);
 }
 

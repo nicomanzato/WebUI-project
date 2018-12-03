@@ -1,9 +1,12 @@
+'use strict';
+
 import React from 'react';
 import {
   StyleSheet,
   ScrollView,
   View,
   Text,
+  TouchableHighlight,
 } from 'react-native';
 
 const trendList = (props) => {
@@ -15,15 +18,20 @@ const trendList = (props) => {
       const tw_volume = trend.tweet_volume === null ? null :
        <Text style={styles.volumeText}>{trend.tweet_volume} Tweets</Text>;
       return (
-       <View style={styles.trend} key={index}>
-         <View style={styles.trendNumberView}>
-           <Text key={'#' + index} style={styles.trendNumber}>{index + 1}</Text>
+       <TouchableHighlight
+          key={index}
+          onPress={() => { props.onItemPress(trend.query)}}
+          underlayColor='#dddddd'>
+          <View style={styles.trend} key={index}>
+             <View style={styles.trendNumberView}>
+               <Text key={'#' + index} style={styles.trendNumber}>{index + 1}</Text>
+             </View>
+             <View style={styles.trendTextView}>
+               <Text key={index + 'Name'} style={styles.trendText}>{trend.name}</Text>
+               {tw_volume}
+             </View>
          </View>
-         <View style={styles.trendTextView}>
-           <Text key={index + 'Name'} style={styles.trendText}>{trend.name}</Text>
-           {tw_volume}
-         </View>
-       </View>
+       </TouchableHighlight>
       );
     });
   }
