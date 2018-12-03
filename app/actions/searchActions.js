@@ -6,8 +6,6 @@ export const REQUEST_SEARCH_LOAD_MORE_POST = 'REQUEST_SEARCH_LOAD_MORE_POST'
 export const SUCCESS_SEARCH_LOAD_MORE_POST = 'SUCCESS_SEARCH_LOAD_MORE_POST'
 export const FAILURE_SEARCH_LOAD_MORE_POST = 'FAILURE_SEARCH_LOAD_MORE_POST'
 
-const serverIP = '10.160.11.56:8080';
-
 export function requestSearchResultLoad(keyword) {
   return {type: REQUEST_SEARCH_RESULTS_LOAD, searchKeyword: keyword}
 }

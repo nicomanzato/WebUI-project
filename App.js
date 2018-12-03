@@ -1,7 +1,7 @@
 import React from 'react';
 import Reactotron from './ReactotronConfig'
-import { AppRegistry } from 'react-native';
-import { Provider, Text } from 'react-redux';
+import { AppRegistry, SafeAreaView } from 'react-native';
+import { Provider, View } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -10,7 +10,6 @@ import rootSaga from './app/sagas/index';
 
 import AppReducer from './app/reducers';
 import { AppNavigator, middleware } from './app/components/AppNavigator';
-
 
 //const store = createStore(AppReducer, applyMiddleware(thunk));
 

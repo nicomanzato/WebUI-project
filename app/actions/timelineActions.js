@@ -10,8 +10,6 @@ export const REQUEST_TIMELINE_REFRESH = 'REQUEST_TIMELINE_REFRESH';
 export const SUCCESS_TIMELINE_REFRESH = 'SUCCESS_TIMELINE_REFRESH';
 export const FAILURE_TIMELINE_REFRESH = 'FAILURE_TIMELINE_REFRESH';
 
-const serverIP = '10.160.11.56:8080';
-
 export function requestTimelineLoad() {
   return {type: REQUEST_TIMELINE_LOAD}
 }
