@@ -1,7 +1,7 @@
 'use strict';
 
 import { NavigationActions } from 'react-navigation';
-import { RootNavigator } from '../components/AppNavigator';
+import { RootNavigator } from '../../components/AppNavigator';
 
 const firstAction = RootNavigator.router.getActionForPathAndParams('Home');
 const tempNavState = RootNavigator.router.getStateForAction(firstAction);
@@ -9,7 +9,6 @@ const initialNavState = RootNavigator.router.getStateForAction(
   tempNavState
 );
 
-//function NavReducer(state = initialNavState, action) {
 const NavReducer = (state = initialNavState, action) => {
   let nextState;
   switch (action.type) {

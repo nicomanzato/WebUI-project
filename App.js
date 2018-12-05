@@ -6,14 +6,11 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import createSagaMiddleware from 'redux-saga';
-import rootSaga from './app/sagas/index';
+import appSagas from './app/store/appSagas';
 
-import AppReducer from './app/reducers';
+import AppReducer from './app/store/appReducer';
 import { AppNavigator, middleware } from './app/components/AppNavigator';
 
-//const store = createStore(AppReducer, applyMiddleware(thunk));
-
-//const sagaMiddleware = createSagaMiddleware();
 const sagaMonitor = Reactotron.createSagaMonitor();
 const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
 
@@ -22,7 +19,7 @@ const store = Reactotron.createStore(
   applyMiddleware(sagaMiddleware)
 )
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(appSagas);
 
 class App extends React.Component {
   render() {

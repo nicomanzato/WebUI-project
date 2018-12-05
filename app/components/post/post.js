@@ -10,9 +10,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const post = (props) => {
-
-
+const Post = (props) => {
 
   const {item} = props;
   let media;
@@ -72,7 +70,7 @@ const post = (props) => {
   );
 }
 
-export default post;
+export default Post;
 
 const styles = StyleSheet.create({
   row:{

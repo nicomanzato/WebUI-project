@@ -28,11 +28,6 @@ const timelineStack = createStackNavigator({
   },
 );
 
-const searchStack = createStackNavigator({
-  Search:  SearchScreen,
-  Post:  PostScreen
-});
-
 timelineStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
@@ -42,8 +37,11 @@ timelineStack.navigationOptions = ({ navigation }) => {
     tabBarVisible,
   };
 };
- Routes.home = timelineStack;
 
+const searchStack = createStackNavigator({
+  Search:  SearchScreen,
+  Post:  PostScreen
+});
 
 searchStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
@@ -55,9 +53,6 @@ searchStack.navigationOptions = ({ navigation }) => {
     tabBarVisible,
   };
 };
-
-Routes.home = timelineStack;
-//const RootNavigator = createStackNavigator(Routes);
 
 const RootNavigator = createMaterialTopTabNavigator({
 

@@ -6,7 +6,7 @@ import {
   CONFIG_TOGGLE_HAVE_DEFAULT_INFORMATION,
   CONFIG_TOGGLE_CONTAINS_LINK,
   CONFIG_TOGGLE_TEXT_TRUNCATED
-} from "../actions/configurationActions"
+} from "./configurationActions"
 
 let configurationState = {
   configVerifiedOnly: false,

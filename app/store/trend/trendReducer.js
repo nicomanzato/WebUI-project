@@ -1,7 +1,8 @@
 import {
   REQUEST_TRENDS_LOAD,
   SUCCESS_TRENDS_LOAD,
-} from "../actions/trendActions" //Import the actions types constant we defined in our actions
+  FAILURE_TRENDS_LOAD,
+} from "./trendActions" //Import the actions types constant we defined in our actions
 
 let trendState = {
   trends: [],
@@ -15,6 +16,9 @@ const TrendReducer = (state = trendState, action) => {
       return state;
     case SUCCESS_TRENDS_LOAD:
       state = Object.assign({}, state, { trends: action.data, loadingTrends: false });
+      return state;
+    case FAILURE_TRENDS_LOAD:
+      state = Object.assign({}, state, {});
       return state;
     default:
       return state;

@@ -94,8 +94,6 @@ const postDetails = (props) => {
 
 const formatDate = (date) => {
 
-  let fecha;
-
   return date.slice(11, 16).concat(' - ' + date.slice(8, 10))
    .concat(' ' + date.slice(4, 7) + '.').concat(' ' + date.slice(28, 30));
 

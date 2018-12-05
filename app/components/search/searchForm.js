@@ -5,10 +5,7 @@ import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight } from 'r
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 
-import {bindActionCreators} from 'redux';
-import { connect } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
-import * as Actions from '../../actions/searchActions';
 
 class SearchForm extends React.Component {
   constructor(props){
@@ -20,7 +17,7 @@ class SearchForm extends React.Component {
   }
 
   handleOnPress = () => {
-    this.props.requestSearchResultLoad(this.state.searchKeyword.replace(/#/, '%23'));
+    this.props.requestSearchForPost(this.state.searchKeyword.replace(/#/, '%23'));
   }
 
   render = () => {
@@ -45,25 +42,7 @@ class SearchForm extends React.Component {
   }
 };
 
-
-
-// The function takes data from the app current state,
-// and insert/links it into the props of our component.
-// This function makes Redux know that this component needs to be passed a piece of the state
-function mapStateToProps(state, props) {
-    return {
-    }
-}
-
-// Doing this merges our actions into the component’s props,
-// while wrapping them in dispatch() so that they immediately dispatch an Action.
-// Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(Actions, dispatch);
-}
-
-//Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
+export default SearchForm;
 
 const styles = StyleSheet.create({
   container: {

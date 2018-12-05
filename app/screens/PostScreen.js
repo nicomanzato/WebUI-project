@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 import {connect} from 'react-redux';
-import PostDetails from '../components/PostDetails'
+import PostDetails from '../components/post/postDetail'
 
 class PostScreen extends Component {
 

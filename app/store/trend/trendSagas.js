@@ -5,7 +5,7 @@ import {
   successTrendsLoad,
   failureTrendsLoad,
   REQUEST_TRENDS_LOAD,
-} from "./../actions/trendActions.js"
+} from "./trendActions.js"
 
 const serverIP = '10.160.11.56:8080';
 
