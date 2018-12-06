@@ -20,6 +20,14 @@ export const getLastSearchResultId = state => {
   return searchPost[searchPost.length - 1].id;
 }
 
+export const getShowPostId = state => {
+  return state.PostReducer.showPostId;
+}
+
+export const getUserProfilePostId = state => {
+  return state.UserReducer.userId;
+}
+
 export const getSilencedPost = (state) => {
 
   const configuration = getConfiguration(state)

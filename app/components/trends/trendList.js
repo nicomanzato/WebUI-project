@@ -20,7 +20,7 @@ const trendList = (props) => {
       return (
        <TouchableHighlight
           key={index}
-          onPress={() => { props.onItemPress(trend.query)}}
+          onPress={() => { props.onItemPress(trend)}}
           underlayColor='#dddddd'>
           <View style={styles.trend} key={index}>
              <View style={styles.trendNumberView}>

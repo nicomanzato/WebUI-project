@@ -4,22 +4,33 @@ import {
   getConfiguration,
   getLastPostId,
   getSearchKeyword,
-  getLastSearchResultId} from './postSelector'
+  getLastSearchResultId,
+  getShowPostId,
+  getUserProfilePostId} from './postSelector'
 
 import {
+  requestUserProfileLoadPost,
   successLoadPost,
   successLoadMorePost,
   successSearchForPost,
   successSearchMorePost,
+  successPostShow,
+  successUserProfileLoadPost,
   failureLoadPost,
   failureLoadMorePost,
   failureSearchForPost,
   failureSearchMorePost,
+  failurePostShow,
+  failureUserProfileLoadPost,
   REQUEST_POST_LOAD,
   REQUEST_POST_LOAD_MORE,
   REQUEST_POST_SEARCH,
-  REQUEST_POST_SEARCH_MORE
+  REQUEST_POST_SEARCH_MORE,
+  REQUEST_POST_SHOW,
+  REQUEST_USER_PROFILE_LOAD_POST
 } from "./postActions"
+
+import {SUCCESS_USER_PROFILE} from './../user/userActions'
 
 const serverIP = '10.160.11.56:8080';
 
@@ -98,7 +109,49 @@ function* searchMorePost() {
 }
 
 function* watchSearchMorePost() {
-    yield takeLatest(REQUEST_POST_SEARCH_MORE, searchMorePost);
+  yield takeLatest(REQUEST_POST_SEARCH_MORE, searchMorePost);
+}
+
+function* showPost() {
+  try {
+    const id = yield select(getShowPostId);
+    const url = `http://${serverIP}/show?id=${id}`;
+    const response = yield call(fetch,url);
+    const data = yield call([response, "json"]);
+    yield put(successPostShow(data));
+  } catch (er) {
+    failurePostShow(er);
+    console.log(er);
+  }
+}
+
+function* watchShowPost() {
+  yield takeLatest(REQUEST_POST_SHOW, showPost);
+}
+
+function* loadUserProfileTimeline() {
+  try {
+    const id = yield select(getUserProfilePostId);
+    const url = `http://${serverIP}/user_timeline?user_id=${id}`;
+    const response = yield call(fetch,url);
+    const data = yield call([response, "json"]);
+    yield put(successUserProfileLoadPost(data));
+  } catch (er) {
+    failureUserProfileLoadPost(er);
+    console.log(er);
+  }
+}
+
+function* watchLoadUserProfileTimeline() {
+  yield takeLatest(REQUEST_USER_PROFILE_LOAD_POST, loadUserProfileTimeline);
+}
+
+function* onUserProfileLoaded() {
+  yield put(requestUserProfileLoadPost());
+}
+
+function* watchUserProfileLoaded() {
+  yield takeLatest(SUCCESS_USER_PROFILE, onUserProfileLoaded);
 }
 
 export default function* postSagas() {
@@ -106,6 +159,9 @@ export default function* postSagas() {
     watchLoadTimeline(),
     watchInfiniteScrollTimeline(),
     watchSearchForPost(),
-    watchSearchMorePost()
+    watchSearchMorePost(),
+    watchShowPost(),
+    watchLoadUserProfileTimeline(),
+    watchUserProfileLoaded(),
   ])
 }

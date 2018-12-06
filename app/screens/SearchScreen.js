@@ -8,49 +8,75 @@ import ResultList from './../components/search/resultList'
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-import {requestSearchForPost, requestSearchMorePost} from '../store/post/postActions';
-import {requestTrendsLoad} from '../store/trend/trendActions';
+import {
+  requestSearchForPost,
+  requestSearchMorePost,
+  resetPostSearch} from '../store/post/postActions';
+import {requestTrendsLoad, resetTrends} from '../store/trend/trendActions';
 
-const SearchScreen = (props) => (
-  <View style={styles.container}>
-    <SearchForm
-      requestSearchForPost={props.requestSearchForPost}/>
-    {!props.hasSearched &&
-      <Trends
-        loadingTrends={props.loadingTrends}
-        onTrendPress={props.requestSearchForPost}
-        onComponentMount={props.requestTrendsLoad}
-        trends={props.trends}/>}
-    {props.hasSearched &&
-      <ResultList
-        navigation={props.navigation}
-        loadingSearch={props.loadingSearch}
-        searchResult={props.searchResult}
-        onEndReached={props.requestSearchMorePost}/>}
-  </View>
-);
+class SearchScreen extends React.Component {
 
-SearchScreen.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};
+  constructor(props) {
+    super(props)
 
-SearchScreen.navigationOptions = {
-  header: null
-};
+    this.state = {
+      searchKeyword: '',
+    };
+  }
+
+  setSearchKeyword = (keyword) => {
+    this.setState({
+      searchKeyword: keyword,
+    })
+  }
+
+  render = () => {
+    return (
+      <View style={styles.container}>
+        <SearchForm
+          hasSearched={this.props.hasSearched}
+          onTrendTextChange={this.setSearchKeyword}
+          searchValue={this.state.searchKeyword}
+          onReset={() => { this.props.resetPostSearch(); this.props.resetTrends(); this.setSearchKeyword('') }}
+          requestSearchForPost={this.props.requestSearchForPost}/>
+        {!this.props.hasSearched &&
+          <Trends
+            loadingTrends={this.props.loadingTrends}
+            onTrendPress={(trend) => {this.props.requestSearchForPost(trend.query); this.setSearchKeyword(trend.name); }}
+            onComponentMount={this.props.requestTrendsLoad}
+            trends={this.props.trends}/>}
+        {this.props.hasSearched &&
+          <ResultList
+            navigation={this.props.navigation}
+            loadingSearch={this.props.loadingSearch}
+            searchResult={this.props.searchResult}
+            onEndReached={this.props.requestSearchMorePost}/>}
+      </View>
+    );
+  };
+
+  static navigationOptions = {
+    header: null,
+  };
+
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFF'
   },
+  activityIndicatorContainer:{
+    backgroundColor: "#fff",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
 });
 
-// The function takes data from the app current state,
-// and insert/links it into the props of our component.
-// This function makes Redux know that this component needs to be passed a piece of the state
-function mapStateToProps(state, props) {
+const mapStateToProps = (state) => {
     return {
-        loadingTrends: false,
+        loadingTrends: state.TrendReducer.loadingTrends,
         trends: state.TrendReducer.trends,
 
         hasSearched: state.PostReducer.hasSearchedForPost,
@@ -60,14 +86,12 @@ function mapStateToProps(state, props) {
     }
 }
 
-// Doing this merges our actions into the component’s props,
-// while wrapping them in dispatch() so that they immediately dispatch an Action.
-// Just by doing this, we will have access to the actions defined in out actions file (action/home.js)
 const mapDispatchToProps = {
   requestTrendsLoad: () => requestTrendsLoad(),
   requestSearchForPost: (searchKeyword) => requestSearchForPost(searchKeyword),
   requestSearchMorePost: () => requestSearchMorePost(),
+  resetPostSearch: () => resetPostSearch(),
+  resetTrends: () => resetTrends(),
 }
 
-//Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

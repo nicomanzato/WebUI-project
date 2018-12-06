@@ -37,9 +37,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// The function takes data from the app current state,
-// and insert/links it into the props of our component.
-// This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
     return {
         loading: state.PostReducer.isLoadingPost,
@@ -53,5 +50,4 @@ const mapDispatchToProps = {
   requestLoadMorePost: () => requestLoadMorePost(),
 }
 
-//Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

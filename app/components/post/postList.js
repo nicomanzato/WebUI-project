@@ -10,7 +10,7 @@ import {
 
 import Post from './post'
 
-class ListItem extends Component {
+class ListItem extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -27,7 +27,7 @@ class ListItem extends Component {
      <TouchableHighlight
       onPress={(this.onPress)}
       underlayColor='#dddddd'>
-      <Post item={item} singlePost={false}/>
+      <Post item={item} navigation={this.props.navigation}/>
      </TouchableHighlight>
     );
   }
@@ -36,12 +36,12 @@ class ListItem extends Component {
 const PostList = (props) => {
 
   const onPressItem = (item) => {
-    props.navigation.dispatch({ type: 'Post', data: item});
+    props.navigation.dispatch({ type: 'Post', data: item.id_str});
   };
 
   const renderItem = ({item, index}) => {
     return (
-     <ListItem item={item} onPressItem={onPressItem} />
+     <ListItem item={item} navigation={props.navigation} onPressItem={onPressItem} />
     )
   }
 
@@ -51,6 +51,7 @@ const PostList = (props) => {
       renderItem={renderItem}
       refreshing={props.refreshing}
       onRefresh={props.onRefresh}
+      ListFooterComponent={() => { return <ActivityIndicator small/> }}
       onEndReachedThreshold={5}
       onEndReached={props.onEndReached}
       keyExtractor={(item, index) => index.toString()}/>

@@ -12,7 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const Post = (props) => {
 
-  const {item} = props;
+  const item = props.item;
   let media;
 
   if (item.entities.media) {
@@ -26,14 +26,23 @@ const Post = (props) => {
     });
   }
 
+  const handleOnProfilePicPress = () => {
+    props.navigation.navigate('UserProfile', {userId: item.user.id_str});
+  }
+
   return (
 
     <View style={[styles.post, props.singlePost ? {height: 300} : null]}>
       <View style={styles.row}>
         <View style={styles.profileView}>
-          <Image
-            source={{uri: item.user.profile_image_url_https}}
-            style={styles.profilePic}/>
+          <TouchableHighlight
+            underlayColor='#dddddd'
+            onPress={handleOnProfilePicPress}
+          >
+            <Image
+              source={{uri: item.user.profile_image_url_https}}
+              style={styles.profilePic}/>
+          </TouchableHighlight>
         </View>
         <View style={styles.contentView}>
           <View style={styles.usernameTitle}>

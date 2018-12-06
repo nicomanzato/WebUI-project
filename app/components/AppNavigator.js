@@ -1,19 +1,21 @@
 'use strict';
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
+import React from 'react'
+import {Platform, StatusBar} from 'react-native'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation'
 import {
   reduxifyNavigator,
   createReactNavigationReduxMiddleware,
-} from 'react-navigation-redux-helpers';
-import {Routes, timelineStackRoutes} from '../config/routes';
-import { Ionicons } from '@expo/vector-icons';
+} from 'react-navigation-redux-helpers'
+import {Routes, timelineStackRoutes} from '../config/routes'
+import { Ionicons } from '@expo/vector-icons'
 import HomeScreen from '../screens/HomeScreen'
 import SearchScreen from '../screens/SearchScreen'
 import ConfigScreen from '../screens/ConfigScreen'
 import PostScreen from '../screens/PostScreen'
+import UserProfileScreen from '../screens/UserProfileScreen'
 
 const middleware = createReactNavigationReduxMiddleware(
   'root',
@@ -22,7 +24,8 @@ const middleware = createReactNavigationReduxMiddleware(
 
 const timelineStack = createStackNavigator({
   Home:  HomeScreen,
-  Post: PostScreen
+  UserProfile: UserProfileScreen,
+  Post: PostScreen,
 },{
     initialRouteName: 'Home',
   },
@@ -40,6 +43,7 @@ timelineStack.navigationOptions = ({ navigation }) => {
 
 const searchStack = createStackNavigator({
   Search:  SearchScreen,
+  UserProfile: UserProfileScreen,
   Post:  PostScreen
 });
 
@@ -85,6 +89,7 @@ const RootNavigator = createMaterialTopTabNavigator({
     activeTintColor: 'black',
     inactiveTintColor: 'grey',
     showLabel: false,
+    marginTop: Platform.OS === 'ios' ? 0 : 24,
     showIcon: 'true',
     indicatorStyle: {
       borderBottomColor: '#1183ff',
@@ -94,10 +99,10 @@ const RootNavigator = createMaterialTopTabNavigator({
       fontSize: 0
     },
     iconStyle: {
-      margin: 0,
+      marginTop: Platform.OS === 'ios' ? 0 : 24,
       padding: 0,
-      height: 80,
-      width: 80,
+      height: 40,
+      width: 40,
     },
     style:{
       padding: 0,

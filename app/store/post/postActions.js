@@ -14,6 +14,16 @@ export const REQUEST_POST_SEARCH_MORE = 'REQUEST_POST_SEARCH_MORE'
 export const SUCCESS_POST_SEARCH_MORE = 'SUCCESS_POST_SEARCH_MORE'
 export const FAILURE_POST_SEARCH_MORE = 'FAILURE_POST_SEARCH_MORE'
 
+export const RESET_POST_SEARCH = 'RESET_POST_SEARCH'
+
+export const REQUEST_POST_SHOW = 'REQUEST_POST_SHOW'
+export const SUCCESS_POST_SHOW = 'SUCCESS_POST_SHOW'
+export const FAILURE_POST_SHOW = 'FAILURE_POST_SHOW'
+
+export const REQUEST_USER_PROFILE_LOAD_POST = 'REQUEST_USER_PROFILE_LOAD_POST'
+export const SUCCESS_USER_PROFILE_LOAD_POST = 'SUCCESS_USER_PROFILE_LOAD_POST'
+export const FAILURE_USER_PROFILE_LOAD_POST = 'FAILURE_USER_PROFILE_LOAD_POST'
+
 export const requestLoadPost = () => {
   return {type: REQUEST_POST_LOAD}
 }
@@ -61,3 +71,35 @@ export const failureSearchMorePost = (er) => {
 }
 
 // ****************************************************
+
+export const resetPostSearch = () => {
+  return {type: RESET_POST_SEARCH}
+}
+
+// ****************************************************
+
+export const requestPostShow = (id) => {
+  return {type: REQUEST_POST_SHOW, id: id}
+}
+
+export const successPostShow = (data) => {
+  return {type: SUCCESS_POST_SHOW, data: data}
+}
+
+export const failurePostShow = (er) => {
+  return {type: FAILURE_POST_SHOW}
+}
+
+// ****************************************************
+
+export const requestUserProfileLoadPost = () => {
+  return {type: REQUEST_USER_PROFILE_LOAD_POST}
+}
+
+export const successUserProfileLoadPost = (data) => {
+  return {type: SUCCESS_USER_PROFILE_LOAD_POST, data: data}
+}
+
+export const failureUserProfileLoadPost = (er) => {
+  return {type: FAILURE_USER_PROFILE_LOAD_POST}
+}

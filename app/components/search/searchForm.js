@@ -20,6 +20,13 @@ class SearchForm extends React.Component {
     this.props.requestSearchForPost(this.state.searchKeyword.replace(/#/, '%23'));
   }
 
+  onReset = () => {
+    this.props.onReset();
+    this.setState({
+      searchKeyword: '',
+    })
+  }
+
   render = () => {
     return (
      <View style={styles.container}>
@@ -28,9 +35,11 @@ class SearchForm extends React.Component {
          <TextInput
           underlineColorAndroid="transparent"
           style={styles.searchTextInput}
-          onChangeText={(searchKeyword) => this.setState({searchKeyword})}
-          value={this.state.searchKeyword}
+          onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onTrendTextChange(searchKeyword);}}
+          value={this.props.searchValue}
          />
+         { this.props.hasSearched &&
+         <Ionicons name="ios-close" style={styles.icon} onPress={this.onReset} size={32} color="#1183ff"/>}
        </View>
        <TouchableHighlight
         style={styles.searchButton}
@@ -53,7 +62,9 @@ const styles = StyleSheet.create({
     paddingTop: 17,
     paddingLeft: 5,
     paddingRight: 5,
-
+  },
+  icon: {
+    padding: 5,
   },
   searchTextInput: {
     flex: 1,

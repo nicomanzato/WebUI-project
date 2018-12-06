@@ -1,7 +1,7 @@
 import React from 'react';
 import Reactotron from './ReactotronConfig'
-import { AppRegistry, SafeAreaView } from 'react-native';
-import { Provider, View } from 'react-redux';
+import { AppRegistry, Platform, StatusBar, View, Text } from 'react-native';
+import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -24,9 +24,11 @@ sagaMiddleware.run(appSagas);
 class App extends React.Component {
   render() {
     return (
-      <Provider store={store}>
-        <AppNavigator />
-      </Provider>
+      //<View style={{ paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight }}>
+        <Provider store={store}>
+          <AppNavigator />
+        </Provider>
+    //  </View>
     );
   }
 }
