@@ -12,24 +12,16 @@ import {
 import TrendList from './trendList';
 
 class Trends extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
 
   componentDidMount = () => {
     this.props.onComponentMount();
   }
 
+  componentWillUnmount = () => {
+    //this.props.onComponentWillUnmount();
+  }
+
   render = () => {
-    if (this.props.loadingTrends) {
-      return (
-        <View style={styles.activityIndicatorContainer}>
-          <ActivityIndicator animating={true}/>
-        </View>
-      );
-    } else {
       return (
        <View>
          <Text style={styles.trendTitle}>Trends for you</Text>
@@ -40,7 +32,6 @@ class Trends extends Component {
          />
        </View>
       )
-    }
   }
 };
 

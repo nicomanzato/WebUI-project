@@ -45,18 +45,16 @@ class UserProfileScreen extends Component {
        }
        {!this.props.isLoadingUserProfile && !this.props.isLoadingUserProfilePost &&
          <View style={styles.userContainer}>
-           <View style={styles.userProfile}>
-             <UserProfile user={this.props.user} />
-           </View>
-           <View style={styles.postList}>
-             <PostList
-               navigation={this.props.navigation}
-               data={this.props.userProfilePost}
-               refreshing={false}
-               onRefresh={() => {}}
-               onEndReached={() => {}}
-             />
-           </View>
+           <UserProfile user={this.props.user} styles={styles.userProfile} />
+           <View style={styles.separator} />
+           <PostList
+             style={styles.postList}
+             navigation={this.props.navigation}
+             data={this.props.userProfilePost}
+             refreshing={false}
+             onRefresh={() => {}}
+             onEndReached={() => {}}
+           />
         </View>
        }
 
@@ -65,21 +63,6 @@ class UserProfileScreen extends Component {
   }
 
 }
-
-/*
-<View style={styles.userProfile}>
-  <UserProfile user={this.props.user} />
-</View>
-<View style={styles.postList}>
-  <PostList
-    navigation={this.props.navigation}
-    data={this.props.userProfilePost}
-    refreshing={false}
-    onRefresh={() => {}}
-    onEndReached={() => {}}
-  />
-</View>
-*/
 
 function mapStateToProps(state, props) {
     return {
@@ -98,11 +81,15 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfileScreen);
 
 const styles = StyleSheet.create({
+  separator: {
+    height: 1,
+    backgroundColor: '#dddddd'
+  },
   userProfile: {
-    flex: 0.3,
+    marginBottom: 5,
   },
   postList: {
-    flex: 0.6,
+    marginTop: 5,
   },
   userContainer: {
     flex: 1,

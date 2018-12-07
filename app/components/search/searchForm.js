@@ -4,7 +4,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight } from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
-
+import Fade from './../animation/fade'
 import { Ionicons } from '@expo/vector-icons';
 
 class SearchForm extends React.Component {
@@ -17,7 +17,7 @@ class SearchForm extends React.Component {
   }
 
   handleOnPress = () => {
-    this.props.requestSearchForPost(this.state.searchKeyword.replace(/#/, '%23'));
+    this.props.onSubmit(this.state.searchKeyword.replace(/#/, '%23'));
   }
 
   onReset = () => {
@@ -38,8 +38,9 @@ class SearchForm extends React.Component {
           onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onTrendTextChange(searchKeyword);}}
           value={this.props.searchValue}
          />
-         { this.props.hasSearched &&
-         <Ionicons name="ios-close" style={styles.icon} onPress={this.onReset} size={32} color="#1183ff"/>}
+         <Fade visible={this.props.hasSearched}>
+          <Ionicons name="ios-close" style={styles.icon} onPress={this.onReset} size={32} color="#1183ff"/>
+         </Fade>
        </View>
        <TouchableHighlight
         style={styles.searchButton}

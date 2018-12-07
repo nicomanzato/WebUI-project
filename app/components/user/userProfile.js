@@ -16,7 +16,7 @@ const UserProfile = (props) => {
         source={{uri: props.user.profile_banner_url}}
         style={styles.banner}
       />
-      <View style={styles.row}>
+      <View style={[ styles.row, styles.horizontalCentered ]}>
         <Image
           source={{uri: props.user.profile_image_url_https}}
           style={styles.profilePic}
@@ -39,10 +39,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
   },
 
   userName: {
@@ -54,7 +51,9 @@ const styles = StyleSheet.create({
   userNameText: {
     fontSize: 16,
   },
-
+  horizontalCentered: {
+    justifyContent: 'center'
+  },
   profilePic: {
     resizeMode: 'contain',
     alignSelf: 'center',

@@ -19,6 +19,10 @@ class ResultList extends Component {
     this.state = {};
   }
 
+  componentDidMount = () => {
+    this.props.onComponentMount();
+  }
+
   render(){
     if (this.props.loadingSearch) {
       return (

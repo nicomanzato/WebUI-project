@@ -21,6 +21,7 @@ const Post = (props) => {
         <Image
           source={{uri: image.media_url_https}}
           style={styles.postImage}
+          fadeDuration={0}
           key={image.id}/>
       );
     });
@@ -40,6 +41,7 @@ const Post = (props) => {
             onPress={handleOnProfilePicPress}
           >
             <Image
+              fadeDuration={0}
               source={{uri: item.user.profile_image_url_https}}
               style={styles.profilePic}/>
           </TouchableHighlight>

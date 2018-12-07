@@ -9,41 +9,44 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-const trendList = (props) => {
+class TrendList extends React.Component {
 
-  let trends = [];
+  render = () => {
 
-  if (props.trends.length > 0) {
-    trends = props.trends.map((trend, index) => {
-      const tw_volume = trend.tweet_volume === null ? null :
-       <Text style={styles.volumeText}>{trend.tweet_volume} Tweets</Text>;
-      return (
-       <TouchableHighlight
-          key={index}
-          onPress={() => { props.onItemPress(trend)}}
-          underlayColor='#dddddd'>
-          <View style={styles.trend} key={index}>
-             <View style={styles.trendNumberView}>
-               <Text key={'#' + index} style={styles.trendNumber}>{index + 1}</Text>
-             </View>
-             <View style={styles.trendTextView}>
-               <Text key={index + 'Name'} style={styles.trendText}>{trend.name}</Text>
-               {tw_volume}
-             </View>
-         </View>
-       </TouchableHighlight>
-      );
-    });
-  }
+    let trends = [];
 
-  return (
-    <ScrollView>
-      {trends}
-    </ScrollView>
-  );
+    if (this.props.trends.length > 0) {
+      trends = this.props.trends.map((trend, index) => {
+        const tw_volume = trend.tweet_volume === null ? null :
+         <Text style={styles.volumeText}>{trend.tweet_volume} Tweets</Text>;
+        return (
+         <TouchableHighlight
+            key={index}
+            onPress={() => { this.props.onItemPress(trend)}}
+            underlayColor='#dddddd'>
+            <View style={styles.trend} key={index}>
+               <View style={styles.trendNumberView}>
+                 <Text key={'#' + index} style={styles.trendNumber}>{index + 1}</Text>
+               </View>
+               <View style={styles.trendTextView}>
+                 <Text key={index + 'Name'} style={styles.trendText}>{trend.name}</Text>
+                 {tw_volume}
+               </View>
+           </View>
+         </TouchableHighlight>
+        );
+      });
+    }
+
+    return (
+      <ScrollView>
+        {trends}
+      </ScrollView>
+    )
+  };
 }
 
-export default trendList;
+export default TrendList;
 
 const styles = StyleSheet.create({
   trend: {
