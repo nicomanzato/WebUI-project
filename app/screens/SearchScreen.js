@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 import SearchForm from './../components/search/searchForm'
 import Trends from './../components/trends/trends'
+import PostList from './../components/post/postList'
 import ResultList from './../components/search/resultList'
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
+
+import Fade from './../components/animation/fade'
 
 import {
   requestSearchForPost,
@@ -22,20 +25,17 @@ class SearchScreen extends React.Component {
     this.state = {
       searchKeyword: '',
       hasSearched: false,
+
+      shouldDisplayTrends: true,
+      shouldDisplaySearchResults: false,
     };
 
     this.trendFadeAnimatedValue = new Animated.Value(0);
     this.searchResultsFadeAnimatedValue = new Animated.Value(0);
+  }
+
+  componentDidMount = () => {
     this.props.requestTrendsLoad();
-  }
-
-  handleOnTrendMount = () => {
-    this.startTrendFadeInAnimation();
-  }
-
-  handleOnTrendUnmount = () => {
-    this.startTrendFadeOutAnimation();
-    setTimeout(1500);
   }
 
   setSearchKeyword = (keyword) => {
@@ -57,76 +57,40 @@ class SearchScreen extends React.Component {
           hasSearched={this.props.hasSearched}
           onTrendTextChange={this.setSearchKeyword}
           searchValue={this.state.searchKeyword}
-          onReset={() => { this.props.resetPostSearch(); /* this.props.resetTrends(); */ this.setSearchKeyword(''); }}
+          onReset={() => { this.props.resetPostSearch();  this.props.resetTrends(); this.props.requestTrendsLoad(); this.setSearchKeyword(''); }}
           onSubmit={(keyword) => {this.props.requestSearchForPost(keyword);} }/>
-        { (this.props.loadingTrends || this.props.loadingSearch) &&
+        {(this.props.loadingTrends || this.props.loadingSearch) &&
           <View style={styles.activityIndicatorContainer}>
             <ActivityIndicator animating={true}/>
           </View>
         }
-        {!this.props.hasSearched && !this.props.loadingTrends &&
-          <Animated.View style={{opacity: this.trendFadeAnimatedValue, flex: 1}}>
+        {!this.props.loadingTrends && this.state.shouldDisplayTrends &&
+          <Fade
+            visible={!this.props.hasSearched}
+            onDoneFadingOut={() => {this.setState({ shouldDisplayTrends: false, shouldDisplaySearchResults: true});}}>
+
             <Trends
               onTrendPress={(trend) => { this.handleOnTrendPress(trend) }}
-              onComponentMount={this.handleOnTrendMount}
-              onComponentWillUnmount={this.handleOnTrendUnmount}
               trends={this.props.trends}
             />
-          </Animated.View>
+          </Fade>
         }
-        {this.props.hasSearched && !this.props.loadingSearch &&
-          <Animated.View style={{opacity: this.searchResultsFadeAnimatedValue, flex: 1}}>
-            <ResultList
-              onComponentMount={this.startSearchResultsFadeInAnimation}
+        {!this.props.loadingSearch && this.state.shouldDisplaySearchResults &&
+          <Fade
+            visible={this.props.hasSearched}
+            onDoneFadingOut={() => {this.setState({shouldDisplaySearchResults: false, shouldDisplayTrends: true })}}>
+
+            <PostList
               navigation={this.props.navigation}
-              loadingSearch={this.props.loadingSearch}
-              searchResult={this.props.searchResult}
-              onEndReached={this.props.requestSearchMorePost}/>
-          </Animated.View>
+              data={this.props.searchResult}
+              onEndReached={this.props.requestSearchMorePost}
+            />
+
+          </Fade>
         }
       </View>
     );
   };
-
-//*************************************************
-//******************* ANIMATION *******************
-//*************************************************
-
-  startTrendFadeInAnimation = () => {
-    this.trendFadeAnimatedValue.setValue(0);
-    Animated.timing(
-      this.trendFadeAnimatedValue,
-      {
-        toValue: 1,
-        duration: 1500,
-        easing: Easing.in,
-      }
-    ).start();
-  }
-
-  startTrendFadeOutAnimation = () => {
-    this.trendFadeAnimatedValue.setValue(1);
-    Animated.timing(
-      this.trendFadeAnimatedValue,
-      {
-        toValue: 0,
-        duration: 1500,
-        easing: Easing.linear,
-      }
-    ).start(() => this.setState({hasSearched: true}));
-  }
-
-  startSearchResultsFadeInAnimation = () => {
-    this.searchResultsFadeAnimatedValue.setValue(0);
-    Animated.timing(
-      this.searchResultsFadeAnimatedValue,
-      {
-        toValue: 1,
-        duration: 1500,
-        easing: Easing.in,
-      }
-    ).start();
-  }
 
   static navigationOptions = {
     header: null,

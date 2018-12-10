@@ -51,7 +51,6 @@ const PostList = (props) => {
       renderItem={renderItem}
       refreshing={props.refreshing}
       onRefresh={props.onRefresh}
-      ListFooterComponent={() => { return <ActivityIndicator small/> }}
       onEndReachedThreshold={5}
       onEndReached={props.onEndReached}
       keyExtractor={(item, index) => index.toString()}/>

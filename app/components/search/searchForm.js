@@ -38,9 +38,9 @@ class SearchForm extends React.Component {
           onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onTrendTextChange(searchKeyword);}}
           value={this.props.searchValue}
          />
-         <Fade visible={this.props.hasSearched}>
-          <Ionicons name="ios-close" style={styles.icon} onPress={this.onReset} size={32} color="#1183ff"/>
-         </Fade>
+         { this.props.hasSearched && 
+           <Ionicons name="ios-close" style={styles.icon} onPress={this.onReset} size={32} color="#1183ff"/>
+         }
        </View>
        <TouchableHighlight
         style={styles.searchButton}

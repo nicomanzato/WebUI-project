@@ -19,10 +19,6 @@ class ResultList extends Component {
     this.state = {};
   }
 
-  componentDidMount = () => {
-    this.props.onComponentMount();
-  }
-
   render(){
     if (this.props.loadingSearch) {
       return (
@@ -33,16 +29,23 @@ class ResultList extends Component {
     } else {
       return (
         <View style={styles.searchResultList}>
-          <PostList
-            navigation={this.props.navigation}
-            data={this.props.searchResult}
-            onEndReached={this.props.onEndReached}
-          />
+          <Text>ResultList :)</Text>
+
         </View>
       );
     }
   }
 }
+
+/*
+
+<PostList
+  navigation={this.props.navigation}
+  data={this.props.searchResult}
+  onEndReached={this.props.onEndReached}
+/>
+
+*/
 
 export default ResultList;
 

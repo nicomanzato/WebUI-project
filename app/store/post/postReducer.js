@@ -84,7 +84,7 @@ const PostReducer = (state = postState, action) => {
       return state;
 
     case RESET_POST_SEARCH:
-      state = Object.assign({}, state, {hasSearchedForPost: false, loadingSearchPost: false, loadingMoreSearchPost: false, searchKeyword: '', searchPost: [], });
+      state = Object.assign({}, state, {hasSearchedForPost: false, loadingSearchPost: false, loadingMoreSearchPost: false, searchKeyword: '', /* searchPost: [] */ });
       return state;
 
     case REQUEST_POST_SHOW:

@@ -13,14 +13,6 @@ import TrendList from './trendList';
 
 class Trends extends Component {
 
-  componentDidMount = () => {
-    this.props.onComponentMount();
-  }
-
-  componentWillUnmount = () => {
-    //this.props.onComponentWillUnmount();
-  }
-
   render = () => {
       return (
        <View>

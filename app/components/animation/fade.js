@@ -6,42 +6,61 @@ class Fade extends React.Component {
   constructor(props){
     super(props);
 
-    this.visible = this.props.visible;
+    this.shouldRenderChildren = this.props.visible;
+    this.visibility = new Animated.Value(0);
   }
 
   componentDidMount = () => {
-    this.visibility = new Animated.Value(this.props.visible ? 1 : 0);
+    if (this.props.visible){
+      this.fade();
+    }
   }
 
-  componentDidUpdate = () => {
-    this.checkForEnabledVisibility();
-    Animated.timing(this.visibility,{
-      toValue: this.props.visible ? 1 : 0,
-      duration: 300,
-    }).start(this.updateVisibility());
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.visible != this.props.visible) {
+      this.fade();
+    }
   }
 
-  checkForEnabledVisibility = () => {
-    if (this.props.visible) { this.visible = true; }
+  fade = () => {
+    this.shouldRenderChildren = true;
+    Animated.timing(this.visibility, {
+    toValue: this.props.visible ? 1 : 0,
+    duration: 700,
+    }).start(this.onDoneFading);
   }
 
-  updateVisibility = () => {
-     this.visible = this.props.visible;
+  onDoneFading = () => {
+
+    // if done fading out
+    if (!this.props.visible) {
+      this.shouldRenderChildren = false;
+      if (this.props.onDoneFadingOut) this.props.onDoneFadingOut();
+    }
   }
 
   render = () => {
 
     const { visible, style, children, ...rest } = this.props;
-
     const containerStyle = {
-      opacity: this.visibility,
+      opacity: this.visibility.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, 1],
+      }),
+      transform: [
+        {
+          scale: this.visibility.interpolate({
+            inputRange: [0, 1],
+            outputRange: [1.1, 1],
+          }),
+        },
+      ],
     };
-
     const combinedStyle = [containerStyle, style];
 
     return (
       <Animated.View style={combinedStyle} {...rest}>
-        {children}
+        {this.shouldRenderChildren ? children : null}
       </Animated.View>
     );
   }
