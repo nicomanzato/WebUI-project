@@ -11,22 +11,19 @@ class Fade extends React.Component {
   }
 
   componentDidMount = () => {
-    if (this.props.visible){
-      this.fade();
-    }
+    if (this.props.visible) this.fade();
   }
 
   componentDidUpdate = (prevProps) => {
-    if (prevProps.visible != this.props.visible) {
-      this.fade();
-    }
+    if (prevProps.visible != this.props.visible) this.fade();
   }
 
   fade = () => {
     this.shouldRenderChildren = true;
     Animated.timing(this.visibility, {
-    toValue: this.props.visible ? 1 : 0,
-    duration: 700,
+      useNativeDriver: true,
+      toValue: this.props.visible ? 1 : 0,
+      duration: 500,
     }).start(this.onDoneFading);
   }
 

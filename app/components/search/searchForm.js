@@ -1,11 +1,13 @@
 'use strict';
 
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableHighlight, Animated } from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 import Fade from './../animation/fade'
 import { Ionicons } from '@expo/vector-icons';
+
+var AnimatedTouchableHighlight = Animated.createAnimatedComponent(TouchableHighlight);
 
 class SearchForm extends React.Component {
   constructor(props){
@@ -14,10 +16,21 @@ class SearchForm extends React.Component {
     this.state = {
       searchKeyword: '',
     }
+    this.animatedValue = new Animated.Value(0);
   }
 
   handleOnPress = () => {
-    this.props.onSubmit(this.state.searchKeyword.replace(/#/, '%23'));
+    if (this.state.searchKeyword.length > 0){
+      this.props.onSubmit(this.state.searchKeyword.replace(/#/, '%23'));
+      if (this.props.animated) {
+        this.animatedValue = new Animated.Value(0);
+        Animated.timing(this.animatedValue, {
+        useNativeDriver: true,
+        toValue:  1,
+        duration: 300,
+        }).start()
+      }
+    }
   }
 
   onReset = () => {
@@ -28,6 +41,18 @@ class SearchForm extends React.Component {
   }
 
   render = () => {
+
+    const animatedSearchButtonStyle = {
+      transform: [
+        {
+          scale: this.animatedValue.interpolate({
+            inputRange: [0, 0.5, 1],
+            outputRange: [1, 1.1, 1],
+          }),
+        },
+      ],
+    };
+
     return (
      <View style={styles.container}>
        <View style={styles.textInputView}>
@@ -38,15 +63,15 @@ class SearchForm extends React.Component {
           onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onTrendTextChange(searchKeyword);}}
           value={this.props.searchValue}
          />
-         { this.props.hasSearched && 
+         { this.props.hasSearched &&
            <Ionicons name="ios-close" style={styles.icon} onPress={this.onReset} size={32} color="#1183ff"/>
          }
        </View>
-       <TouchableHighlight
-        style={styles.searchButton}
+       <AnimatedTouchableHighlight
+        style={[styles.searchButton, animatedSearchButtonStyle]}
         onPress={this.handleOnPress}>
-         <Text style={styles.searchButtonText}> Search </Text>
-       </TouchableHighlight>
+         <Animated.Text style={[styles.searchButtonText, animatedSearchButtonStyle]}> Search </Animated.Text>
+       </AnimatedTouchableHighlight>
      </View>
     );
   }

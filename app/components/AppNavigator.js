@@ -102,8 +102,8 @@ const RootNavigator = createMaterialTopTabNavigator({
     iconStyle: {
       marginTop: Platform.OS === 'ios' ? 0 : 24,
       padding: 0,
-      height: 40,
-      width: 40,
+      height: 35,
+      width: 35,
     },
     style:{
       padding: 0,

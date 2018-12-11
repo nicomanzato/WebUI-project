@@ -24,14 +24,12 @@ class SearchScreen extends React.Component {
 
     this.state = {
       searchKeyword: '',
-      hasSearched: false,
 
       shouldDisplayTrends: true,
       shouldDisplaySearchResults: false,
     };
 
-    this.trendFadeAnimatedValue = new Animated.Value(0);
-    this.searchResultsFadeAnimatedValue = new Animated.Value(0);
+    this.hasSearched = false;
   }
 
   componentDidMount = () => {
@@ -45,8 +43,33 @@ class SearchScreen extends React.Component {
   }
 
   handleOnTrendPress = (trend) => {
-    this.props.requestSearchForPost(trend.query);
-    this.setSearchKeyword(trend.name);
+    if (trend.name !== this.props.searchKeyword) {
+      this.hasSearched = true;
+      this.props.requestSearchForPost(trend.query);
+      this.setSearchKeyword(trend.name);
+    }
+  }
+
+  handleOnSearchFormReset = () => {
+    this.props.resetPostSearch();
+    this.props.resetTrends();
+    this.props.requestTrendsLoad();
+    this.setSearchKeyword('');
+    this.hasSearched = false;
+  }
+
+  handleOnSubmitSearchForm = (keyword) => {
+    if (keyword !== this.props.searchKeyword) {
+      this.hasSearched = true;
+      this.props.requestSearchForPost(keyword);
+    }
+  }
+
+  handleOnDoneFadingOut = () => {
+    this.setState({
+      shouldDisplayTrends: !this.state.shouldDisplayTrends,
+      shouldDisplaySearchResults: !this.state.shouldDisplaySearchResults,
+    });
   }
 
   render = () => {
@@ -54,20 +77,21 @@ class SearchScreen extends React.Component {
     return (
       <View style={styles.container}>
         <SearchForm
+          animated
           hasSearched={this.props.hasSearched}
           onTrendTextChange={this.setSearchKeyword}
           searchValue={this.state.searchKeyword}
-          onReset={() => { this.props.resetPostSearch();  this.props.resetTrends(); this.props.requestTrendsLoad(); this.setSearchKeyword(''); }}
-          onSubmit={(keyword) => {this.props.requestSearchForPost(keyword);} }/>
+          onReset={this.handleOnSearchFormReset}
+          onSubmit={(keyword) => { this.handleOnSubmitSearchForm(keyword) }}/>
         {(this.props.loadingTrends || this.props.loadingSearch) &&
           <View style={styles.activityIndicatorContainer}>
             <ActivityIndicator animating={true}/>
           </View>
         }
-        {!this.props.loadingTrends && this.state.shouldDisplayTrends &&
+        {this.state.shouldDisplayTrends && !this.props.loadingTrends &&
           <Fade
-            visible={!this.props.hasSearched}
-            onDoneFadingOut={() => {this.setState({ shouldDisplayTrends: false, shouldDisplaySearchResults: true});}}>
+            visible={!this.hasSearched}
+            onDoneFadingOut={this.handleOnDoneFadingOut}>
 
             <Trends
               onTrendPress={(trend) => { this.handleOnTrendPress(trend) }}
@@ -77,8 +101,8 @@ class SearchScreen extends React.Component {
         }
         {!this.props.loadingSearch && this.state.shouldDisplaySearchResults &&
           <Fade
-            visible={this.props.hasSearched}
-            onDoneFadingOut={() => {this.setState({shouldDisplaySearchResults: false, shouldDisplayTrends: true })}}>
+            visible={this.hasSearched}
+            onDoneFadingOut={this.handleOnDoneFadingOut}>
 
             <PostList
               navigation={this.props.navigation}
@@ -116,6 +140,7 @@ const mapStateToProps = (state) => {
         loadingTrends: state.TrendReducer.loadingTrends,
         trends: state.TrendReducer.trends,
 
+        searchKeyword: state.PostReducer.searchKeyword,
         hasSearched: state.PostReducer.hasSearchedForPost,
         loadingSearch: state.PostReducer.loadingSearchPost,
         searchResult: state.PostReducer.searchPost,
