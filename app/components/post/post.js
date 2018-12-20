@@ -10,75 +10,75 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const Post = (props) => {
+class Post extends React.PureComponent{
 
-  const item = props.item;
-  let media;
-
-  if (item.entities.media) {
-    media = item.entities.media.map((image) => {
-      return(
-        <Image
-          source={{uri: image.media_url_https}}
-          style={styles.postImage}
-          fadeDuration={0}
-          key={image.id}/>
-      );
-    });
+  renderMedia = () => {
+    let media;
+    if (this.props.item.entities.media) {
+      media = this.props.item.entities.media.map((image) => {
+        return(
+          <Image
+            source={{uri: image.media_url_https}}
+            style={styles.postImage}
+            fadeDuration={0}
+            key={image.id}/>
+        );
+      });
+    }
   }
 
-  const handleOnProfilePicPress = () => {
-    props.navigation.navigate('UserProfile', {userId: item.user.id_str});
+  handleOnProfilePicPress = () => {
+    props.navigation.navigate('UserProfile', {userId: this.props.item.user.id_str});
   }
 
-  return (
-
-    <View style={[styles.post, props.singlePost ? {height: 300} : null]}>
-      <View style={styles.row}>
-        <View style={styles.profileView}>
-          <TouchableHighlight
-            underlayColor='#dddddd'
-            onPress={handleOnProfilePicPress}
-          >
-            <Image
-              fadeDuration={0}
-              source={{uri: item.user.profile_image_url_https}}
-              style={styles.profilePic}/>
-          </TouchableHighlight>
-        </View>
-        <View style={styles.contentView}>
-          <View style={styles.usernameTitle}>
-            <Text style={styles.profileUsername}>{props.item.user.name}</Text>
-            {props.item.user.verified === true &&
-              <Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF" />
-            }
-            <Text style={styles.profileScreenName}> @{props.item.user.screen_name}</Text>
+  render = () => {
+    return (
+      <View style={[styles.post, this.props.singlePost ? {height: 300} : null]}>
+        <View style={styles.row}>
+          <View style={styles.profileView}>
+            <TouchableHighlight
+              underlayColor='#dddddd'
+              onPress={this.handleOnProfilePicPress}
+            >
+              <Image
+                fadeDuration={0}
+                source={{uri: this.props.item.user.profile_image_url_https}}
+                style={styles.profilePic}/>
+            </TouchableHighlight>
           </View>
-          <Text style={styles.postContent}>
-            {item.text}
-          </Text>
-          <View>
-            { media }
-          </View>
-          <View style={styles.socialInteractionContainer}>
-            <View style={styles.socialInteractionElement}>
-              <Ionicons name="ios-heart-outline" size={32} color="grey" />
-              <Text style={styles.socialInteractionText}>{item.favorite_count}</Text>
+          <View style={styles.contentView}>
+            <View style={styles.usernameTitle}>
+              <Text style={styles.profileUsername}>{this.props.item.user.name}</Text>
+              {this.props.item.user.verified === true &&
+                <Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF" />
+              }
+              <Text style={styles.profileScreenName}> @{this.props.item.user.screen_name}</Text>
             </View>
-            <View style={styles.socialInteractionElement}>
-              <Ionicons name="ios-chatboxes-outline" size={32} color="grey" />
-              <Text style={styles.socialInteractionText}>0</Text>
+            <Text style={styles.postContent}>
+              {this.props.item.text}
+            </Text>
+            <View>
+              { this.renderMedia() }
             </View>
-            <View style={styles.socialInteractionElement}>
-              <Ionicons name="ios-share-alt" size={32} color="grey" />
-              <Text style={styles.socialInteractionText}>{item.retweet_count}</Text>
+            <View style={styles.socialInteractionContainer}>
+              <View style={styles.socialInteractionElement}>
+                <Ionicons name="ios-heart-outline" size={32} color="grey" />
+                <Text style={styles.socialInteractionText}>{this.props.item.favorite_count}</Text>
+              </View>
+              <View style={styles.socialInteractionElement}>
+                <Ionicons name="ios-chatboxes-outline" size={32} color="grey" />
+                <Text style={styles.socialInteractionText}>0</Text>
+              </View>
+              <View style={styles.socialInteractionElement}>
+                <Ionicons name="ios-share-alt" size={32} color="grey" />
+                <Text style={styles.socialInteractionText}>{this.props.item.retweet_count}</Text>
+              </View>
             </View>
           </View>
         </View>
       </View>
-    </View>
-
-  );
+    );
+  }
 }
 
 export default Post;

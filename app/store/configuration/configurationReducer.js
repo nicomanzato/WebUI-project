@@ -8,7 +8,7 @@ import {
   CONFIG_TOGGLE_TEXT_TRUNCATED
 } from "./configurationActions"
 
-let configurationState = {
+export let configurationState = {
   configVerifiedOnly: false,
   configDoNotFollow: false,
   configHaveDefaultInformation: false,

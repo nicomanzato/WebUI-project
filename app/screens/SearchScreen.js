@@ -28,8 +28,6 @@ class SearchScreen extends React.Component {
       shouldDisplayTrends: true,
       shouldDisplaySearchResults: false,
     };
-
-    this.hasSearched = false;
   }
 
   componentDidMount = () => {
@@ -44,7 +42,6 @@ class SearchScreen extends React.Component {
 
   handleOnTrendPress = (trend) => {
     if (trend.name !== this.props.searchKeyword) {
-      this.hasSearched = true;
       this.props.requestSearchForPost(trend.query);
       this.setSearchKeyword(trend.name);
     }
@@ -55,20 +52,35 @@ class SearchScreen extends React.Component {
     this.props.resetTrends();
     this.props.requestTrendsLoad();
     this.setSearchKeyword('');
-    this.hasSearched = false;
   }
 
   handleOnSubmitSearchForm = (keyword) => {
     if (keyword !== this.props.searchKeyword) {
-      this.hasSearched = true;
       this.props.requestSearchForPost(keyword);
     }
   }
 
-  handleOnDoneFadingOut = () => {
+  handleOnDoneFadingOutSearchResults = () => {
+    if (!this.props.hasSearched){
+      this.setShouldDisplaySearchResults(false);
+      this.setShouldDisplayTrends(true);
+    }
+  }
+
+  handleOnDoneFadingOutTrends = () => {
+    this.setShouldDisplayTrends(false);
+    this.setShouldDisplaySearchResults(true);
+  }
+
+  setShouldDisplayTrends = (value) => {
     this.setState({
-      shouldDisplayTrends: !this.state.shouldDisplayTrends,
-      shouldDisplaySearchResults: !this.state.shouldDisplaySearchResults,
+      shouldDisplayTrends: value,
+    });
+  }
+
+  setShouldDisplaySearchResults = (value) => {
+    this.setState({
+      shouldDisplaySearchResults: value,
     });
   }
 
@@ -79,7 +91,7 @@ class SearchScreen extends React.Component {
         <SearchForm
           animated
           hasSearched={this.props.hasSearched}
-          onTrendTextChange={this.setSearchKeyword}
+          onTrendInputTextChange={this.setSearchKeyword}
           searchValue={this.state.searchKeyword}
           onReset={this.handleOnSearchFormReset}
           onSubmit={(keyword) => { this.handleOnSubmitSearchForm(keyword) }}/>
@@ -90,20 +102,19 @@ class SearchScreen extends React.Component {
         }
         {this.state.shouldDisplayTrends && !this.props.loadingTrends &&
           <Fade
-            visible={!this.hasSearched}
-            onDoneFadingOut={this.handleOnDoneFadingOut}>
-
+            visible={!this.props.hasSearched && !this.props.loadingTrends}
+            onDoneFadingOut={this.handleOnDoneFadingOutTrends}>
             <Trends
               onTrendPress={(trend) => { this.handleOnTrendPress(trend) }}
               trends={this.props.trends}
             />
+
           </Fade>
         }
-        {!this.props.loadingSearch && this.state.shouldDisplaySearchResults &&
+        {this.state.shouldDisplaySearchResults &&
           <Fade
-            visible={this.hasSearched}
-            onDoneFadingOut={this.handleOnDoneFadingOut}>
-
+            visible={this.props.hasSearched && !this.props.loadingSearch}
+            onDoneFadingOut={this.handleOnDoneFadingOutSearchResults}>
             <PostList
               navigation={this.props.navigation}
               data={this.props.searchResult}

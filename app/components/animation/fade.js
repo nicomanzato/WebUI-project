@@ -6,7 +6,7 @@ class Fade extends React.Component {
   constructor(props){
     super(props);
 
-    this.shouldRenderChildren = this.props.visible;
+    this.shouldRenderChildren = true;
     this.visibility = new Animated.Value(0);
   }
 
@@ -28,11 +28,9 @@ class Fade extends React.Component {
   }
 
   onDoneFading = () => {
-
-    // if done fading out
-    if (!this.props.visible) {
-      this.shouldRenderChildren = false;
+    if (this.props.visible === false) {
       if (this.props.onDoneFadingOut) this.props.onDoneFadingOut();
+      this.shouldRenderChildren = false;
     }
   }
 
@@ -40,10 +38,7 @@ class Fade extends React.Component {
 
     const { visible, style, children, ...rest } = this.props;
     const containerStyle = {
-      opacity: this.visibility.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 1],
-      }),
+      opacity: this.visibility,
       transform: [
         {
           scale: this.visibility.interpolate({
@@ -57,7 +52,7 @@ class Fade extends React.Component {
 
     return (
       <Animated.View style={combinedStyle} {...rest}>
-        {this.shouldRenderChildren ? children : null}
+        {children}
       </Animated.View>
     );
   }

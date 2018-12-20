@@ -60,7 +60,7 @@ class SearchForm extends React.Component {
          <TextInput
           underlineColorAndroid="transparent"
           style={styles.searchTextInput}
-          onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onTrendTextChange(searchKeyword);}}
+          onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onTrendInputTextChange(searchKeyword);}}
           value={this.props.searchValue}
          />
          { this.props.hasSearched &&

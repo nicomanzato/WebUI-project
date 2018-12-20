@@ -31,7 +31,7 @@ export const successLoadPost = (data) => {
   return {type: SUCCESS_POST_LOAD, data: data}
 }
 export const failureLoadPost = (er) => {
-  return {type: FAILURE_POST_LOAD}
+  return {type: FAILURE_POST_LOAD, failureErrorDetail: er}
 }
 
 // ****************************************************
@@ -43,7 +43,7 @@ export const successLoadMorePost = (data) => {
   return {type: SUCCESS_POST_LOAD_MORE, data}
 }
 export const failureLoadMorePost = (er) => {
-  return {type: FAILURE_POST_LOAD_MORE}
+  return {type: FAILURE_POST_LOAD_MORE, failureErrorDetail: er}
 }
 
 // ****************************************************
@@ -55,7 +55,7 @@ export const successSearchForPost = (data) => {
   return {type: SUCCESS_POST_SEARCH, data: data}
 }
 export const failureSearchForPost = (er) => {
-  return {type: FAILURE_POST_SEARCH}
+  return {type: FAILURE_POST_SEARCH, failureErrorDetail: er}
 }
 
 // ****************************************************
@@ -67,7 +67,7 @@ export const successSearchMorePost = (data) => {
   return {type: SUCCESS_POST_SEARCH_MORE, data: data}
 }
 export const failureSearchMorePost = (er) => {
-  return {type: FAILURE_POST_SEARCH_MORE}
+  return {type: FAILURE_POST_SEARCH_MORE, failureErrorDetail: er}
 }
 
 // ****************************************************
@@ -87,7 +87,7 @@ export const successPostShow = (data) => {
 }
 
 export const failurePostShow = (er) => {
-  return {type: FAILURE_POST_SHOW}
+  return {type: FAILURE_POST_SHOW, failureErrorDetail: er}
 }
 
 // ****************************************************
@@ -101,5 +101,5 @@ export const successUserProfileLoadPost = (data) => {
 }
 
 export const failureUserProfileLoadPost = (er) => {
-  return {type: FAILURE_USER_PROFILE_LOAD_POST}
+  return {type: FAILURE_USER_PROFILE_LOAD_POST, failureErrorDetail: er}
 }

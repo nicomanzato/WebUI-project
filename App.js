@@ -24,11 +24,9 @@ sagaMiddleware.run(appSagas);
 class App extends React.Component {
   render() {
     return (
-      //<View style={{ paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight }}>
-        <Provider store={store}>
-          <AppNavigator />
-        </Provider>
-    //  </View>
+      <Provider store={store}>
+        <AppNavigator />
+      </Provider>
     );
   }
 }

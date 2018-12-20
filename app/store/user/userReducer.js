@@ -4,10 +4,13 @@ import {
   FAILURE_USER_PROFILE,
 } from './userActions'
 
-let userState = {
+export let userState = {
   user: {},
   userId: -1,
   isLoadingUserProfile: false,
+
+  failureError: '',
+  hasFailed: false,
 }
 
 const UserReducer =  (state = userState, action) => {
@@ -19,7 +22,7 @@ const UserReducer =  (state = userState, action) => {
       state = Object.assign({}, state, {isLoadingUserProfile: false, user: action.data});
       return state;
     case FAILURE_USER_PROFILE:
-      state = Object.assign({}, state, {});
+      state = Object.assign({}, state, {hasFailed: true, failureError: action.failureErrorDetail});
       return state;
     default:
       return state;

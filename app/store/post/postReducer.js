@@ -20,7 +20,7 @@ import {
   FAILURE_USER_PROFILE_LOAD_POST
 } from './postActions'
 
-let postState = {
+export let postState = {
   loadedPost: [],
   isLoadingPost: false,
   isLoadingMorePost: false,
@@ -38,73 +38,76 @@ let postState = {
   userProfilePost: [],
   isLoadingUserProfilePost: false,
 
+  failureError: '',
+  hasFailed: false,
+
 };
 
 const PostReducer = (state = postState, action) => {
   switch(action.type) {
 
     case REQUEST_POST_LOAD:
-      state = Object.assign({}, state, { isLoadingPost: true });
+      state = Object.assign({}, state, { isLoadingPost: true, hasFailed: false });
       return state;
     case SUCCESS_POST_LOAD:
       state = Object.assign({}, state, { loadedPost: action.data, isLoadingPost: false });
       return state;
     case FAILURE_POST_LOAD:
-      state = Object.assign({}, state, {});
+      state = Object.assign({}, state, {isLoadingPost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail, loadedPost: []});
       return state;
 
     case REQUEST_POST_LOAD_MORE:
-      state = Object.assign({}, state, { isLoadingMorePost: true });
+      state = Object.assign({}, state, { isLoadingMorePost: true, hasFailed: false });
       return state;
     case SUCCESS_POST_LOAD_MORE:
       state = Object.assign({}, state, { loadedPost: state.loadedPost.concat(action.data), isLoadingMorePost: false });
       return state;
     case FAILURE_POST_LOAD_MORE:
-      state = Object.assign({}, state, {});
+      state = Object.assign({}, state, {isLoadingMorePost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
       return state;
 
     case REQUEST_POST_SEARCH:
-      state = Object.assign({}, state, { hasSearchedForPost: true, loadingSearchPost: true, searchKeyword: action.searchKeyword });
+      state = Object.assign({}, state, { hasSearchedForPost: true, loadingSearchPost: true, searchKeyword: action.searchKeyword, hasFailed: false  });
       return state;
     case SUCCESS_POST_SEARCH:
       state = Object.assign({}, state, { searchPost: action.data, loadingSearchPost: false });
       return state;
     case FAILURE_POST_SEARCH:
-      state = Object.assign({}, state, {});
+      state = Object.assign({}, state, {loadingSearchPost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
       return state;
 
     case REQUEST_POST_SEARCH_MORE:
-      state = Object.assign({}, state, {loadingMoreSearchPost: true });
+      state = Object.assign({}, state, {loadingMoreSearchPost: true, hasFailed: false  });
       return state;
     case SUCCESS_POST_SEARCH_MORE:
       state = Object.assign({}, state, {searchPost: state.searchPost.concat(action.data), loadingMoreSearchPost: false });
       return state;
-    case FAILURE_POST_LOAD_MORE:
-      state = Object.assign({}, state, {});
+    case FAILURE_POST_SEARCH_MORE:
+      state = Object.assign({}, state, {loadingMoreSearchPost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
       return state;
 
     case RESET_POST_SEARCH:
-      state = Object.assign({}, state, {hasSearchedForPost: false, loadingSearchPost: false, loadingMoreSearchPost: false, searchKeyword: '', /* searchPost: [] */ });
+      state = Object.assign({}, state, {hasSearchedForPost: false, loadingSearchPost: false, loadingMoreSearchPost: false, searchKeyword: '', hasFailed: false  });
       return state;
 
     case REQUEST_POST_SHOW:
-      state = Object.assign({}, state, {isLoadingShowPost: true, showPostId: action.id});
+      state = Object.assign({}, state, {isLoadingShowPost: true, showPostId: action.id, hasFailed: false });
       return state;
     case SUCCESS_POST_SHOW:
       state = Object.assign({}, state, {isLoadingShowPost: false, showPost: action.data});
       return state;
     case FAILURE_POST_SHOW:
-      state = Object.assign({}, state, {});
+      state = Object.assign({}, state, {isLoadingShowPost: false, showPostId: -1, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
       return state;
 
     case REQUEST_USER_PROFILE_LOAD_POST:
-      state = Object.assign({}, state, {isLoadingUserProfilePost: true});
+      state = Object.assign({}, state, {isLoadingUserProfilePost: true, hasFailed: false });
       return state;
     case SUCCESS_USER_PROFILE_LOAD_POST:
       state = Object.assign({}, state, {isLoadingUserProfilePost: false, userProfilePost: action.data});
       return state;
     case FAILURE_USER_PROFILE_LOAD_POST:
-      state = Object.assign({}, state, {});
+      state = Object.assign({}, state, {isLoadingUserProfilePost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
       return state;
 
     default:
