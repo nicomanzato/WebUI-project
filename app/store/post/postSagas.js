@@ -1,12 +1,12 @@
 import { call, all, put, takeEvery, takeLatest, take, select } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 import {
-  getConfiguration,
   getLastPostId,
   getSearchKeyword,
   getLastSearchResultId,
   getShowPostId,
   getUserProfilePostId} from './postSelector'
+import { getConfiguration } from './../configuration/configurationSelector'
 
 import {
   requestUserProfileLoadPost,

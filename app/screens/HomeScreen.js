@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
-import {getSilencedPost} from './../store/post/postSelector'
+import {getNotSilencedPost} from './../store/post/postSelector'
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import {requestLoadPost, requestLoadMorePost} from '../store/post/postActions';
@@ -41,7 +41,7 @@ function mapStateToProps(state, props) {
     return {
         loading: state.PostReducer.isLoadingPost,
         loadingMorePost: state.PostReducer.isLoadingMorePost,
-        loadedPost: getSilencedPost(state),
+        loadedPost: getNotSilencedPost(state),
     }
 }
 

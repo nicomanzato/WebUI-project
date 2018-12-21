@@ -1,10 +1,9 @@
+import {getConfiguration} from './../configuration/configurationSelector'
+import {getUserProfileId} from './../user/userSelector'
+
 export const getLastPostId = state => {
   const loadedPost = state.PostReducer.loadedPost;
   return loadedPost[loadedPost.length - 1].id;
-}
-
-export const getConfiguration = state => {
-  return state.ConfigurationReducer;
 }
 
 export const getLoadedPost = state => {
@@ -24,13 +23,9 @@ export const getShowPostId = state => {
   return state.PostReducer.showPostId;
 }
 
-export const getUserProfilePostId = state => {
-  return state.UserReducer.userId;
-}
+export const getNotSilencedPost = (state) => {
 
-export const getSilencedPost = (state) => {
-
-  const configuration = getConfiguration(state)
+  const configuration = getConfiguration(state);
   const posts = getLoadedPost(state);
   return posts.filter((post) => {
 
