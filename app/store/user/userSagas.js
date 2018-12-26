@@ -8,9 +8,9 @@ import {
   REQUEST_USER_PROFILE,
 } from "./userActions.js"
 
-const serverIP = '10.160.11.56:8080';
+export const serverIP = '10.160.11.56:8080';
 
-function* loadUserProfile(){
+export function* loadUserProfile(){
   const userId = yield select(getUserProfileId);
   const url = `http://${serverIP}/user?id=${userId}`;
   try {

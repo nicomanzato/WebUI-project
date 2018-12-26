@@ -7,10 +7,10 @@ import {
   REQUEST_TRENDS_LOAD,
 } from "./trendActions.js"
 
-const serverIP = '10.160.11.56:8080';
+export const serverIP = '10.160.11.56:8080';
 
 
-function* loadTrends(){
+export function* loadTrends(){
   const url = `http://${serverIP}/trends?id=23424747`;
   try {
     const response = yield call(fetch, url);

@@ -12,6 +12,10 @@ import { Ionicons } from '@expo/vector-icons';
 
 class Post extends React.PureComponent{
 
+  constructor(props){
+    super(props);
+  }
+
   renderMedia = () => {
     let media;
     if (this.props.item.entities.media) {
@@ -28,7 +32,7 @@ class Post extends React.PureComponent{
   }
 
   handleOnProfilePicPress = () => {
-    props.navigation.navigate('UserProfile', {userId: this.props.item.user.id_str});
+    this.props.navigation.navigate('UserProfile', {userId: this.props.item.user.id_str});
   }
 
   render = () => {

@@ -8,7 +8,8 @@
     "react-test-renderer": "16.3.1",
     "reactotron-react-native": "^2.1.3",
     "reactotron-redux": "^2.1.3",
-    "reactotron-redux-saga": "^2.1.3"
+    "reactotron-redux-saga": "^2.1.3",
+    "sinon": "^7.2.2"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -24,7 +25,14 @@
       "./jest.setup.js"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|react-navigation-redux-helpers|react-navigation|react-native-safe-area-view|react-navigation-tabs|react-native-tab-view|@expo|expo)/)"
+      "node_modules/(?!(react-native|react-navigation-redux-helpers|react-navigation|react-native-safe-area-view|react-navigation-tabs|react-native-tab-view|@expo|expo|sinon)/)"
+    ],
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/coverage/**"
     ]
   },
   "dependencies": {

@@ -16,7 +16,6 @@ import SearchScreen from '../screens/SearchScreen'
 import ConfigScreen from '../screens/ConfigScreen'
 import PostScreen from '../screens/PostScreen'
 import UserProfileScreen from '../screens/UserProfileScreen'
-import AnimatedScreen from '../screens/AnimatedScreen'
 
 const middleware = createReactNavigationReduxMiddleware(
   'root',

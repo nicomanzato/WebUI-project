@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for WebUI-project/app/store/post/postActions.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">WebUI-project/app/store/post</a> postActions.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>57/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>57/57</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const REQUEST_POST_LOAD = 'REQUEST_POST_LOAD'
+export const SUCCESS_POST_LOAD = 'SUCCESS_POST_LOAD'
+export const FAILURE_POST_LOAD = 'FAILURE_POST_LOAD'
+&nbsp;
+export const REQUEST_POST_LOAD_MORE = 'REQUEST_POST_LOAD_MORE'
+export const SUCCESS_POST_LOAD_MORE = 'SUCCESS_POST_LOAD_MORE'
+export const FAILURE_POST_LOAD_MORE = 'FAILURE_POST_LOAD_MORE'
+&nbsp;
+export const REQUEST_POST_SEARCH = 'REQUEST_POST_SEARCH'
+export const SUCCESS_POST_SEARCH = 'SUCCESS_POST_SEARCH'
+export const FAILURE_POST_SEARCH = 'FAILURE_POST_SEARCH'
+&nbsp;
+export const REQUEST_POST_SEARCH_MORE = 'REQUEST_POST_SEARCH_MORE'
+export const SUCCESS_POST_SEARCH_MORE = 'SUCCESS_POST_SEARCH_MORE'
+export const FAILURE_POST_SEARCH_MORE = 'FAILURE_POST_SEARCH_MORE'
+&nbsp;
+export const RESET_POST_SEARCH = 'RESET_POST_SEARCH'
+&nbsp;
+export const REQUEST_POST_SHOW = 'REQUEST_POST_SHOW'
+export const SUCCESS_POST_SHOW = 'SUCCESS_POST_SHOW'
+export const FAILURE_POST_SHOW = 'FAILURE_POST_SHOW'
+&nbsp;
+export const REQUEST_USER_PROFILE_LOAD_POST = 'REQUEST_USER_PROFILE_LOAD_POST'
+export const SUCCESS_USER_PROFILE_LOAD_POST = 'SUCCESS_USER_PROFILE_LOAD_POST'
+export const FAILURE_USER_PROFILE_LOAD_POST = 'FAILURE_USER_PROFILE_LOAD_POST'
+&nbsp;
+export const requestLoadPost = () =&gt; {
+  return {type: REQUEST_POST_LOAD}
+}
+export const successLoadPost = (data) =&gt; {
+  return {type: SUCCESS_POST_LOAD, data: data}
+}
+export const failureLoadPost = (er) =&gt; {
+  return {type: FAILURE_POST_LOAD, failureErrorDetail: er}
+}
+&nbsp;
+// ****************************************************
+&nbsp;
+export const requestLoadMorePost = () =&gt; {
+  return {type: REQUEST_POST_LOAD_MORE}
+}
+export const successLoadMorePost = (data) =&gt; {
+  return {type: SUCCESS_POST_LOAD_MORE, data: data}
+}
+export const failureLoadMorePost = (er) =&gt; {
+  return {type: FAILURE_POST_LOAD_MORE, failureErrorDetail: er}
+}
+&nbsp;
+// ****************************************************
+&nbsp;
+export const requestSearchForPost = (searchKeyword) =&gt; {
+  return {type: REQUEST_POST_SEARCH, searchKeyword: searchKeyword}
+}
+export const successSearchForPost = (data) =&gt; {
+  return {type: SUCCESS_POST_SEARCH, data: data}
+}
+export const failureSearchForPost = (er) =&gt; {
+  return {type: FAILURE_POST_SEARCH, failureErrorDetail: er}
+}
+&nbsp;
+// ****************************************************
+&nbsp;
+export const requestSearchMorePost = () =&gt; {
+  return {type: REQUEST_POST_SEARCH_MORE}
+}
+export const successSearchMorePost = (data) =&gt; {
+  return {type: SUCCESS_POST_SEARCH_MORE, data: data}
+}
+export const failureSearchMorePost = (er) =&gt; {
+  return {type: FAILURE_POST_SEARCH_MORE, failureErrorDetail: er}
+}
+&nbsp;
+// ****************************************************
+&nbsp;
+export const resetPostSearch = () =&gt; {
+  return {type: RESET_POST_SEARCH}
+}
+&nbsp;
+// ****************************************************
+&nbsp;
+export const requestPostShow = (id) =&gt; {
+  return {type: REQUEST_POST_SHOW, id: id}
+}
+&nbsp;
+export const successPostShow = (data) =&gt; {
+  return {type: SUCCESS_POST_SHOW, data: data}
+}
+&nbsp;
+export const failurePostShow = (er) =&gt; {
+  return {type: FAILURE_POST_SHOW, failureErrorDetail: er}
+}
+&nbsp;
+// ****************************************************
+&nbsp;
+export const requestUserProfileLoadPost = () =&gt; {
+  return {type: REQUEST_USER_PROFILE_LOAD_POST}
+}
+&nbsp;
+export const successUserProfileLoadPost = (data) =&gt; {
+  return {type: SUCCESS_USER_PROFILE_LOAD_POST, data: data}
+}
+&nbsp;
+export const failureUserProfileLoadPost = (er) =&gt; {
+  return {type: FAILURE_USER_PROFILE_LOAD_POST, failureErrorDetail: er}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 26 2018 13:28:33 GMT-0300 (GMT-03:00)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

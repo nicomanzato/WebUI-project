@@ -40,7 +40,7 @@ export const requestLoadMorePost = () => {
   return {type: REQUEST_POST_LOAD_MORE}
 }
 export const successLoadMorePost = (data) => {
-  return {type: SUCCESS_POST_LOAD_MORE, data}
+  return {type: SUCCESS_POST_LOAD_MORE, data: data}
 }
 export const failureLoadMorePost = (er) => {
   return {type: FAILURE_POST_LOAD_MORE, failureErrorDetail: er}

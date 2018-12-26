@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for WebUI-project/app/screens/SearchScreen.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">WebUI-project/app/screens</a> SearchScreen.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import { StyleSheet, Text, View, Button, Animated, Easing, ActivityIndicator } from 'react-native';</span>
+<span class="cstat-no" title="statement not covered" >import PropTypes from 'prop-types';</span>
+<span class="cstat-no" title="statement not covered" >import {StackNavigator} from 'react-navigation';</span>
+<span class="cstat-no" title="statement not covered" >import SearchForm from './../components/search/searchForm'</span>
+<span class="cstat-no" title="statement not covered" >import Trends from './../components/trends/trends'</span>
+<span class="cstat-no" title="statement not covered" >import PostList from './../components/post/postList'</span>
+<span class="cstat-no" title="statement not covered" >import ResultList from './../components/search/resultList'</span>
+<span class="cstat-no" title="statement not covered" >import {bindActionCreators} from 'redux';</span>
+<span class="cstat-no" title="statement not covered" >import { connect } from 'react-redux';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >import Fade from './../components/animation/fade'</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >import {</span>
+  requestSearchForPost,
+  requestSearchMorePost,
+  resetPostSearch} from '../store/post/postActions';
+<span class="cstat-no" title="statement not covered" >import {requestTrendsLoad, resetTrends} from '../store/trend/trendActions';</span>
+&nbsp;
+class SearchScreen extends React.Component {
+&nbsp;
+  constructor(props) <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >{</span></span></span></span></span></span></span></span></span></span></span></span></span>
+    super(props)
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.state = {</span>
+      searchKeyword: '',
+&nbsp;
+      shouldDisplayTrends: true,
+      shouldDisplaySearchResults: false,
+    };
+  }
+&nbsp;
+  componentDidMount = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >    this.props.requestTrendsLoad();</span>
+  }
+&nbsp;
+  setSearchKeyword = <span class="fstat-no" title="function not covered" >(</span>keyword) =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      searchKeyword: keyword,
+    })
+  }
+&nbsp;
+  handleOnTrendPress = <span class="fstat-no" title="function not covered" >(</span>trend) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (trend.name !== this.props.searchKeyword) {</span>
+<span class="cstat-no" title="statement not covered" >      this.props.requestSearchForPost(trend.query);</span>
+<span class="cstat-no" title="statement not covered" >      this.setSearchKeyword(trend.name);</span>
+    }
+  }
+&nbsp;
+  handleOnSearchFormReset = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >    this.props.resetPostSearch();</span>
+<span class="cstat-no" title="statement not covered" >    this.props.resetTrends();</span>
+<span class="cstat-no" title="statement not covered" >    this.props.requestTrendsLoad();</span>
+<span class="cstat-no" title="statement not covered" >    this.setSearchKeyword('');</span>
+  }
+&nbsp;
+  handleOnSubmitSearchForm = <span class="fstat-no" title="function not covered" >(</span>keyword) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (keyword !== this.props.searchKeyword) {</span>
+<span class="cstat-no" title="statement not covered" >      this.props.requestSearchForPost(keyword);</span>
+    }
+  }
+&nbsp;
+  handleOnDoneFadingOutSearchResults = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >    if (!this.props.hasSearched){</span>
+<span class="cstat-no" title="statement not covered" >      this.setShouldDisplaySearchResults(false);</span>
+<span class="cstat-no" title="statement not covered" >      this.setShouldDisplayTrends(true);</span>
+    }
+  }
+&nbsp;
+  handleOnDoneFadingOutTrends = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >    this.setShouldDisplayTrends(false);</span>
+<span class="cstat-no" title="statement not covered" >    this.setShouldDisplaySearchResults(true);</span>
+  }
+&nbsp;
+  setShouldDisplayTrends = <span class="fstat-no" title="function not covered" >(</span>value) =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      shouldDisplayTrends: value,
+    });
+  }
+&nbsp;
+  setShouldDisplaySearchResults = <span class="fstat-no" title="function not covered" >(</span>value) =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      shouldDisplaySearchResults: value,
+    });
+  }
+&nbsp;
+  render = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return (</span>
+      &lt;View style={styles.container}&gt;
+        &lt;SearchForm
+          animated
+          hasSearched={this.props.hasSearched}
+          onTrendInputTextChange={this.setSearchKeyword}
+          searchValue={this.state.searchKeyword}
+          onReset={this.handleOnSearchFormReset}
+          onSubmit={<span class="fstat-no" title="function not covered" >(</span>keyword) =&gt; { <span class="cstat-no" title="statement not covered" >this.handleOnSubmitSearchForm(keyword) }}</span>/&gt;
+        {(this.props.loadingTrends || this.props.loadingSearch) &amp;&amp;
+          &lt;View style={styles.activityIndicatorContainer}&gt;
+            &lt;ActivityIndicator animating={true}/&gt;
+          &lt;/View&gt;
+        }
+        {this.state.shouldDisplayTrends &amp;&amp; !this.props.loadingTrends &amp;&amp;
+          &lt;Fade
+            visible={!this.props.hasSearched &amp;&amp; !this.props.loadingTrends}
+            onDoneFadingOut={this.handleOnDoneFadingOutTrends}&gt;
+            &lt;Trends
+              onTrendPress={<span class="fstat-no" title="function not covered" >(</span>trend) =&gt; { <span class="cstat-no" title="statement not covered" >this.handleOnTrendPress(trend) }}</span>
+              trends={this.props.trends}
+            /&gt;
+&nbsp;
+          &lt;/Fade&gt;
+        }
+        {this.state.shouldDisplaySearchResults &amp;&amp;
+          &lt;Fade
+            visible={this.props.hasSearched &amp;&amp; !this.props.loadingSearch}
+            onDoneFadingOut={this.handleOnDoneFadingOutSearchResults}&gt;
+            &lt;PostList
+              navigation={this.props.navigation}
+              data={this.props.searchResult}
+              onEndReached={this.props.requestSearchMorePost}
+            /&gt;
+&nbsp;
+          &lt;/Fade&gt;
+        }
+      &lt;/View&gt;
+    );
+  };
+&nbsp;
+  static navigationOptions = {
+    header: null,
+  };
+&nbsp;
+}
+&nbsp;
+const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFF'
+  },
+  activityIndicatorContainer:{
+    backgroundColor: "#fff",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+});
+&nbsp;
+const <span class="fstat-no" title="function not covered" >mapStateToProps = <span class="cstat-no" title="statement not covered" >(</span>state) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+        loadingTrends: state.TrendReducer.loadingTrends,
+        trends: state.TrendReducer.trends,
+&nbsp;
+        searchKeyword: state.PostReducer.searchKeyword,
+        hasSearched: state.PostReducer.hasSearchedForPost,
+        loadingSearch: state.PostReducer.loadingSearchPost,
+        searchResult: state.PostReducer.searchPost,
+        loadingMoreSearchResults: state.PostReducer.loadingMoreSearchPost,
+    }
+}
+&nbsp;
+const mapDispatchToProps = <span class="cstat-no" title="statement not covered" >{</span>
+  requestTrendsLoad: <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; </span>requestTrendsLoad(),</span>
+  requestSearchForPost: <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>searchKeyword) =&gt; requestSearchForPost(searchKeyword),</span>
+  requestSearchMorePost: <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; </span>requestSearchMorePost(),</span>
+  resetPostSearch: <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; </span>resetPostSearch(),</span>
+  resetTrends: <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; </span>resetTrends(),</span>
+}
+&nbsp;
+export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 26 2018 13:28:33 GMT-0300 (GMT-03:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>
