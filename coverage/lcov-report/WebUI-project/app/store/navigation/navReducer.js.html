@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">57.14% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/19</span>
+        <span class='fraction'>8/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">42.86% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/10</span>
+        <span class='fraction'>3/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/1</span>
+        <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">57.14% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/17</span>
+        <span class='fraction'>8/14</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -88,24 +88,18 @@
 43
 44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,54 +114,60 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import { NavigationActions } from 'react-navigation';</span>
-<span class="cstat-no" title="statement not covered" >import { RootNavigator } from '../../components/AppNavigator';</span>
+import { NavigationActions } from 'react-navigation';
+import { RootNavigator } from '../../components/AppNavigator';
 &nbsp;
-const firstAction = <span class="cstat-no" title="statement not covered" >RootNavigator.router.getActionForPathAndParams('Home');</span>
-const tempNavState = <span class="cstat-no" title="statement not covered" >RootNavigator.router.getStateForAction(firstAction);</span>
-const initialNavState = <span class="cstat-no" title="statement not covered" >RootNavigator.router.getStateForAction(</span>
+const firstAction = RootNavigator.router.getActionForPathAndParams('Home');
+const tempNavState = RootNavigator.router.getStateForAction(firstAction);
+const initialNavState = RootNavigator.router.getStateForAction(
   tempNavState
 );
 &nbsp;
-const <span class="fstat-no" title="function not covered" >NavReducer = <span class="cstat-no" title="statement not covered" >(</span>state = initialNavState, action) =&gt; <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >{</span></span></span>
-  let <span class="cstat-no" title="statement not covered" >nextState;</span>
-<span class="cstat-no" title="statement not covered" >  switch (action.type) {</span>
-    case 'Home':
+const NavReducer = (state = initialNavState, action) =&gt; {
+  let nextState;
+  switch (action.type) {
+<span class="branch-0 cbranch-no" title="branch not covered" >    case 'Home':</span>
 <span class="cstat-no" title="statement not covered" >      nextState = RootNavigator.router.getStateForAction(</span>
         NavigationActions.navigate({ routeName: 'Home' }),
         state
       );
 <span class="cstat-no" title="statement not covered" >      break;</span>
-    case 'Categories':
+<span class="branch-1 cbranch-no" title="branch not covered" >    case 'Categories':</span>
 <span class="cstat-no" title="statement not covered" >      nextState = RootNavigator.router.getStateForAction(</span>
         NavigationActions.navigate({ routeName: 'Categories' }),
         state
       );
 <span class="cstat-no" title="statement not covered" >      break;</span>
-    case 'Post':
+<span class="branch-2 cbranch-no" title="branch not covered" >    case 'Post':</span>
 <span class="cstat-no" title="statement not covered" >      nextState = RootNavigator.router.getStateForAction(</span>
        NavigationActions.navigate({ routeName: 'Post' , params: {data: action.data}}),
        state
       );
 <span class="cstat-no" title="statement not covered" >      break;</span>
     default:
-<span class="cstat-no" title="statement not covered" >      nextState = RootNavigator.router.getStateForAction(action, state);</span>
-<span class="cstat-no" title="statement not covered" >      break;</span>
+      nextState = RootNavigator.router.getStateForAction(action, state);
+      break;
   }
 &nbsp;
   // Simply return the original `state` if `nextState` is null or undefined.
-<span class="cstat-no" title="statement not covered" >  return nextState || state;</span>
+  return nextState || <span class="branch-1 cbranch-no" title="branch not covered" >state;</span>
 }
 &nbsp;
 &nbsp;
@@ -178,7 +178,7 @@ export default NavReducer
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 26 2018 13:28:33 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 27 2018 11:48:13 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="..\..\..\..\prettify.js"></script>

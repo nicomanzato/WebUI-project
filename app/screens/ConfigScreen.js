@@ -14,7 +14,7 @@ import {
   configToggleTextTruncated,
 } from '../store/configuration/configurationActions';
 
-const ConfigScreen = (props) => (
+export const ConfigScreen = (props) => (
   <View style={styles.container}>
     <ConfigList
       configVerifiedOnly={props.configVerifiedOnly}

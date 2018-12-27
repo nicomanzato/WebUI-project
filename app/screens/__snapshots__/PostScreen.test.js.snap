@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`post screen should render correctly when done loading post 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+      "paddingTop": 10,
+    }
+  }
+>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "borderBottomWidth": 1,
+            "borderColor": "#ccc",
+            "flex": 1,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "height": 80,
+            }
+          }
+        >
+          <View>
+            <Image
+              source={
+                Object {
+                  "uri": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
+                }
+              }
+              style={
+                Object {
+                  "borderRadius": 25,
+                  "height": 75,
+                  "resizeMode": "contain",
+                  "width": 75,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "paddingLeft": 10,
+              }
+            }
+          >
+            <View>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "fontSize": 17,
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                TN - Todo Noticias
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+            </View>
+            <View>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 17,
+                  }
+                }
+              >
+                @
+                todonoticias
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={Object {}}
+        >
+          <View
+            style={
+              Object {
+                "paddingLeft": 1,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 19,
+                  "fontWeight": "400",
+                  "lineHeight": 30,
+                  "paddingLeft": 5,
+                }
+              }
+            >
+              Por una medida de Trump, Rusia advirtió que "hay peligro" de una guerra nuclear: "Puede morir toda la civilización"… https://t.co/WG9oBkfoFF
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "marginBottom": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+               
+              14:06 - 20 Dec. 18
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "height": 1,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "padding": 10,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 15,
+                  }
+                }
+              >
+                0
+                 Retweets
+              </Text>
+            </View>
+            <View
+              style={
+                Object {
+                  "padding": 10,
+                  "paddingLeft": 20,
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "grey",
+                    "fontSize": 15,
+                  }
+                }
+              >
+                0
+                 Favorites
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "height": 1,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-evenly",
+              "margin": 5,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "steelblue",
+                  "borderRadius": 35,
+                  "flexDirection": "row",
+                  "height": 65,
+                  "justifyContent": "center",
+                  "width": 65,
+                },
+                Object {
+                  "backgroundColor": "#F20E49",
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "steelblue",
+                  "borderRadius": 35,
+                  "flexDirection": "row",
+                  "height": 65,
+                  "justifyContent": "center",
+                  "width": 65,
+                },
+                Object {
+                  "backgroundColor": "#26B943",
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "steelblue",
+                  "borderRadius": 35,
+                  "flexDirection": "row",
+                  "height": 65,
+                  "justifyContent": "center",
+                  "width": 65,
+                },
+                Object {
+                  "backgroundColor": "#06B3E7",
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`post screen should render correctly while loading post 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+      "paddingTop": 10,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#999999"
+      hidesWhenStopped={true}
+      size="small"
+    />
+  </View>
+</View>
+`;

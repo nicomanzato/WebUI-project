@@ -17,7 +17,7 @@ import {
   resetPostSearch} from '../store/post/postActions';
 import {requestTrendsLoad, resetTrends} from '../store/trend/trendActions';
 
-class SearchScreen extends React.Component {
+export class SearchScreen extends React.Component {
 
   constructor(props) {
     super(props)

@@ -8,3 +8,9 @@ NativeModules.BlobModule = {
 };
 
 global.WebSocket = WebSocket
+
+class XMLHttpRequest {
+  open = () => {}
+  send = () => {}
+}
+global.XMLHttpRequest = XMLHttpRequest;

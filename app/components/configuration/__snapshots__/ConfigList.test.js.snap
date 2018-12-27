@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`post screen should render correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#627B97",
+        "height": 50,
+        "justifyContent": "center",
+        "marginBottom": 3,
+        "marginTop": 1,
+        "paddingLeft": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 16,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Silence notifications from ... 
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#ccc",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.9,
+          "height": 50,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 17,
+          }
+        }
+      >
+        People who have not verified the account
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.1,
+          "height": 50,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignSelf": "flex-start",
+              "borderColor": "red",
+              "borderWidth": 1,
+            },
+            Object {},
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#ccc",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.9,
+          "height": 50,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 17,
+          }
+        }
+      >
+        People who do not follow
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.1,
+          "height": 50,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignSelf": "flex-start",
+              "borderColor": "red",
+              "borderWidth": 1,
+            },
+            Object {},
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#ccc",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.9,
+          "height": 50,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 17,
+          }
+        }
+      >
+        People who have default profile information
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.1,
+          "height": 50,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignSelf": "flex-start",
+              "borderColor": "red",
+              "borderWidth": 1,
+            },
+            Object {},
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#ccc",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.9,
+          "height": 50,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 17,
+          }
+        }
+      >
+        Tweets that contain a link
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.1,
+          "height": 50,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignSelf": "flex-start",
+              "borderColor": "red",
+              "borderWidth": 1,
+            },
+            Object {},
+          ]
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#ccc",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.9,
+          "height": 50,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 17,
+          }
+        }
+      >
+        Tweets that have text truncated
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.1,
+          "height": 50,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignSelf": "flex-start",
+              "borderColor": "red",
+              "borderWidth": 1,
+            },
+            Object {},
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

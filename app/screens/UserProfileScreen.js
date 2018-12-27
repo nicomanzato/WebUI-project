@@ -16,7 +16,7 @@ import {requestUserProfile} from '../store/user/userActions'
 import UserProfile from './../components/user/userProfile'
 import PostList from './../components/post/postList'
 
-class UserProfileScreen extends Component {
+export class UserProfileScreen extends Component {
 
   constructor(props) {
     super(props);

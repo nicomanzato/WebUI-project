@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user profile should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://pbs.twimg.com/profile_banners/2495199115/1530555192",
+      }
+    }
+    style={
+      Object {
+        "height": 296.44444444444446,
+        "resizeMode": "contain",
+        "width": 750,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+        },
+        Object {
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://pbs.twimg.com/profile_images/806223847557124096/rwtoQ0Cd_normal.jpg",
+        }
+      }
+      style={
+        Object {
+          "alignSelf": "center",
+          "borderRadius": 25,
+          "height": 50,
+          "resizeMode": "contain",
+          "width": 50,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "height": 50,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 16,
+          }
+        }
+      >
+         
+        Selección Argentina 🇦🇷
+         
+      </Text>
+    </View>
+  </View>
+</View>
+`;

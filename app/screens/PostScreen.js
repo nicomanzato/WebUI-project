@@ -17,7 +17,7 @@ import {connect} from 'react-redux';
 import PostDetails from '../components/post/postDetail'
 import {requestPostShow} from '../store/post/postActions';
 
-class PostScreen extends Component {
+export class PostScreen extends Component {
 
   static navigationOptions = {
     title: 'Tweet',

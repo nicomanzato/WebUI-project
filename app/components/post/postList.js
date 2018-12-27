@@ -8,30 +8,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-import Post from './post'
-
-class ListItem extends React.PureComponent {
-
-  constructor(props) {
-    super(props);
-    this.onPress = this.onPress.bind(this);
-  }
-
-  onPress() {
-    this.props.onPressItem(this.props.item);
-  };
-
-  render() {
-    const item = this.props.item;
-    return (
-     <TouchableHighlight
-      onPress={(this.onPress)}
-      underlayColor='#dddddd'>
-      <Post item={item} navigation={this.props.navigation}/>
-     </TouchableHighlight>
-    );
-  }
-}
+import PostListElement from './postListElement'
 
 const PostList = (props) => {
 
@@ -41,7 +18,7 @@ const PostList = (props) => {
 
   const renderItem = ({item, index}) => {
     return (
-     <ListItem item={item} navigation={props.navigation} onPressItem={onPressItem} />
+     <PostListElement item={item} navigation={props.navigation} onPressItem={onPressItem} />
     )
   }
 

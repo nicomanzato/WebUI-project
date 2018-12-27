@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import {requestLoadPost, requestLoadMorePost} from '../store/post/postActions';
 import Timeline from '../components/timeline/timeline' //Import the component file
 
-const HomeScreen = (props) => (
+export const HomeScreen = (props) => (
   <View style={styles.container}>
     <Timeline
       data={props.loadedPost}

@@ -21,7 +21,7 @@ class Fade extends React.Component {
   fade = () => {
     this.shouldRenderChildren = true;
     Animated.timing(this.visibility, {
-      useNativeDriver: true,
+      useNativeDriver: false,
       toValue: this.props.visible ? 1 : 0,
       duration: 500,
     }).start(this.onDoneFading);
