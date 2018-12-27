@@ -15,11 +15,11 @@ export function* loadUserProfile(){
   const url = `http://${serverIP}/user?id=${userId}`;
   try {
     const response = yield call(fetch, url);
-    const data = yield call([response, "json"]);
+    const data = yield call([response, 'json']);
     yield put(successUserProfile(data));
   } catch(er) {
-    failureUserProfile();
-    console.log(er);
+    failureUserProfile(er);
+    //console.log(er);
   }
 }
 

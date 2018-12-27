@@ -1,285 +1,303 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`post detail should render correctly 1`] = `
-<RCTScrollView>
-  <View>
-    <View
+<ScrollView>
+  <Component
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#ccc",
+        "flex": 1,
+        "padding": 10,
+      }
+    }
+  >
+    <Component
       style={
         Object {
-          "borderBottomWidth": 1,
-          "borderColor": "#ccc",
-          "flex": 1,
-          "padding": 10,
+          "flexDirection": "row",
+          "height": 80,
         }
       }
     >
-      <View
+      <Component>
+        <Image
+          source={
+            Object {
+              "uri": "https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 25,
+              "height": 75,
+              "resizeMode": "contain",
+              "width": 75,
+            }
+          }
+        />
+      </Component>
+      <Component
         style={
           Object {
-            "flexDirection": "row",
-            "height": 80,
+            "paddingLeft": 10,
           }
         }
       >
-        <View>
-          <Image
-            source={
-              Object {
-                "uri": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
-              }
-            }
-            style={
-              Object {
-                "borderRadius": 25,
-                "height": 75,
-                "resizeMode": "contain",
-                "width": 75,
-              }
-            }
-          />
-        </View>
-        <View
-          style={
-            Object {
-              "paddingLeft": 10,
-            }
-          }
-        >
-          <View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "fontSize": 17,
-                  "fontWeight": "600",
-                }
-              }
-            >
-              TN - Todo Noticias
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
-          </View>
-          <View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "grey",
-                  "fontSize": 17,
-                }
-              }
-            >
-              @
-              todonoticias
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        style={Object {}}
-      >
-        <View
-          style={
-            Object {
-              "paddingLeft": 1,
-            }
-          }
-        >
+        <Component>
           <Text
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
             style={
               Object {
-                "fontSize": 19,
-                "fontWeight": "400",
-                "lineHeight": 30,
-                "paddingLeft": 5,
+                "fontSize": 17,
+                "fontWeight": "600",
               }
             }
           >
-            Por una medida de Trump, Rusia advirtió que "hay peligro" de una guerra nuclear: "Puede morir toda la civilización"… https://t.co/WG9oBkfoFF
+            Clarín
           </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "marginBottom": 10,
-              "paddingTop": 10,
-            }
-          }
-        >
+        </Component>
+        <Component>
           <Text
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "grey",
+                "fontSize": 17,
+              }
+            }
           >
-             
-            14:06 - 20 Dec. 18
+            @
+            clarincom
           </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#dddddd",
-              "height": 1,
-            }
-          }
-        />
-        <View
-          style={
-            Object {
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "padding": 10,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "grey",
-                  "fontSize": 15,
-                }
-              }
-            >
-              0
-               Retweets
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "padding": 10,
-                "paddingLeft": 20,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "grey",
-                  "fontSize": 15,
-                }
-              }
-            >
-              0
-               Favorites
-            </Text>
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#dddddd",
-              "height": 1,
-            }
-          }
-        />
-      </View>
-      <View
+        </Component>
+      </Component>
+    </Component>
+    <Component
+      style={Object {}}
+    >
+      <Component
         style={
           Object {
-            "flexDirection": "row",
-            "justifyContent": "space-evenly",
-            "margin": 5,
+            "paddingLeft": 1,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 19,
+              "fontWeight": "400",
+              "lineHeight": 30,
+              "paddingLeft": 5,
+            }
+          }
+        >
+          Microteatro de verano, una agenda cargada para pasar los meses de más calor https://t.co/3V4dX1OSiJ https://t.co/GuK1rpkdeJ
+        </Text>
+      </Component>
+      <Component
+        style={
+          Object {
+            "marginBottom": 10,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://pbs.twimg.com/media/Du8RZabWwAA5fiX.jpg",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "resizeMode": "contain",
+            }
+          }
+        />
+      </Component>
+      <Component
+        style={
+          Object {
+            "marginBottom": 10,
             "paddingTop": 10,
           }
         }
       >
-        <View
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+           
+          12:52 - 21 Dec. 18
+        </Text>
+      </Component>
+      <Component
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "height": 1,
+          }
+        }
+      />
+      <Component
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Component
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "steelblue",
-                "borderRadius": 35,
-                "flexDirection": "row",
-                "height": 65,
-                "justifyContent": "center",
-                "width": 65,
-              },
-              Object {
-                "backgroundColor": "#F20E49",
-              },
-            ]
+            Object {
+              "padding": 10,
+            }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-          />
-        </View>
-        <View
+            style={
+              Object {
+                "color": "grey",
+                "fontSize": 15,
+              }
+            }
+          >
+            0
+             Retweets
+          </Text>
+        </Component>
+        <Component
           style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "steelblue",
-                "borderRadius": 35,
-                "flexDirection": "row",
-                "height": 65,
-                "justifyContent": "center",
-                "width": 65,
-              },
-              Object {
-                "backgroundColor": "#26B943",
-              },
-            ]
+            Object {
+              "padding": 10,
+              "paddingLeft": 20,
+            }
           }
         >
           <Text
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
-          />
-        </View>
-        <View
-          style={
-            Array [
+            style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "steelblue",
-                "borderRadius": 35,
-                "flexDirection": "row",
-                "height": 65,
-                "justifyContent": "center",
-                "width": 65,
-              },
-              Object {
-                "backgroundColor": "#06B3E7",
-              },
-            ]
+                "color": "grey",
+                "fontSize": 15,
+              }
+            }
+          >
+            0
+             Favorites
+          </Text>
+        </Component>
+      </Component>
+      <Component
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "height": 1,
           }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          />
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
+        }
+      />
+    </Component>
+    <Component
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+          "margin": 5,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Component
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "steelblue",
+              "borderRadius": 35,
+              "flexDirection": "row",
+              "height": 65,
+              "justifyContent": "center",
+              "width": 65,
+            },
+            Object {
+              "backgroundColor": "#F20E49",
+            },
+          ]
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="white"
+          name="ios-heart-outline"
+          size={32}
+        />
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "steelblue",
+              "borderRadius": 35,
+              "flexDirection": "row",
+              "height": 65,
+              "justifyContent": "center",
+              "width": 65,
+            },
+            Object {
+              "backgroundColor": "#26B943",
+            },
+          ]
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="white"
+          name="ios-chatboxes-outline"
+          size={32}
+        />
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "steelblue",
+              "borderRadius": 35,
+              "flexDirection": "row",
+              "height": 65,
+              "justifyContent": "center",
+              "width": 65,
+            },
+            Object {
+              "backgroundColor": "#06B3E7",
+            },
+          ]
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="white"
+          name="ios-share-alt"
+          size={32}
+        />
+      </Component>
+    </Component>
+  </Component>
+</ScrollView>
 `;

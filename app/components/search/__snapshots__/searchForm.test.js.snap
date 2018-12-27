@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`search form should render correctly 1`] = `
-<View
+<Component
   style={
     Object {
       "backgroundColor": "#FFFF",
@@ -14,7 +14,7 @@ exports[`search form should render correctly 1`] = `
     }
   }
 >
-  <View
+  <Component
     style={
       Object {
         "alignItems": "center",
@@ -29,10 +29,11 @@ exports[`search form should render correctly 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <Icon
+      allowFontScaling={false}
+      color="#1183ff"
+      name="ios-search"
+      size={32}
     />
     <TextInput
       allowFontScaling={true}
@@ -48,65 +49,60 @@ exports[`search form should render correctly 1`] = `
       underlineColorAndroid="transparent"
       value="This is a Test value"
     />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-    />
-  </View>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#1FBFFF",
-        "borderRadius": 5,
-        "flex": 0.25,
-        "height": 40,
-        "justifyContent": "center",
-        "transform": Array [
-          Object {
-            "scale": 1,
-          },
-        ],
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      collapsable={undefined}
-      ellipsizeMode="tail"
+    <Icon
+      allowFontScaling={false}
+      color="#1183ff"
+      name="ios-close"
+      onPress={[Function]}
+      size={32}
       style={
         Object {
-          "color": "white",
-          "fontSize": 16,
+          "padding": 5,
+        }
+      }
+    />
+  </Component>
+  <AnimatedComponent
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#1FBFFF",
+          "borderRadius": 5,
+          "flex": 0.25,
+          "height": 40,
+          "justifyContent": "center",
+        },
+        Object {
           "transform": Array [
             Object {
               "scale": 1,
             },
           ],
-        }
+        },
+      ]
+    }
+  >
+    <AnimatedComponent
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 16,
+          },
+          Object {
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+            ],
+          },
+        ]
       }
     >
        Search 
-    </Text>
-  </View>
-</View>
+    </AnimatedComponent>
+  </AnimatedComponent>
+</Component>
 `;

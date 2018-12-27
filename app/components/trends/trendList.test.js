@@ -1,17 +1,20 @@
 import React from 'react';
 import TrendList from './trendList';
 import TrendMock from './../../store/trend/mock/trendMock'
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 describe('trend list', () => {
+
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
-        <TrendList
-          trends={[TrendMock, TrendMock, TrendMock]}
-          onItemPress={() => {}}
-        />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const renderer = new ShallowRenderer();
+    renderer.render(
+      <TrendList
+        trends={[TrendMock, TrendMock, TrendMock]}
+        onItemPress={() => {}}
+      />
+    );
+
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
+
 });

@@ -1,13 +1,17 @@
 import React from 'react';
 import PostDetail from './postDetail';
-import PostMock from './../../store/post/mock/postMock'
-import renderer from 'react-test-renderer';
+import PostMock2 from './../../store/post/mock/postMock2'
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 describe('post detail', () => {
+
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<PostDetail item={PostMock} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const renderer = new ShallowRenderer();
+    renderer.render(
+      <PostDetail item={PostMock2} />
+    );
+
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
+
 });

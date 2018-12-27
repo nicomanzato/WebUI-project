@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`post component should render correctly 1`] = `
-<View
+<Component
   style={
     Array [
       Object {
@@ -13,7 +13,7 @@ exports[`post component should render correctly 1`] = `
     ]
   }
 >
-  <View
+  <Component
     style={
       Object {
         "flex": 1,
@@ -21,38 +21,24 @@ exports[`post component should render correctly 1`] = `
       }
     }
   >
-    <View
+    <Component
       style={
         Object {
           "flex": 0.2,
         }
       }
     >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={null}
-        testID={undefined}
-        tvParallaxProperties={undefined}
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        onPress={[Function]}
+        underlayColor="#dddddd"
       >
         <Image
           fadeDuration={0}
           source={
             Object {
-              "uri": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
+              "uri": "https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
             }
           }
           style={
@@ -65,16 +51,16 @@ exports[`post component should render correctly 1`] = `
             }
           }
         />
-      </View>
-    </View>
-    <View
+      </TouchableHighlight>
+    </Component>
+    <Component
       style={
         Object {
           "flex": 0.8,
         }
       }
     >
-      <View
+      <Component
         style={
           Object {
             "flexDirection": "row",
@@ -91,13 +77,8 @@ exports[`post component should render correctly 1`] = `
             }
           }
         >
-          TN - Todo Noticias
+          Clarín
         </Text>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -109,9 +90,9 @@ exports[`post component should render correctly 1`] = `
           }
         >
            @
-          todonoticias
+          clarincom
         </Text>
-      </View>
+      </Component>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -123,10 +104,10 @@ exports[`post component should render correctly 1`] = `
           }
         }
       >
-        Por una medida de Trump, Rusia advirtió que "hay peligro" de una guerra nuclear: "Puede morir toda la civilización"… https://t.co/WG9oBkfoFF
+        Microteatro de verano, una agenda cargada para pasar los meses de más calor https://t.co/3V4dX1OSiJ https://t.co/GuK1rpkdeJ
       </Text>
-      <View />
-      <View
+      <Component />
+      <Component
         style={
           Object {
             "flexDirection": "row",
@@ -137,7 +118,7 @@ exports[`post component should render correctly 1`] = `
           }
         }
       >
-        <View
+        <Component
           style={
             Object {
               "alignItems": "center",
@@ -145,10 +126,11 @@ exports[`post component should render correctly 1`] = `
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <Icon
+            allowFontScaling={false}
+            color="grey"
+            name="ios-heart-outline"
+            size={32}
           />
           <Text
             accessible={true}
@@ -164,8 +146,8 @@ exports[`post component should render correctly 1`] = `
           >
             0
           </Text>
-        </View>
-        <View
+        </Component>
+        <Component
           style={
             Object {
               "alignItems": "center",
@@ -173,10 +155,11 @@ exports[`post component should render correctly 1`] = `
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <Icon
+            allowFontScaling={false}
+            color="grey"
+            name="ios-chatboxes-outline"
+            size={32}
           />
           <Text
             accessible={true}
@@ -192,8 +175,8 @@ exports[`post component should render correctly 1`] = `
           >
             0
           </Text>
-        </View>
-        <View
+        </Component>
+        <Component
           style={
             Object {
               "alignItems": "center",
@@ -201,10 +184,11 @@ exports[`post component should render correctly 1`] = `
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+          <Icon
+            allowFontScaling={false}
+            color="grey"
+            name="ios-share-alt"
+            size={32}
           />
           <Text
             accessible={true}
@@ -220,9 +204,9 @@ exports[`post component should render correctly 1`] = `
           >
             0
           </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-</View>
+        </Component>
+      </Component>
+    </Component>
+  </Component>
+</Component>
 `;

@@ -1,13 +1,16 @@
 import React from 'react';
 import PostListElement from './postListElement';
 import PostMock from './../../store/post/mock/postMock'
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 describe('post list element', () => {
+
   it('should render correctly', () => {
-    const tree = renderer
-      .create(<PostListElement item={PostMock} onPressItem={() => {}} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const renderer = new ShallowRenderer();
+    renderer.render(
+      <PostListElement item={PostMock} onPressItem={() => {}} />
+    );
+
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 });

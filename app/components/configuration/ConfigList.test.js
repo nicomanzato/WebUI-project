@@ -1,11 +1,11 @@
 import React from 'react';
 import ConfigList from './configList';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 describe('post screen', () => {
   it('should render correctly', () => {
-    const tree = renderer
-      .create(
+    const renderer = new ShallowRenderer();
+    renderer.render(
         <ConfigList
           configVerifiedOnly={false}
           configDoNotFollow={false}
@@ -18,8 +18,8 @@ describe('post screen', () => {
           configToggleHaveDefaultInformation={() => {}}
           configToggleContainsLink={() => {}}
           configToggleTextTruncated={() => {}}
-          />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+          />);
+
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 });

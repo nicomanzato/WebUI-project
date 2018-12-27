@@ -14,3 +14,4 @@ class XMLHttpRequest {
   send = () => {}
 }
 global.XMLHttpRequest = XMLHttpRequest;
+jest.useFakeTimers();

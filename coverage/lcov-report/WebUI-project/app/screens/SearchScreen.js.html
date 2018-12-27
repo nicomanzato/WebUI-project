@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">21.88% </span>
+        <span class="strong">9.38% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/32</span>
+        <span class='fraction'>3/32</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.44% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>8/18</span>
+        <span class='fraction'>0/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15.79% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/19</span>
+        <span class='fraction'>0/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">21.88% </span>
+        <span class="strong">9.38% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/32</span>
+        <span class='fraction'>3/32</span>
       </div>
     </div>
   </div>
@@ -212,8 +212,7 @@
 167
 168
 169
-170
-171</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+170</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -234,11 +233,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -246,7 +243,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -301,7 +299,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -390,7 +388,6 @@ import {StackNavigator} from 'react-navigation';
 import SearchForm from './../components/search/searchForm'
 import Trends from './../components/trends/trends'
 import PostList from './../components/post/postList'
-import ResultList from './../components/search/resultList'
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 &nbsp;
@@ -404,10 +401,10 @@ import {requestTrendsLoad, resetTrends} from '../store/trend/trendActions';
 &nbsp;
 export class SearchScreen extends React.Component {
 &nbsp;
-  constructor(props) {
-    super(props)
+<span class="fstat-no" title="function not covered" >  co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >    super(props)</span>
 &nbsp;
-    this.state = {
+<span class="cstat-no" title="statement not covered" >    this.state = {</span>
       searchKeyword: '',
 &nbsp;
       shouldDisplayTrends: true,
@@ -415,8 +412,8 @@ export class SearchScreen extends React.Component {
     };
   }
 &nbsp;
-  componentDidMount = () =&gt; {
-    this.props.requestTrendsLoad();
+  componentDidMount = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.props.requestTrendsLoad();</span>
   }
 &nbsp;
   setSearchKeyword = <span class="fstat-no" title="function not covered" >(k</span>eyword) =&gt; {
@@ -469,9 +466,9 @@ export class SearchScreen extends React.Component {
     });
   }
 &nbsp;
-  render = () =&gt; {
+  render = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 &nbsp;
-    return (
+<span class="cstat-no" title="statement not covered" >    return (</span>
       &lt;View style={styles.container}&gt;
         &lt;SearchForm
           animated
@@ -481,7 +478,7 @@ export class SearchScreen extends React.Component {
           onReset={this.handleOnSearchFormReset}
           onSubmit={<span class="fstat-no" title="function not covered" >(k</span>eyword) =&gt; { <span class="cstat-no" title="statement not covered" >this.handleOnSubmitSearchForm(keyword) </span>}}/&gt;
         {(this.props.loadingTrends || this.props.loadingSearch) &amp;&amp;
-<span class="branch-2 cbranch-no" title="branch not covered" >          &lt;View style={styles.activityIndicatorContainer}&gt;</span>
+          &lt;View style={styles.activityIndicatorContainer}&gt;
             &lt;ActivityIndicator animating={true}/&gt;
           &lt;/View&gt;
         }
@@ -497,7 +494,7 @@ export class SearchScreen extends React.Component {
           &lt;/Fade&gt;
         }
         {this.state.shouldDisplaySearchResults &amp;&amp;
-<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;Fade</span>
+          &lt;Fade
             visible={this.props.hasSearched &amp;&amp; !this.props.loadingSearch}
             onDoneFadingOut={this.handleOnDoneFadingOutSearchResults}&gt;
             &lt;PostList
@@ -559,7 +556,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 27 2018 11:48:13 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 27 2018 17:02:42 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

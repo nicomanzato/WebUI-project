@@ -5,7 +5,6 @@ import {StackNavigator} from 'react-navigation';
 import SearchForm from './../components/search/searchForm'
 import Trends from './../components/trends/trends'
 import PostList from './../components/post/postList'
-import ResultList from './../components/search/resultList'
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 

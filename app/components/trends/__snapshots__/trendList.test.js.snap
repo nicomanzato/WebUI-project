@@ -1,236 +1,192 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`trend list should render correctly 1`] = `
-<RCTScrollView>
-  <View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
-      testID={undefined}
-      tvParallaxProperties={undefined}
+<ScrollView>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    delayPressOut={100}
+    onPress={[Function]}
+    underlayColor="#dddddd"
+  >
+    <Component
+      style={
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#ccc",
+          "flexDirection": "row",
+          "padding": 10,
+        }
+      }
     >
-      <View
+      <Component
         style={
           Object {
-            "borderBottomWidth": 1,
-            "borderColor": "#ccc",
-            "flexDirection": "row",
-            "padding": 10,
+            "flex": 0.1,
+            "paddingLeft": 7,
           }
         }
       >
-        <View
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
           style={
             Object {
-              "flex": 0.1,
-              "paddingLeft": 7,
+              "color": "grey",
+              "fontSize": 18,
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "grey",
-                "fontSize": 18,
-              }
-            }
-          >
-            1
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "flex": 0.9,
-              "paddingLeft": 10,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontSize": 17,
-                "marginBottom": 5,
-              }
-            }
-          >
-            Sofía Herrera
-          </Text>
-        </View>
-      </View>
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <View
+          1
+        </Text>
+      </Component>
+      <Component
         style={
           Object {
-            "borderBottomWidth": 1,
-            "borderColor": "#ccc",
-            "flexDirection": "row",
-            "padding": 10,
+            "flex": 0.9,
+            "paddingLeft": 10,
           }
         }
       >
-        <View
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
           style={
             Object {
-              "flex": 0.1,
-              "paddingLeft": 7,
+              "fontSize": 17,
+              "marginBottom": 5,
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "grey",
-                "fontSize": 18,
-              }
-            }
-          >
-            2
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "flex": 0.9,
-              "paddingLeft": 10,
-            }
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontSize": 17,
-                "marginBottom": 5,
-              }
-            }
-          >
-            Sofía Herrera
-          </Text>
-        </View>
-      </View>
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={null}
-      testID={undefined}
-      tvParallaxProperties={undefined}
+          Sofía Herrera
+        </Text>
+      </Component>
+    </Component>
+  </TouchableHighlight>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    delayPressOut={100}
+    onPress={[Function]}
+    underlayColor="#dddddd"
+  >
+    <Component
+      style={
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#ccc",
+          "flexDirection": "row",
+          "padding": 10,
+        }
+      }
     >
-      <View
+      <Component
         style={
           Object {
-            "borderBottomWidth": 1,
-            "borderColor": "#ccc",
-            "flexDirection": "row",
-            "padding": 10,
+            "flex": 0.1,
+            "paddingLeft": 7,
           }
         }
       >
-        <View
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
           style={
             Object {
-              "flex": 0.1,
-              "paddingLeft": 7,
+              "color": "grey",
+              "fontSize": 18,
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "grey",
-                "fontSize": 18,
-              }
-            }
-          >
-            3
-          </Text>
-        </View>
-        <View
+          2
+        </Text>
+      </Component>
+      <Component
+        style={
+          Object {
+            "flex": 0.9,
+            "paddingLeft": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
           style={
             Object {
-              "flex": 0.9,
-              "paddingLeft": 10,
+              "fontSize": 17,
+              "marginBottom": 5,
             }
           }
         >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontSize": 17,
-                "marginBottom": 5,
-              }
+          Sofía Herrera
+        </Text>
+      </Component>
+    </Component>
+  </TouchableHighlight>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    delayPressOut={100}
+    onPress={[Function]}
+    underlayColor="#dddddd"
+  >
+    <Component
+      style={
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#ccc",
+          "flexDirection": "row",
+          "padding": 10,
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "flex": 0.1,
+            "paddingLeft": 7,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "grey",
+              "fontSize": 18,
             }
-          >
-            Sofía Herrera
-          </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
+          }
+        >
+          3
+        </Text>
+      </Component>
+      <Component
+        style={
+          Object {
+            "flex": 0.9,
+            "paddingLeft": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 17,
+              "marginBottom": 5,
+            }
+          }
+        >
+          Sofía Herrera
+        </Text>
+      </Component>
+    </Component>
+  </TouchableHighlight>
+</ScrollView>
 `;

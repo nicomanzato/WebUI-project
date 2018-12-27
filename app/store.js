@@ -2,7 +2,7 @@ import { applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import appReducer from './store/appReducer'; //Import the reducer
 import appSagas from './store/appSagas';
-import reactotron from '../reactotronConfig'
+import reactotron from '../ReactotronConfig'
 
 const sagaMonitor = reactotron.createSagaMonitor()
 

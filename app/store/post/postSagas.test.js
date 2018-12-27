@@ -9,9 +9,7 @@ import PostMock3 from './mock/postMock3'
 
 const MockPromise = {
   then: () => {},
-  json: () => {
-    foo: 'bar'
-  }
+  json: () => { return { foo: 'bar' }}
 };
 
 const MockArray = {
@@ -32,9 +30,12 @@ describe('post sagas', () => {
     expect(next.value).toEqual(call(fetch, url));
 
     next = generator.next(MockPromise);
-    expect(next.value).toEqual(call([next.value.CALL.context, 'json']));
+    expect(next.value).toEqual(call([MockPromise, 'json']));
+    next = generator.next([PostMock, PostMock2, PostMock3]);
+    expect(next.value).toEqual(put({type: actions.SUCCESS_POST_LOAD, data: [PostMock, PostMock2, PostMock3]}));
+
     next = generator.next();
-    expect(next.value).toEqual(put(next.value.PUT.action));
+    expect(next.done).toBeTruthy();
   });
 
   it('should handle infiniteScrollTimeline', () => {
@@ -49,10 +50,13 @@ describe('post sagas', () => {
     expect(next.value).toEqual(call(fetch, url));
 
     next = generator.next(MockPromise);
-    expect(next.value).toEqual(call([next.value.CALL.context, 'json']));
+    expect(next.value).toEqual(call([MockPromise, 'json']));
 
-    next = generator.next(MockArray);
-    expect(next.value).toEqual(put(next.value.PUT.action));
+    next = generator.next([PostMock, PostMock2, PostMock3]);
+    expect(next.value).toEqual(put({type: actions.SUCCESS_POST_LOAD_MORE, data: [PostMock, PostMock2, PostMock3].slice(1)}));
+
+    next = generator.next();
+    expect(next.done).toBeTruthy();
   });
 
   it('should handle searchForPost', () => {
@@ -67,10 +71,13 @@ describe('post sagas', () => {
     expect(next.value).toEqual(call(fetch, url));
 
     next = generator.next(MockPromise);
-    expect(next.value).toEqual(call([next.value.CALL.context, 'json']));
+    expect(next.value).toEqual(call([MockPromise, 'json']));
 
     next = generator.next(MockSearchResults);
-    expect(next.value).toEqual(put(next.value.PUT.action));
+    expect(next.value).toEqual(put({type: actions.SUCCESS_POST_SEARCH, data: MockSearchResults.statuses}));
+
+    next = generator.next();
+    expect(next.done).toBeTruthy();
   });
 
   it('should handle searchMorePost', () => {
@@ -89,10 +96,13 @@ describe('post sagas', () => {
     expect(next.value).toEqual(call(fetch,url));
 
     next = generator.next(MockPromise);
-    expect(next.value).toEqual(call([next.value.CALL.context, 'json']));
+    expect(next.value).toEqual(call([MockPromise, 'json']));
 
     next = generator.next(MockSearchResults);
-    expect(next.value).toEqual(put(next.value.PUT.action));
+    expect(next.value).toEqual(put({type: actions.SUCCESS_POST_SEARCH_MORE, data: MockSearchResults.statuses.slice(1)}));
+
+    next = generator.next();
+    expect(next.done).toBeTruthy();
   });
 
   it('should handle showPost', () => {
@@ -107,10 +117,13 @@ describe('post sagas', () => {
     expect(next.value).toEqual(call(fetch, url));
 
     next = generator.next(MockPromise);
-    expect(next.value).toEqual(call([next.value.CALL.context, 'json']));
+    expect(next.value).toEqual(call([MockPromise, 'json']));
 
-    next = generator.next(MockPromise);
-    expect(next.value).toEqual(put(next.value.PUT.action));
+    next = generator.next(PostMock);
+    expect(next.value).toEqual(put({type: actions.SUCCESS_POST_SHOW, data: PostMock}));
+
+    next = generator.next();
+    expect(next.done).toBeTruthy();
   });
 
   it('should handle loadUserProfileTimeline', () => {
@@ -125,10 +138,13 @@ describe('post sagas', () => {
     expect(next.value).toEqual(call(fetch, url));
 
     next = generator.next(MockPromise);
-    expect(next.value).toEqual(call([next.value.CALL.context, 'json']));
+    expect(next.value).toEqual(call([MockPromise, 'json']));
 
-    next = generator.next(MockPromise);
-    expect(next.value).toEqual(put(next.value.PUT.action));
+    next = generator.next([PostMock, PostMock2, PostMock3]);
+    expect(next.value).toEqual(put({type: actions.SUCCESS_USER_PROFILE_LOAD_POST, data: [PostMock, PostMock2, PostMock3]}));
+
+    next = generator.next();
+    expect(next.done).toBeTruthy();
   });
 
 });
