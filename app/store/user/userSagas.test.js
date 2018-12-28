@@ -10,6 +10,7 @@ const MockPromise = {
 
 const NotAMockPromise = {
   then: () => {},
+  json: () => { throw new Error('An error occurred'); }
 }
 
 describe('user sagas', () => {
@@ -34,7 +35,7 @@ describe('user sagas', () => {
     next = generator.next();
     expect(next.done).toBeTruthy();
   });
-/*
+
   it('should fail to handle loadUserProfile', () => {
     const generator = UserSagas.loadUserProfile();
 
@@ -46,8 +47,8 @@ describe('user sagas', () => {
     const url = `http://${UserSagas.serverIP}/user?id=${userProfileId}`;
     expect(next.value).toEqual(call(fetch,url));
 
-    next = generator.next(NotAMockPromise);
-    expect(next.done).toBeTruthy();
-  })
-*/
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_USER_PROFILE, errorDetail: 'something bad happened'}));
+  });
+
 });

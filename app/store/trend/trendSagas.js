@@ -17,7 +17,7 @@ export function* loadTrends(){
     const data = yield call([response, "json"]);
     yield put(successTrendsLoad(data[0].trends));
   } catch(er) {
-    failureTrendsLoad();
+    yield put(failureTrendsLoad(er));
     console.log(er);
   }
 }

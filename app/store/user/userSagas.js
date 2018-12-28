@@ -18,7 +18,7 @@ export function* loadUserProfile(){
     const data = yield call([response, 'json']);
     yield put(successUserProfile(data));
   } catch(er) {
-    failureUserProfile(er);
+    yield put(failureUserProfile(er));
     //console.log(er);
   }
 }

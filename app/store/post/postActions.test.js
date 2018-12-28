@@ -40,7 +40,7 @@ describe('post actions', () => {
 
   it('should generate FAILURE_POST_LOAD', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = {type: FAILURE_POST_LOAD, failureErrorDetail: errorMessage};
+    const expectedResult = {type: FAILURE_POST_LOAD, errorDetail: errorMessage};
 
     expect(actions.failureLoadPost(errorMessage)).toEqual(expectedResult);
   });
@@ -60,7 +60,7 @@ describe('post actions', () => {
 
   it('should generate FAILURE_POST_LOAD_MORE', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = {type: FAILURE_POST_LOAD_MORE, failureErrorDetail: errorMessage}
+    const expectedResult = {type: FAILURE_POST_LOAD_MORE, errorDetail: errorMessage}
 
     expect(actions.failureLoadMorePost(errorMessage)).toEqual(expectedResult);
   });
@@ -81,7 +81,7 @@ describe('post actions', () => {
 
   it('should generate FAILURE_POST_SEARCH', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = {type: FAILURE_POST_SEARCH, failureErrorDetail: errorMessage};
+    const expectedResult = {type: FAILURE_POST_SEARCH, errorDetail: errorMessage};
 
     expect(actions.failureSearchForPost(errorMessage)).toEqual(expectedResult);
   });
@@ -101,7 +101,7 @@ describe('post actions', () => {
 
   it('should generate FAILURE_POST_SEARCH_MORE', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = {type: FAILURE_POST_SEARCH_MORE, failureErrorDetail: errorMessage};
+    const expectedResult = {type: FAILURE_POST_SEARCH_MORE, errorDetail: errorMessage};
 
     expect(actions.failureSearchMorePost(errorMessage)).toEqual(expectedResult);
   });
@@ -128,7 +128,7 @@ describe('post actions', () => {
 
   it('should generate FAILURE_POST_SHOW', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = {type: FAILURE_POST_SHOW, failureErrorDetail: errorMessage};
+    const expectedResult = {type: FAILURE_POST_SHOW, errorDetail: errorMessage};
 
     expect(actions.failurePostShow(errorMessage)).toEqual(expectedResult);
   });
@@ -148,7 +148,7 @@ describe('post actions', () => {
 
   it('should generate FAILURE_USER_PROFILE_LOAD_POST', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = {type: FAILURE_USER_PROFILE_LOAD_POST, failureErrorDetail: errorMessage};
+    const expectedResult = {type: FAILURE_USER_PROFILE_LOAD_POST, errorDetail: errorMessage};
 
     expect(actions.failureUserProfileLoadPost(errorMessage)).toEqual(expectedResult);
   });

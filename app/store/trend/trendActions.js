@@ -12,7 +12,7 @@ export function successTrendsLoad(data) {
 }
 
 export function failureTrendsLoad(er) {
-  return {type: FAILURE_TRENDS_LOAD, failureErrorDetail: er}
+  return {type: FAILURE_TRENDS_LOAD, errorDetail: er}
 }
 
 export function resetTrends() {

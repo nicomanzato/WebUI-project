@@ -22,7 +22,7 @@ const TrendReducer = (state = trendState, action) => {
       state = Object.assign({}, state, { trends: action.data, loadingTrends: false });
       return state;
     case FAILURE_TRENDS_LOAD:
-      state = Object.assign({}, state, {hasFailed: true, failureError: action.failureErrorDetail});
+      state = Object.assign({}, state, {hasFailed: true, failureError: action.errorDetail});
       return state;
     case RESET_TRENDS:
       state = Object.assign({}, state, {trends: [], loadingTrends: false});

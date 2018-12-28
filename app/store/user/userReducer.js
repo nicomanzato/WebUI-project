@@ -22,7 +22,7 @@ const UserReducer =  (state = userState, action) => {
       state = Object.assign({}, state, {isLoadingUserProfile: false, user: action.data});
       return state;
     case FAILURE_USER_PROFILE:
-      state = Object.assign({}, state, {hasFailed: true, failureError: action.failureErrorDetail});
+      state = Object.assign({}, state, {hasFailed: true, failureError: action.errorDetail});
       return state;
     default:
       return state;

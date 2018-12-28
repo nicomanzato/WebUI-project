@@ -29,4 +29,18 @@ describe('trend sagas', () =>{
     next = generator.next();
     expect(next.done).toBeTruthy();
   });
+
+  it('should fail to handle loadTrends', () => {
+    const generator = TrendSagas.loadTrends();
+
+    let next = generator.next();
+    const url = `http://${TrendSagas.serverIP}/trends?id=23424747`;
+    expect(next.value).toEqual(call(fetch, url));
+
+    next = generator.next(MockPromise);
+    expect(next.value).toEqual(call([MockPromise, 'json']));
+
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_TRENDS_LOAD, errorDetail: 'something bad happened'}));
+  });
 });

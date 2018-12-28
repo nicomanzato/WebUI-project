@@ -181,7 +181,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,7 +193,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,7 +205,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -217,23 +217,9 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
@@ -251,7 +237,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const REQUEST_POST_LOAD = 'REQUEST_POST_LOAD'
 export const SUCCESS_POST_LOAD = 'SUCCESS_POST_LOAD'
@@ -286,7 +286,7 @@ export const successLoadPost = (data) =&gt; {
   return {type: SUCCESS_POST_LOAD, data: data}
 }
 export const failureLoadPost = (er) =&gt; {
-  return {type: FAILURE_POST_LOAD, failureErrorDetail: er}
+  return {type: FAILURE_POST_LOAD, errorDetail: er}
 }
 &nbsp;
 // ****************************************************
@@ -298,7 +298,7 @@ export const successLoadMorePost = (data) =&gt; {
   return {type: SUCCESS_POST_LOAD_MORE, data: data}
 }
 export const failureLoadMorePost = (er) =&gt; {
-  return {type: FAILURE_POST_LOAD_MORE, failureErrorDetail: er}
+  return {type: FAILURE_POST_LOAD_MORE, errorDetail: er}
 }
 &nbsp;
 // ****************************************************
@@ -310,7 +310,7 @@ export const successSearchForPost = (data) =&gt; {
   return {type: SUCCESS_POST_SEARCH, data: data}
 }
 export const failureSearchForPost = (er) =&gt; {
-  return {type: FAILURE_POST_SEARCH, failureErrorDetail: er}
+  return {type: FAILURE_POST_SEARCH, errorDetail: er}
 }
 &nbsp;
 // ****************************************************
@@ -322,7 +322,7 @@ export const successSearchMorePost = (data) =&gt; {
   return {type: SUCCESS_POST_SEARCH_MORE, data: data}
 }
 export const failureSearchMorePost = (er) =&gt; {
-  return {type: FAILURE_POST_SEARCH_MORE, failureErrorDetail: er}
+  return {type: FAILURE_POST_SEARCH_MORE, errorDetail: er}
 }
 &nbsp;
 // ****************************************************
@@ -342,7 +342,7 @@ export const successPostShow = (data) =&gt; {
 }
 &nbsp;
 export const failurePostShow = (er) =&gt; {
-  return {type: FAILURE_POST_SHOW, failureErrorDetail: er}
+  return {type: FAILURE_POST_SHOW, errorDetail: er}
 }
 &nbsp;
 // ****************************************************
@@ -356,7 +356,7 @@ export const successUserProfileLoadPost = (data) =&gt; {
 }
 &nbsp;
 export const failureUserProfileLoadPost = (er) =&gt; {
-  return {type: FAILURE_USER_PROFILE_LOAD_POST, failureErrorDetail: er}
+  return {type: FAILURE_USER_PROFILE_LOAD_POST, errorDetail: er}
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -364,7 +364,7 @@ export const failureUserProfileLoadPost = (er) =&gt; {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 27 2018 17:02:42 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 28 2018 10:06:03 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="..\..\..\..\prettify.js"></script>

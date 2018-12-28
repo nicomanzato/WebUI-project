@@ -45,8 +45,8 @@ export function* loadTimeline() {
     const data = yield call([response, 'json']);
     yield put(successLoadPost(data));
   } catch (er) {
-    failureLoadPost(er);
     console.log(er);
+    yield put(failureLoadPost(er));
   }
 }
 
@@ -63,8 +63,8 @@ export function* infiniteScrollTimeline() {
     const data = yield call([response, 'json']);
     yield put(successLoadMorePost(data.slice(1)));
   } catch(er) {
-    failureLoadMorePost(er);
     console.log(er);
+    yield put(failureLoadMorePost(er));
   }
 }
 
@@ -74,15 +74,14 @@ function* watchInfiniteScrollTimeline() {
 
 export function* searchForPost() {
   try {
-
     const searchKeyword = yield select(getSearchKeyword);
     const url = `http://${serverIP}/search?q=${searchKeyword}&count=${searchCount}`;
     const response = yield call(fetch,url);
     const data = yield call([response, 'json']);
     yield put(successSearchForPost(data.statuses, searchKeyword));
   } catch (er) {
-    failureSearchForPost(er);
     console.log(er);
+    yield put(failureSearchForPost(er));
   }
 }
 
@@ -100,8 +99,8 @@ export function* searchMorePost() {
     const data = yield call([response, 'json']);
     yield put(successSearchMorePost(data.statuses.slice(1)));
   } catch (er) {
-    failureSearchMorePost(er);
     console.log(er);
+    yield put(failureSearchMorePost(er));
   }
 }
 
@@ -117,8 +116,8 @@ export function* showPost() {
     const data = yield call([response, 'json']);
     yield put(successPostShow(data));
   } catch (er) {
-    failurePostShow(er);
     console.log(er);
+    yield put(failurePostShow(er));
   }
 }
 
@@ -134,8 +133,8 @@ export function* loadUserProfileTimeline() {
     const data = yield call([response, 'json']);
     yield put(successUserProfileLoadPost(data));
   } catch (er) {
-    failureUserProfileLoadPost(er);
     console.log(er);
+    yield put(failureUserProfileLoadPost(er));
   }
 }
 

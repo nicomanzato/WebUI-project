@@ -38,6 +38,17 @@ describe('post sagas', () => {
     expect(next.done).toBeTruthy();
   });
 
+  it('should fail to handle loadTimeline', () => {
+    const generator = PostSagas.loadTimeline();
+
+    let next = generator.next();
+    const url = PostSagas.generateTimelineUrl(PostSagas.serverIP, PostSagas.timelineCount);
+    expect(next.value).toEqual(call(fetch, url));
+
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_POST_LOAD, errorDetail: 'something bad happened'}));
+  });
+
   it('should handle infiniteScrollTimeline', () => {
     const generator = PostSagas.infiniteScrollTimeline();
 
@@ -59,6 +70,17 @@ describe('post sagas', () => {
     expect(next.done).toBeTruthy();
   });
 
+  it('should fail to handle infiniteScrollTimeline', () => {
+    const generator = PostSagas.infiniteScrollTimeline();
+
+    let next = generator.next();
+    expect(next.value).toEqual(select(selectors.getLastPostId));
+    const maxID = '1122334455';
+
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_POST_LOAD_MORE, errorDetail: 'something bad happened'}));
+  });
+
   it('should handle searchForPost', () => {
     const generator = PostSagas.searchForPost();
 
@@ -78,6 +100,17 @@ describe('post sagas', () => {
 
     next = generator.next();
     expect(next.done).toBeTruthy();
+  });
+
+  it('should fail to handle searchForPost', () => {
+    const generator = PostSagas.searchForPost();
+
+    let next = generator.next();
+    expect(next.value).toEqual(select(selectors.getSearchKeyword));
+    const searchKeyword = 'aSearchKeyword';
+
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_POST_SEARCH, errorDetail: 'something bad happened'}));
   });
 
   it('should handle searchMorePost', () => {
@@ -105,6 +138,16 @@ describe('post sagas', () => {
     expect(next.done).toBeTruthy();
   });
 
+  it('should fail to handle searchMorePost', () => {
+    const generator = PostSagas.searchMorePost();
+
+    let next = generator.next();
+    expect(next.value).toEqual(select(selectors.getSearchKeyword));
+
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_POST_SEARCH_MORE, errorDetail: 'something bad happened'}));
+  });
+
   it('should handle showPost', () => {
     const generator = PostSagas.showPost();
 
@@ -126,12 +169,23 @@ describe('post sagas', () => {
     expect(next.done).toBeTruthy();
   });
 
+  it ('should fail to handle showPost', () => {
+    const generator = PostSagas.showPost();
+
+    let next = generator.next();
+    expect(next.value).toEqual(select(selectors.getShowPostId));
+    const postId = '112233';
+
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_POST_SHOW, errorDetail: 'something bad happened'}));
+  })
+
   it('should handle loadUserProfileTimeline', () => {
     const generator = PostSagas.loadUserProfileTimeline();
 
     let next = generator.next();
     expect(next.value).toEqual(select(userSelectors.getUserProfileId));
-    const userId = '11223344'
+    const userId = '11223344';
 
     next = generator.next(userId);
     const url = `http://${PostSagas.serverIP}/user_timeline?user_id=${userId}`;
@@ -146,5 +200,16 @@ describe('post sagas', () => {
     next = generator.next();
     expect(next.done).toBeTruthy();
   });
+
+  it('should fail to handle loadUserProfileTimeline', () => {
+    const generator = PostSagas.loadUserProfileTimeline();
+
+    let next = generator.next();
+    expect(next.value).toEqual(select(userSelectors.getUserProfileId));
+    const userId = '11223344';
+
+    next = generator.throw('something bad happened');
+    expect(next.value).toEqual(put({type: actions.FAILURE_USER_PROFILE_LOAD_POST, errorDetail: 'something bad happened'}));
+  })
 
 });

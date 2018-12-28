@@ -53,7 +53,7 @@ const PostReducer = (state = postState, action) => {
       state = Object.assign({}, state, { loadedPost: action.data, isLoadingPost: false });
       return state;
     case FAILURE_POST_LOAD:
-      state = Object.assign({}, state, {isLoadingPost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail, loadedPost: []});
+      state = Object.assign({}, state, {isLoadingPost: false, hasFailed: true, errorDetail: action.errorDetail, loadedPost: []});
       return state;
 
     case REQUEST_POST_LOAD_MORE:
@@ -63,7 +63,7 @@ const PostReducer = (state = postState, action) => {
       state = Object.assign({}, state, { loadedPost: state.loadedPost.concat(action.data), isLoadingMorePost: false });
       return state;
     case FAILURE_POST_LOAD_MORE:
-      state = Object.assign({}, state, {isLoadingMorePost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
+      state = Object.assign({}, state, {isLoadingMorePost: false, hasFailed: true, errorDetail: action.errorDetail});
       return state;
 
     case REQUEST_POST_SEARCH:
@@ -73,7 +73,7 @@ const PostReducer = (state = postState, action) => {
       state = Object.assign({}, state, { searchPost: action.data, loadingSearchPost: false });
       return state;
     case FAILURE_POST_SEARCH:
-      state = Object.assign({}, state, {loadingSearchPost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
+      state = Object.assign({}, state, {loadingSearchPost: false, hasFailed: true, errorDetail: action.errorDetail});
       return state;
 
     case REQUEST_POST_SEARCH_MORE:
@@ -83,7 +83,7 @@ const PostReducer = (state = postState, action) => {
       state = Object.assign({}, state, {searchPost: state.searchPost.concat(action.data), loadingMoreSearchPost: false });
       return state;
     case FAILURE_POST_SEARCH_MORE:
-      state = Object.assign({}, state, {loadingMoreSearchPost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
+      state = Object.assign({}, state, {loadingMoreSearchPost: false, hasFailed: true, errorDetail: action.errorDetail});
       return state;
 
     case RESET_POST_SEARCH:
@@ -97,7 +97,7 @@ const PostReducer = (state = postState, action) => {
       state = Object.assign({}, state, {isLoadingShowPost: false, showPost: action.data});
       return state;
     case FAILURE_POST_SHOW:
-      state = Object.assign({}, state, {isLoadingShowPost: false, showPostId: -1, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
+      state = Object.assign({}, state, {isLoadingShowPost: false, showPostId: -1, hasFailed: true, errorDetail: action.errorDetail});
       return state;
 
     case REQUEST_USER_PROFILE_LOAD_POST:
@@ -107,7 +107,7 @@ const PostReducer = (state = postState, action) => {
       state = Object.assign({}, state, {isLoadingUserProfilePost: false, userProfilePost: action.data});
       return state;
     case FAILURE_USER_PROFILE_LOAD_POST:
-      state = Object.assign({}, state, {isLoadingUserProfilePost: false, hasFailed: true, failureErrorDetail: action.failureErrorDetail});
+      state = Object.assign({}, state, {isLoadingUserProfilePost: false, hasFailed: true, errorDetail: action.errorDetail});
       return state;
 
     default:

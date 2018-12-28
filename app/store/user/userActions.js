@@ -11,5 +11,5 @@ export const successUserProfile = (data) => {
 }
 
 export const failureUserProfile = (er) => {
-  return {type: FAILURE_USER_PROFILE, failureErrorDetail: er}
+  return {type: FAILURE_USER_PROFILE, errorDetail: er}
 }

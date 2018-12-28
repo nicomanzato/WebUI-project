@@ -26,7 +26,7 @@ describe('trend actions', () => {
 
   it('should generate FAILURE_TRENDS_LOAD', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = {type: FAILURE_TRENDS_LOAD, failureErrorDetail: errorMessage};
+    const expectedResult = {type: FAILURE_TRENDS_LOAD, errorDetail: errorMessage};
 
     expect(actions.failureTrendsLoad(errorMessage)).toEqual(expectedResult);
   });

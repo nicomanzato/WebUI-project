@@ -43,9 +43,9 @@ describe('post reducer', () => {
 
   it ('should handle FAILURE_POST_LOAD', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = Object.assign({}, postState, {isLoadingPost: false, loadedPost: [], failureErrorDetail: errorMessage, hasFailed: true});
+    const expectedResult = Object.assign({}, postState, {isLoadingPost: false, loadedPost: [], errorDetail: errorMessage, hasFailed: true});
 
-    expect(PostReducer(postState, {type: FAILURE_POST_LOAD_MORE, failureErrorDetail: errorMessage})).toEqual(expectedResult);
+    expect(PostReducer(postState, {type: FAILURE_POST_LOAD_MORE, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 
   it('should handle REQUEST_POST_LOAD_MORE', () => {
@@ -63,9 +63,9 @@ describe('post reducer', () => {
 
   it('should handle FAILURE_POST_LOAD_MORE', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = Object.assign({}, postState, {isLoadingMorePost: false, hasFailed: true, failureErrorDetail: errorMessage});
+    const expectedResult = Object.assign({}, postState, {isLoadingMorePost: false, hasFailed: true, errorDetail: errorMessage});
 
-    expect(PostReducer(postState, {type: FAILURE_POST_LOAD_MORE, failureErrorDetail: errorMessage})).toEqual(expectedResult);
+    expect(PostReducer(postState, {type: FAILURE_POST_LOAD_MORE, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 
   it('should handle REQUEST_POST_SEARCH', () => {
@@ -84,9 +84,9 @@ describe('post reducer', () => {
 
   it('should handle FAILURE_POST_SEARCH', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = Object.assign({}, postState, {loadingSearchPost: false, hasFailed: true, failureErrorDetail: errorMessage});
+    const expectedResult = Object.assign({}, postState, {loadingSearchPost: false, hasFailed: true, errorDetail: errorMessage});
 
-    expect(PostReducer(postState, {type: FAILURE_POST_SEARCH, failureErrorDetail: errorMessage})).toEqual(expectedResult);
+    expect(PostReducer(postState, {type: FAILURE_POST_SEARCH, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 
   it('should handle REQUEST_POST_SEARCH_MORE', () => {
@@ -104,9 +104,9 @@ describe('post reducer', () => {
 
   it('should handle FAILURE_POST_SEARCH_MORE', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = Object.assign({}, postState, {loadingMoreSearchPost: false, hasFailed: true, failureErrorDetail: errorMessage});
+    const expectedResult = Object.assign({}, postState, {loadingMoreSearchPost: false, hasFailed: true, errorDetail: errorMessage});
 
-    expect(PostReducer(postState, {type: FAILURE_POST_SEARCH_MORE, failureErrorDetail: errorMessage})).toEqual(expectedResult);
+    expect(PostReducer(postState, {type: FAILURE_POST_SEARCH_MORE, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 
   it('should handle RESET_POST_SEARCH', () => {
@@ -131,9 +131,9 @@ describe('post reducer', () => {
 
   it('should handle FAILURE_POST_SHOW', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = Object.assign({}, postState, {isLoadingShowPost: false, showPostId: -1, hasFailed: true, failureErrorDetail: errorMessage});
+    const expectedResult = Object.assign({}, postState, {isLoadingShowPost: false, showPostId: -1, hasFailed: true, errorDetail: errorMessage});
 
-    expect(PostReducer(postState, {type: FAILURE_POST_SHOW, failureErrorDetail: errorMessage})).toEqual(expectedResult);
+    expect(PostReducer(postState, {type: FAILURE_POST_SHOW, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 
   it('should handle REQUEST_USER_PROFILE_LOAD_POST', () => {
@@ -151,9 +151,9 @@ describe('post reducer', () => {
 
   it('should handle FAILURE_USER_PROFILE_LOAD_POST', () => {
     const errorMessage = 'something bad happened';
-    const expectedResult = Object.assign({}, postState, {isLoadingUserProfilePost: false, hasFailed: true, failureErrorDetail: errorMessage});
+    const expectedResult = Object.assign({}, postState, {isLoadingUserProfilePost: false, hasFailed: true, errorDetail: errorMessage});
 
-    expect(PostReducer(postState, {type: FAILURE_USER_PROFILE_LOAD_POST, failureErrorDetail: errorMessage})).toEqual(expectedResult);
+    expect(PostReducer(postState, {type: FAILURE_USER_PROFILE_LOAD_POST, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 
 });
