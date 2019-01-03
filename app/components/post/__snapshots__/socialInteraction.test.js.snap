@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`social interaction should render correctly 1`] = `
+<Component
+  style={
+    Object {
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingLeft": 35,
+      "paddingRight": 35,
+      "paddingTop": 15,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Icon
+      allowFontScaling={false}
+      color="grey"
+      name="ios-heart-outline"
+      size={32}
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "grey",
+          "fontSize": 15,
+          "margin": 5,
+        }
+      }
+    >
+      10
+    </Text>
+  </Component>
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Icon
+      allowFontScaling={false}
+      color="grey"
+      name="ios-chatboxes-outline"
+      size={32}
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "grey",
+          "fontSize": 15,
+          "margin": 5,
+        }
+      }
+    >
+      0
+    </Text>
+  </Component>
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Icon
+      allowFontScaling={false}
+      color="grey"
+      name="ios-share-alt"
+      size={32}
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "grey",
+          "fontSize": 15,
+          "margin": 5,
+        }
+      }
+    >
+      15
+    </Text>
+  </Component>
+</Component>
+`;

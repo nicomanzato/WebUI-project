@@ -15,7 +15,7 @@ class PostListElement extends React.PureComponent {
   constructor(props) {
     super(props);
     this.onPress = this.onPress.bind(this);
-  }
+  };
 
   onPress() {
     this.props.onPressItem(this.props.item);
@@ -25,12 +25,12 @@ class PostListElement extends React.PureComponent {
     const item = this.props.item;
     return (
      <TouchableHighlight
-      onPress={(this.onPress)}
+      onPress={this.onPress}
       underlayColor='#dddddd'>
-      <Post item={item} navigation={this.props.navigation}/>
+      <Post item={item} onProfilePicPress={this.props.onProfilePicPress} navigation={this.props.navigation}/>
      </TouchableHighlight>
     );
-  }
+  };
 }
 
 export default PostListElement

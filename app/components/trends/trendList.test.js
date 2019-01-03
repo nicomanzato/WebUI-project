@@ -1,20 +1,25 @@
 import React from 'react';
-import TrendList from './trendList';
+import {TouchableHighlight} from 'react-native'
+import TrendList from './trendList'
 import TrendMock from './../../store/trend/mock/trendMock'
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow, mount, ReactWrapper } from 'enzyme'
 
 describe('trend list', () => {
 
   it('should render correctly', () => {
-    const renderer = new ShallowRenderer();
-    renderer.render(
+    const wrapper = mount(
       <TrendList
         trends={[TrendMock, TrendMock, TrendMock]}
         onItemPress={() => {}}
       />
     );
 
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    const trend = wrapper.find('TouchableHighlight').first();
+    trend.props().onPress();
+
+    wrapper.update();
+
+    expect(wrapper.find('TrendList')).toMatchSnapshot();
   });
 
 });

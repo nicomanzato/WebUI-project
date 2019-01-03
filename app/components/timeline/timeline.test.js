@@ -3,20 +3,31 @@ import Timeline from './timeline';
 import PostMock from './../../store/post/mock/postMock'
 import PostMock2 from './../../store/post/mock/postMock2'
 import PostMock3 from './../../store/post/mock/postMock3'
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow, mount, ReactWrapper } from 'enzyme';
 
 describe('post screen', () => {
 
   it('should render correctly', () => {
-    const renderer = new ShallowRenderer();
-    renderer.render(
+    const wrapper = shallow(
       <Timeline
         data={[PostMock, PostMock2, PostMock3]}
         onComponentMount={() => {}}
       />
     );
 
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly', () => {
+    const wrapper = shallow(
+      <Timeline
+        data={[]}
+        loading={true}
+        onComponentMount={() => {}}
+      />
+    );
+
+    expect(wrapper).toMatchSnapshot();
   });
 
 });

@@ -1,18 +1,18 @@
 import React from 'react';
 import UserProfile from './userProfile';
 import UserProfileMock from './../../store/user/mock/userProfileMock'
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow, mount, ReactWrapper } from 'enzyme';
 
 describe('user profile', () => {
 
   it('should render correctly', () => {
-    const renderer = new ShallowRenderer();
-    renderer.render(
+    const wrapper = shallow(
       <UserProfile
         user={UserProfileMock}
       />
     );
 
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
+
 });

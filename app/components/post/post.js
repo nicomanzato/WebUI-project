@@ -9,6 +9,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import SocialInteraction from './socialInteraction'
 
 class Post extends React.PureComponent{
 
@@ -29,20 +30,18 @@ class Post extends React.PureComponent{
         );
       });
     }
-  }
 
-  handleOnProfilePicPress = () => {
-    this.props.navigation.navigate('UserProfile', {userId: this.props.item.user.id_str});
+    return media;
   }
 
   render = () => {
     return (
-      <View style={[styles.post, this.props.singlePost ? {height: 300} : null]}>
+      <View style={styles.post}>
         <View style={styles.row}>
           <View style={styles.profileView}>
             <TouchableHighlight
               underlayColor='#dddddd'
-              onPress={this.handleOnProfilePicPress}
+              onPress={() => this.props.onProfilePicPress(this.props.item.user)}
             >
               <Image
                 fadeDuration={0}
@@ -64,20 +63,10 @@ class Post extends React.PureComponent{
             <View>
               { this.renderMedia() }
             </View>
-            <View style={styles.socialInteractionContainer}>
-              <View style={styles.socialInteractionElement}>
-                <Ionicons name="ios-heart-outline" size={32} color="grey" />
-                <Text style={styles.socialInteractionText}>{this.props.item.favorite_count}</Text>
-              </View>
-              <View style={styles.socialInteractionElement}>
-                <Ionicons name="ios-chatboxes-outline" size={32} color="grey" />
-                <Text style={styles.socialInteractionText}>0</Text>
-              </View>
-              <View style={styles.socialInteractionElement}>
-                <Ionicons name="ios-share-alt" size={32} color="grey" />
-                <Text style={styles.socialInteractionText}>{this.props.item.retweet_count}</Text>
-              </View>
-            </View>
+            <SocialInteraction
+              favoriteCount={this.props.item.favorite_count}
+              retweetCount={this.props.item.retweet_count}
+            />
           </View>
         </View>
       </View>
@@ -91,25 +80,6 @@ const styles = StyleSheet.create({
   row:{
     flexDirection: 'row',
     flex: 1,
-  },
-
-  socialInteractionContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingTop: 15,
-    paddingLeft: 5,
-    paddingRight: 35,
-  },
-
-  socialInteractionElement: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-
-  socialInteractionText: {
-    color: 'grey',
-    margin: 5,
-    fontSize: 15,
   },
 
   profileView: {

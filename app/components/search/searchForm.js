@@ -25,7 +25,7 @@ class SearchForm extends React.Component {
       if (this.props.animated) {
         this.animatedValue = new Animated.Value(0);
         Animated.timing(this.animatedValue, {
-        useNativeDriver: true,
+        useNativeDriver: false,
         toValue:  1,
         duration: 300,
         }).start()
@@ -60,7 +60,7 @@ class SearchForm extends React.Component {
          <TextInput
           underlineColorAndroid="transparent"
           style={styles.searchTextInput}
-          onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onTrendInputTextChange(searchKeyword);}}
+          onChangeText={(searchKeyword) => {this.setState({searchKeyword}); this.props.onSearchInputTextChange(searchKeyword);}}
           value={this.props.searchValue}
          />
          { this.props.hasSearched &&

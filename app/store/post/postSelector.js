@@ -3,7 +3,8 @@ import {getUserProfileId} from './../user/userSelector'
 
 export const getLastPostId = state => {
   const loadedPost = state.PostReducer.loadedPost;
-  return loadedPost[loadedPost.length - 1].id;
+  if (loadedPost[loadedPost.length - 1]) return loadedPost[loadedPost.length - 1].id;
+  return -1;
 }
 
 export const getLoadedPost = state => {

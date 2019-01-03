@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`post detail should render correctly 1`] = `
+exports[`post detail should render post with image correctly 1`] = `
 <ScrollView>
   <Component
     style={
@@ -104,6 +104,7 @@ exports[`post detail should render correctly 1`] = `
         </Text>
       </Component>
       <Component
+        key="0"
         style={
           Object {
             "marginBottom": 10,
@@ -111,6 +112,7 @@ exports[`post detail should render correctly 1`] = `
         }
       >
         <Image
+          key="1076097964253298700"
           source={
             Object {
               "uri": "https://pbs.twimg.com/media/Du8RZabWwAA5fiX.jpg",
@@ -150,43 +152,175 @@ exports[`post detail should render correctly 1`] = `
           }
         }
       />
+      <SocialInteraction
+        favoriteCount={0}
+        retweetCount={0}
+      />
       <Component
         style={
           Object {
-            "flexDirection": "row",
+            "backgroundColor": "#dddddd",
+            "height": 1,
+          }
+        }
+      />
+    </Component>
+    <Component
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+          "margin": 5,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <Component
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "steelblue",
+              "borderRadius": 35,
+              "flexDirection": "row",
+              "height": 65,
+              "justifyContent": "center",
+              "width": 65,
+            },
+            Object {
+              "backgroundColor": "#F20E49",
+            },
+          ]
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="white"
+          name="ios-heart-outline"
+          size={32}
+        />
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "steelblue",
+              "borderRadius": 35,
+              "flexDirection": "row",
+              "height": 65,
+              "justifyContent": "center",
+              "width": 65,
+            },
+            Object {
+              "backgroundColor": "#26B943",
+            },
+          ]
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="white"
+          name="ios-chatboxes-outline"
+          size={32}
+        />
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "steelblue",
+              "borderRadius": 35,
+              "flexDirection": "row",
+              "height": 65,
+              "justifyContent": "center",
+              "width": 65,
+            },
+            Object {
+              "backgroundColor": "#06B3E7",
+            },
+          ]
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="white"
+          name="ios-share-alt"
+          size={32}
+        />
+      </Component>
+    </Component>
+  </Component>
+</ScrollView>
+`;
+
+exports[`post detail should render post with no image correctly 1`] = `
+<ScrollView>
+  <Component
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#ccc",
+        "flex": 1,
+        "padding": 10,
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "flexDirection": "row",
+          "height": 80,
+        }
+      }
+    >
+      <Component>
+        <Image
+          source={
+            Object {
+              "uri": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
+            }
+          }
+          style={
+            Object {
+              "borderRadius": 25,
+              "height": 75,
+              "resizeMode": "contain",
+              "width": 75,
+            }
+          }
+        />
+      </Component>
+      <Component
+        style={
+          Object {
+            "paddingLeft": 10,
           }
         }
       >
-        <Component
-          style={
-            Object {
-              "padding": 10,
-            }
-          }
-        >
+        <Component>
           <Text
             accessible={true}
             allowFontScaling={true}
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "grey",
-                "fontSize": 15,
+                "fontSize": 17,
+                "fontWeight": "600",
               }
             }
           >
-            0
-             Retweets
+            TN - Todo Noticias
           </Text>
+          <Icon
+            allowFontScaling={false}
+            color="#1FBFFF"
+            name="ios-checkmark-circle"
+            size={16}
+          />
         </Component>
-        <Component
-          style={
-            Object {
-              "padding": 10,
-              "paddingLeft": 20,
-            }
-          }
-        >
+        <Component>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -194,15 +328,71 @@ exports[`post detail should render correctly 1`] = `
             style={
               Object {
                 "color": "grey",
-                "fontSize": 15,
+                "fontSize": 17,
               }
             }
           >
-            0
-             Favorites
+            @
+            todonoticias
           </Text>
         </Component>
       </Component>
+    </Component>
+    <Component
+      style={Object {}}
+    >
+      <Component
+        style={
+          Object {
+            "paddingLeft": 1,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 19,
+              "fontWeight": "400",
+              "lineHeight": 30,
+              "paddingLeft": 5,
+            }
+          }
+        >
+          Por una medida de Trump, Rusia advirtió que "hay peligro" de una guerra nuclear: "Puede morir toda la civilización"… https://t.co/WG9oBkfoFF
+        </Text>
+      </Component>
+      <Component
+        style={
+          Object {
+            "marginBottom": 10,
+            "paddingTop": 10,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+           
+          14:06 - 20 Dec. 18
+        </Text>
+      </Component>
+      <Component
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "height": 1,
+          }
+        }
+      />
+      <SocialInteraction
+        favoriteCount={0}
+        retweetCount={0}
+      />
       <Component
         style={
           Object {

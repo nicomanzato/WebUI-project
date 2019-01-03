@@ -112,7 +112,6 @@ exports[`post list element should render correctly 1`] = `
         },
       }
     }
-    navigation={undefined}
   />
 </TouchableHighlight>
 `;

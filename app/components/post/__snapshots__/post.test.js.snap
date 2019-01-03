@@ -3,14 +3,11 @@
 exports[`post component should render correctly 1`] = `
 <Component
   style={
-    Array [
-      Object {
-        "borderBottomWidth": 1,
-        "borderColor": "#ccc",
-        "padding": 10,
-      },
-      null,
-    ]
+    Object {
+      "borderBottomWidth": 1,
+      "borderColor": "#ccc",
+      "padding": 10,
+    }
   }
 >
   <Component
@@ -106,106 +103,28 @@ exports[`post component should render correctly 1`] = `
       >
         Microteatro de verano, una agenda cargada para pasar los meses de más calor https://t.co/3V4dX1OSiJ https://t.co/GuK1rpkdeJ
       </Text>
-      <Component />
-      <Component
-        style={
-          Object {
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "paddingLeft": 5,
-            "paddingRight": 35,
-            "paddingTop": 15,
+      <Component>
+        <Image
+          fadeDuration={0}
+          key="1076097964253298700"
+          source={
+            Object {
+              "uri": "https://pbs.twimg.com/media/Du8RZabWwAA5fiX.jpg",
+            }
           }
-        }
-      >
-        <Component
           style={
             Object {
-              "alignItems": "center",
-              "flexDirection": "row",
+              "borderRadius": 10,
+              "height": 250,
+              "resizeMode": "contain",
             }
           }
-        >
-          <Icon
-            allowFontScaling={false}
-            color="grey"
-            name="ios-heart-outline"
-            size={32}
-          />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "grey",
-                "fontSize": 15,
-                "margin": 5,
-              }
-            }
-          >
-            0
-          </Text>
-        </Component>
-        <Component
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <Icon
-            allowFontScaling={false}
-            color="grey"
-            name="ios-chatboxes-outline"
-            size={32}
-          />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "grey",
-                "fontSize": 15,
-                "margin": 5,
-              }
-            }
-          >
-            0
-          </Text>
-        </Component>
-        <Component
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <Icon
-            allowFontScaling={false}
-            color="grey"
-            name="ios-share-alt"
-            size={32}
-          />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "grey",
-                "fontSize": 15,
-                "margin": 5,
-              }
-            }
-          >
-            0
-          </Text>
-        </Component>
+        />
       </Component>
+      <SocialInteraction
+        favoriteCount={0}
+        retweetCount={0}
+      />
     </Component>
   </Component>
 </Component>

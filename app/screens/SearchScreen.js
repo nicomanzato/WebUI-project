@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, Animated, Easing, ActivityIndicator } f
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 import SearchForm from './../components/search/searchForm'
-import Trends from './../components/trends/trends'
+import TrendList from './../components/trends/trendList';
 import PostList from './../components/post/postList'
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
@@ -90,10 +90,10 @@ export class SearchScreen extends React.Component {
         <SearchForm
           animated
           hasSearched={this.props.hasSearched}
-          onTrendInputTextChange={this.setSearchKeyword}
+          onSearchInputTextChange={this.setSearchKeyword}
           searchValue={this.state.searchKeyword}
           onReset={this.handleOnSearchFormReset}
-          onSubmit={(keyword) => { this.handleOnSubmitSearchForm(keyword) }}/>
+          onSubmit={(keyword) => { this.handleOnSubmitSearchForm(keyword) }} />
         {(this.props.loadingTrends || this.props.loadingSearch) &&
           <View style={styles.activityIndicatorContainer}>
             <ActivityIndicator animating={true}/>
@@ -103,10 +103,15 @@ export class SearchScreen extends React.Component {
           <Fade
             visible={!this.props.hasSearched && !this.props.loadingTrends}
             onDoneFadingOut={this.handleOnDoneFadingOutTrends}>
-            <Trends
-              onTrendPress={(trend) => { this.handleOnTrendPress(trend) }}
-              trends={this.props.trends}
-            />
+
+            <View>
+              <Text style={styles.trendTitle}>Trends for you</Text>
+              <View style={styles.separator}/>
+              <TrendList
+                trends={this.props.trends}
+                onItemPress={(trend) => { this.handleOnTrendPress(trend) }}
+              />
+            </View>
 
           </Fade>
         }
@@ -119,7 +124,6 @@ export class SearchScreen extends React.Component {
               data={this.props.searchResult}
               onEndReached={this.props.requestSearchMorePost}
             />
-
           </Fade>
         }
       </View>
@@ -142,6 +146,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+  },
+  trendTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginLeft: 10,
+    marginBottom: 15
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#dddddd'
   },
 });
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`post screen should render correctly 1`] = `
+exports[`config list should render correctly 1`] = `
 <Component>
   <Component
     style={

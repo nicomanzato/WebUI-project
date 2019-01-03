@@ -12,14 +12,18 @@ import PostListElement from './postListElement'
 
 const PostList = (props) => {
 
-  const onPressItem = (item) => {
+  const handleOnProfilePicPress = (user) => {
+    props.navigation.navigate('UserProfile', {userId: user.id_str});
+  }
+
+  const handleOnPressItem = (item) => {
     props.navigation.dispatch({ type: 'Post', data: item.id_str});
   };
 
   const renderItem = ({item, index}) => {
     return (
-     <PostListElement item={item} navigation={props.navigation} onPressItem={onPressItem} />
-    )
+     <PostListElement item={item} navigation={props.navigation} onProfilePicPress={handleOnProfilePicPress} onPressItem={handleOnPressItem} />
+    );
   }
 
   return (

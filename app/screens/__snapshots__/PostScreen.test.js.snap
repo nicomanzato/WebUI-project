@@ -1,126 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`post screen should render correctly when wrapped with redux 1`] = `
-<Connect(PostScreen)
-  isLoadingShowPost={false}
-  navigation={
-    Object {
-      "state": Object {
-        "params": Object {
-          "data": "1",
-        },
-      },
-    }
-  }
-  requestPostShow={[Function]}
-  showPost={
-    Object {
-      "contributors": null,
-      "coordinates": null,
-      "created_at": "Thu Dec 20 14:06:56 +0000 2018",
-      "entities": Object {
-        "hashtags": Array [],
-        "symbols": Array [],
-        "urls": Array [
-          Object {
-            "display_url": "twitter.com/i/web/status/1…",
-            "expanded_url": "https://twitter.com/i/web/status/1075754427368333313",
-            "indices": Array [
-              117,
-              140,
-            ],
-            "url": "https://t.co/WG9oBkfoFF",
-          },
-        ],
-        "user_mentions": Array [],
-      },
-      "favorite_count": 0,
-      "favorited": false,
-      "geo": null,
-      "id": 1075754427368333300,
-      "id_str": "1075754427368333313",
-      "in_reply_to_screen_name": null,
-      "in_reply_to_status_id": null,
-      "in_reply_to_status_id_str": null,
-      "in_reply_to_user_id": null,
-      "in_reply_to_user_id_str": null,
-      "is_quote_status": false,
-      "lang": "es",
-      "place": null,
-      "possibly_sensitive": false,
-      "possibly_sensitive_appealable": false,
-      "retweet_count": 0,
-      "retweeted": false,
-      "source": "<a href=\\"http://twitter.com\\" rel=\\"nofollow\\">Twitter Web Client</a>",
-      "text": "Por una medida de Trump, Rusia advirtió que \\"hay peligro\\" de una guerra nuclear: \\"Puede morir toda la civilización\\"… https://t.co/WG9oBkfoFF",
-      "truncated": true,
-      "user": Object {
-        "contributors_enabled": false,
-        "created_at": "Mon Mar 23 12:35:07 +0000 2009",
-        "default_profile": true,
-        "default_profile_image": false,
-        "description": "Noticias las 24 horas, por el canal líder en audiencia y credibilidad de Argentina",
-        "entities": Object {
-          "description": Object {
-            "urls": Array [],
-          },
-          "url": Object {
-            "urls": Array [
-              Object {
-                "display_url": "tn.com.ar",
-                "expanded_url": "http://www.tn.com.ar",
-                "indices": Array [
-                  0,
-                  22,
-                ],
-                "url": "http://t.co/TX6TF1nOUs",
-              },
-            ],
-          },
-        },
-        "favourites_count": 1,
-        "follow_request_sent": false,
-        "followers_count": 4677787,
-        "following": false,
-        "friends_count": 124,
-        "geo_enabled": false,
-        "has_extended_profile": false,
-        "id": 25992212,
-        "id_str": "25992212",
-        "is_translation_enabled": true,
-        "is_translator": false,
-        "lang": "es",
-        "listed_count": 9085,
-        "location": "Argentina",
-        "name": "TN - Todo Noticias",
-        "notifications": false,
-        "profile_background_color": "666666",
-        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-        "profile_background_tile": true,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/25992212/1533675118",
-        "profile_image_url": "http://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
-        "profile_image_url_https": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
-        "profile_link_color": "D51D2E",
-        "profile_sidebar_border_color": "FFFFFF",
-        "profile_sidebar_fill_color": "314BB9",
-        "profile_text_color": "000000",
-        "profile_use_background_image": true,
-        "protected": false,
-        "screen_name": "todonoticias",
-        "statuses_count": 84280,
-        "time_zone": null,
-        "translator_type": "none",
-        "url": "http://t.co/TX6TF1nOUs",
-        "utc_offset": null,
-        "verified": true,
-      },
-    }
-  }
-/>
-`;
-
-exports[`post screen should render correctly while loading post 1`] = `
 <PostScreen
   isLoadingShowPost={true}
   navigation={
@@ -134,5 +14,64 @@ exports[`post screen should render correctly while loading post 1`] = `
   }
   requestPostShow={[Function]}
   showPost={Object {}}
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
 />
+`;
+
+exports[`post screen should render correctly while loading post 1`] = `
+<Component
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+      "paddingTop": 10,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#999999"
+      hidesWhenStopped={true}
+      size="small"
+    />
+  </Component>
+</Component>
 `;

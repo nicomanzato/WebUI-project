@@ -25,9 +25,9 @@
         <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -251,13 +251,8 @@
 206
 207
 208
-209
-210
-211
-212
-213
-214
-215</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+209</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,24 +266,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -297,6 +279,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -353,7 +341,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -482,13 +470,14 @@ import {
   ScrollView
 } from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
+import SocialInteraction from './socialInteraction'
 &nbsp;
 const postDetails = (props) =&gt; {
 &nbsp;
   const {item} = props;
   let media;
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (item.entities.media) {
+  if (item.entities.media) {
     media = item.entities.media.map((image, i) =&gt; {
       return (
        &lt;View style={styles.mediaView} key={i}&gt;
@@ -517,7 +506,7 @@ const postDetails = (props) =&gt; {
            &lt;View&gt;
              &lt;Text style={styles.profileUsername}&gt;{props.item.user.name}&lt;/Text&gt;
              {props.item.user.verified === true &amp;&amp;
-<span class="branch-1 cbranch-no" title="branch not covered" >             &lt;Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF"/&gt;</span>
+             &lt;Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF"/&gt;
              }
            &lt;/View&gt;
            &lt;View&gt;
@@ -538,14 +527,7 @@ const postDetails = (props) =&gt; {
            &lt;Text&gt; {date}&lt;/Text&gt;
          &lt;/View&gt;
          &lt;View style={styles.separator}/&gt;
-         &lt;View style={styles.interactionsCount}&gt;
-           &lt;View style={styles.retweetCountView}&gt;
-             &lt;Text style={styles.interactionText}&gt;{item.retweet_count} Retweets&lt;/Text&gt;
-           &lt;/View&gt;
-           &lt;View style={styles.favoriteCountView}&gt;
-             &lt;Text style={styles.interactionText}&gt;{item.favorite_count} Favorites&lt;/Text&gt;
-           &lt;/View&gt;
-         &lt;/View&gt;
+         &lt;SocialInteraction retweetCount={item.retweet_count} favoriteCount={item.favorite_count} /&gt;
          &lt;View style={styles.separator}/&gt;
        &lt;/View&gt;
 &nbsp;
@@ -691,7 +673,7 @@ const styles = StyleSheet.create({
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 28 2018 10:06:03 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jan 03 2019 10:34:22 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="..\..\..\..\prettify.js"></script>

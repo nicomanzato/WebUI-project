@@ -1,17 +1,33 @@
-import React from 'react';
-import Post from './post';
+import React from 'react'
+import Post from './post'
 import PostMock2 from './../../store/post/mock/postMock2'
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow, mount, ReactWrapper } from 'enzyme'
 
 describe('post component', () => {
 
   it('should render correctly', () => {
-    const renderer = new ShallowRenderer();
-    renderer.render(
+    const wrapper = shallow(
       <Post item={PostMock2} />
     );
 
-    expect(renderer.getRenderOutput()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call onProfilePicPress when pressed', () => {
+
+    const mockFn = jest.fn().mockName('mockedFunction');
+
+    const wrapper = mount(
+      <Post
+        item={PostMock2}
+        onProfilePicPress={() => mockFn()}
+      />
+    );
+
+    const post = wrapper.find('TouchableHighlight').first();
+    post.props().onPress();
+
+    expect(mockFn).toHaveBeenCalled();
   });
 
 });

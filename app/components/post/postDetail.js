@@ -9,6 +9,7 @@ import {
   ScrollView
 } from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
+import SocialInteraction from './socialInteraction'
 
 const postDetails = (props) => {
 
@@ -65,14 +66,7 @@ const postDetails = (props) => {
            <Text> {date}</Text>
          </View>
          <View style={styles.separator}/>
-         <View style={styles.interactionsCount}>
-           <View style={styles.retweetCountView}>
-             <Text style={styles.interactionText}>{item.retweet_count} Retweets</Text>
-           </View>
-           <View style={styles.favoriteCountView}>
-             <Text style={styles.interactionText}>{item.favorite_count} Favorites</Text>
-           </View>
-         </View>
+         <SocialInteraction retweetCount={item.retweet_count} favoriteCount={item.favorite_count} />
          <View style={styles.separator}/>
        </View>
 

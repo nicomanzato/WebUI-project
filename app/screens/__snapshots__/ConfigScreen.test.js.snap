@@ -1,7 +1,753 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`config screen should call redux wrapped dispatch actions 1`] = `
+<Connect(ConfigList)
+  navigation={
+    Object {
+      "state": Object {
+        "params": Object {
+          "data": "1",
+        },
+      },
+    }
+  }
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ConfigList
+    configContainsLink={true}
+    configDoNotFollow={true}
+    configHaveDefaultInformation={true}
+    configTextTruncated={true}
+    configToggleContainsLink={[Function]}
+    configToggleDoNotFollow={[Function]}
+    configToggleHaveDefaultInformation={[Function]}
+    configToggleTextTruncated={[Function]}
+    configToggleVerifiedOnly={[Function]}
+    configVerifiedOnly={true}
+    navigation={
+      Object {
+        "state": Object {
+          "params": Object {
+            "data": "1",
+          },
+        },
+      }
+    }
+    store={
+      Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "@@observable": [Function],
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <Component>
+      <View>
+        <Component
+          style={
+            Object {
+              "backgroundColor": "#627B97",
+              "height": 50,
+              "justifyContent": "center",
+              "marginBottom": 3,
+              "marginTop": 1,
+              "paddingLeft": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#627B97",
+                "height": 50,
+                "justifyContent": "center",
+                "marginBottom": 3,
+                "marginTop": 1,
+                "paddingLeft": 10,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Silence notifications from ... 
+              </Text>
+            </Text>
+          </View>
+        </Component>
+        <ConfigItem
+          onChange={[Function]}
+          title="People who have not verified the account"
+          value={true}
+        >
+          <Component
+            style={
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "flexDirection": "row",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderBottomWidth": 1,
+                  "borderColor": "#ccc",
+                  "flexDirection": "row",
+                  "padding": 10,
+                }
+              }
+            >
+              <Component
+                style={
+                  Object {
+                    "flex": 0.9,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.9,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 17,
+                      }
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 17,
+                        }
+                      }
+                    >
+                      People who have not verified the account
+                    </Text>
+                  </Text>
+                </View>
+              </Component>
+              <Component
+                style={
+                  Object {
+                    "flex": 0.1,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.1,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <UnimplementedView
+                    onValueChange={[Function]}
+                    style={Object {}}
+                    value={false}
+                  >
+                    <Component
+                      style={
+                        Array [
+                          Object {
+                            "alignSelf": "flex-start",
+                            "borderColor": "red",
+                            "borderWidth": 1,
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "alignSelf": "flex-start",
+                              "borderColor": "red",
+                              "borderWidth": 1,
+                            },
+                            Object {},
+                          ]
+                        }
+                      />
+                    </Component>
+                  </UnimplementedView>
+                </View>
+              </Component>
+            </View>
+          </Component>
+        </ConfigItem>
+        <ConfigItem
+          onChange={[Function]}
+          title="People who do not follow"
+          value={true}
+        >
+          <Component
+            style={
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "flexDirection": "row",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderBottomWidth": 1,
+                  "borderColor": "#ccc",
+                  "flexDirection": "row",
+                  "padding": 10,
+                }
+              }
+            >
+              <Component
+                style={
+                  Object {
+                    "flex": 0.9,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.9,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 17,
+                      }
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 17,
+                        }
+                      }
+                    >
+                      People who do not follow
+                    </Text>
+                  </Text>
+                </View>
+              </Component>
+              <Component
+                style={
+                  Object {
+                    "flex": 0.1,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.1,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <UnimplementedView
+                    onValueChange={[Function]}
+                    style={Object {}}
+                    value={false}
+                  >
+                    <Component
+                      style={
+                        Array [
+                          Object {
+                            "alignSelf": "flex-start",
+                            "borderColor": "red",
+                            "borderWidth": 1,
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "alignSelf": "flex-start",
+                              "borderColor": "red",
+                              "borderWidth": 1,
+                            },
+                            Object {},
+                          ]
+                        }
+                      />
+                    </Component>
+                  </UnimplementedView>
+                </View>
+              </Component>
+            </View>
+          </Component>
+        </ConfigItem>
+        <ConfigItem
+          onChange={[Function]}
+          title="People who have default profile information"
+          value={true}
+        >
+          <Component
+            style={
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "flexDirection": "row",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderBottomWidth": 1,
+                  "borderColor": "#ccc",
+                  "flexDirection": "row",
+                  "padding": 10,
+                }
+              }
+            >
+              <Component
+                style={
+                  Object {
+                    "flex": 0.9,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.9,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 17,
+                      }
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 17,
+                        }
+                      }
+                    >
+                      People who have default profile information
+                    </Text>
+                  </Text>
+                </View>
+              </Component>
+              <Component
+                style={
+                  Object {
+                    "flex": 0.1,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.1,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <UnimplementedView
+                    onValueChange={[Function]}
+                    style={Object {}}
+                    value={false}
+                  >
+                    <Component
+                      style={
+                        Array [
+                          Object {
+                            "alignSelf": "flex-start",
+                            "borderColor": "red",
+                            "borderWidth": 1,
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "alignSelf": "flex-start",
+                              "borderColor": "red",
+                              "borderWidth": 1,
+                            },
+                            Object {},
+                          ]
+                        }
+                      />
+                    </Component>
+                  </UnimplementedView>
+                </View>
+              </Component>
+            </View>
+          </Component>
+        </ConfigItem>
+        <ConfigItem
+          onChange={[Function]}
+          title="Tweets that contain a link"
+          value={true}
+        >
+          <Component
+            style={
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "flexDirection": "row",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderBottomWidth": 1,
+                  "borderColor": "#ccc",
+                  "flexDirection": "row",
+                  "padding": 10,
+                }
+              }
+            >
+              <Component
+                style={
+                  Object {
+                    "flex": 0.9,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.9,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 17,
+                      }
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 17,
+                        }
+                      }
+                    >
+                      Tweets that contain a link
+                    </Text>
+                  </Text>
+                </View>
+              </Component>
+              <Component
+                style={
+                  Object {
+                    "flex": 0.1,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.1,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <UnimplementedView
+                    onValueChange={[Function]}
+                    style={Object {}}
+                    value={false}
+                  >
+                    <Component
+                      style={
+                        Array [
+                          Object {
+                            "alignSelf": "flex-start",
+                            "borderColor": "red",
+                            "borderWidth": 1,
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "alignSelf": "flex-start",
+                              "borderColor": "red",
+                              "borderWidth": 1,
+                            },
+                            Object {},
+                          ]
+                        }
+                      />
+                    </Component>
+                  </UnimplementedView>
+                </View>
+              </Component>
+            </View>
+          </Component>
+        </ConfigItem>
+        <ConfigItem
+          onChange={[Function]}
+          title="Tweets that have text truncated"
+          value={true}
+        >
+          <Component
+            style={
+              Object {
+                "borderBottomWidth": 1,
+                "borderColor": "#ccc",
+                "flexDirection": "row",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderBottomWidth": 1,
+                  "borderColor": "#ccc",
+                  "flexDirection": "row",
+                  "padding": 10,
+                }
+              }
+            >
+              <Component
+                style={
+                  Object {
+                    "flex": 0.9,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.9,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontSize": 17,
+                      }
+                    }
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 17,
+                        }
+                      }
+                    >
+                      Tweets that have text truncated
+                    </Text>
+                  </Text>
+                </View>
+              </Component>
+              <Component
+                style={
+                  Object {
+                    "flex": 0.1,
+                    "height": 50,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 0.1,
+                      "height": 50,
+                    }
+                  }
+                >
+                  <UnimplementedView
+                    onValueChange={[Function]}
+                    style={Object {}}
+                    value={false}
+                  >
+                    <Component
+                      style={
+                        Array [
+                          Object {
+                            "alignSelf": "flex-start",
+                            "borderColor": "red",
+                            "borderWidth": 1,
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {
+                              "alignSelf": "flex-start",
+                              "borderColor": "red",
+                              "borderWidth": 1,
+                            },
+                            Object {},
+                          ]
+                        }
+                      />
+                    </Component>
+                  </UnimplementedView>
+                </View>
+              </Component>
+            </View>
+          </Component>
+        </ConfigItem>
+      </View>
+    </Component>
+  </ConfigList>
+</Connect(ConfigList)>
+`;
+
 exports[`config screen should render correctly 1`] = `
-<ConfigScreen
+<Component
+  style={
+    Object {
+      "backgroundColor": "#FFFF",
+      "flex": 1,
+    }
+  }
+>
+  <ConfigList
+    configContainsLink={false}
+    configDoNotFollow={false}
+    configHaveDefaultInformation={false}
+    configTextTruncated={false}
+    configToggleContainsLink={[Function]}
+    configToggleDoNotFollow={[Function]}
+    configToggleHaveDefaultInformation={[Function]}
+    configToggleTextTruncated={[Function]}
+    configToggleVerifiedOnly={[Function]}
+    configVerifiedOnly={false}
+  />
+</Component>
+`;
+
+exports[`config screen should render correctly 2`] = `
+<ConfigList
   configContainsLink={false}
   configDoNotFollow={false}
   configHaveDefaultInformation={false}
@@ -21,18 +767,33 @@ exports[`config screen should render correctly 1`] = `
       },
     }
   }
-/>
-`;
-
-exports[`config screen should render correctly when wrapped with redux 1`] = `
-<Connect(ConfigList)
-  navigation={
+  store={
     Object {
-      "state": Object {
-        "params": Object {
-          "data": "1",
-        },
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
       },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
     }
   }
 />

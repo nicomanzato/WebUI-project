@@ -1,108 +1,295 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`search form should render correctly 1`] = `
-<Component
-  style={
-    Object {
-      "backgroundColor": "#FFFF",
-      "flexDirection": "row",
-      "height": 80,
-      "justifyContent": "space-evenly",
-      "paddingLeft": 5,
-      "paddingRight": 5,
-      "paddingTop": 17,
-    }
-  }
+<SearchForm
+  animated={true}
+  hasSearched={true}
+  onReset={[Function]}
+  onSearchInputTextChange={[Function]}
+  onSubmit={[Function]}
+  onTrendInputTextChange={[Function]}
+  searchValue="This is a Test value"
 >
   <Component
     style={
       Object {
-        "alignItems": "center",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "flex": 0.65,
+        "backgroundColor": "#FFFF",
         "flexDirection": "row",
-        "height": 40,
-        "justifyContent": "center",
-        "padding": 1,
+        "height": 80,
+        "justifyContent": "space-evenly",
         "paddingLeft": 5,
+        "paddingRight": 5,
+        "paddingTop": 17,
       }
     }
   >
-    <Icon
-      allowFontScaling={false}
-      color="#1183ff"
-      name="ios-search"
-      size={32}
-    />
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
+    <View
       style={
         Object {
-          "flex": 1,
-          "fontSize": 17,
-          "marginLeft": 3,
-          "padding": 5,
+          "backgroundColor": "#FFFF",
+          "flexDirection": "row",
+          "height": 80,
+          "justifyContent": "space-evenly",
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 17,
         }
-      }
-      underlineColorAndroid="transparent"
-      value="This is a Test value"
-    />
-    <Icon
-      allowFontScaling={false}
-      color="#1183ff"
-      name="ios-close"
-      onPress={[Function]}
-      size={32}
-      style={
-        Object {
-          "padding": 5,
-        }
-      }
-    />
-  </Component>
-  <AnimatedComponent
-    onPress={[Function]}
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#1FBFFF",
-          "borderRadius": 5,
-          "flex": 0.25,
-          "height": 40,
-          "justifyContent": "center",
-        },
-        Object {
-          "transform": Array [
-            Object {
-              "scale": 1,
-            },
-          ],
-        },
-      ]
-    }
-  >
-    <AnimatedComponent
-      style={
-        Array [
-          Object {
-            "color": "white",
-            "fontSize": 16,
-          },
-          Object {
-            "transform": Array [
-              Object {
-                "scale": 1,
-              },
-            ],
-          },
-        ]
       }
     >
-       Search 
-    </AnimatedComponent>
-  </AnimatedComponent>
-</Component>
+      <Component
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "flex": 0.65,
+            "flexDirection": "row",
+            "height": 40,
+            "justifyContent": "center",
+            "padding": 1,
+            "paddingLeft": 5,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderWidth": 1,
+              "flex": 0.65,
+              "flexDirection": "row",
+              "height": 40,
+              "justifyContent": "center",
+              "padding": 1,
+              "paddingLeft": 5,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            color="#1183ff"
+            name="ios-search"
+            size={32}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+            </Text>
+          </Icon>
+          <TextInput
+            allowFontScaling={true}
+            onChangeText={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "fontSize": 17,
+                "marginLeft": 3,
+                "padding": 5,
+              }
+            }
+            underlineColorAndroid="transparent"
+            value="This is a Test value"
+          >
+            <TextInput
+              allowFontScaling={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "fontSize": 17,
+                  "marginLeft": 3,
+                  "padding": 5,
+                }
+              }
+              underlineColorAndroid="transparent"
+              value="This is a Test value"
+            />
+          </TextInput>
+          <Icon
+            allowFontScaling={false}
+            color="#1183ff"
+            name="ios-close"
+            onPress={[Function]}
+            size={32}
+            style={
+              Object {
+                "padding": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+            </Text>
+          </Icon>
+        </View>
+      </Component>
+      <AnimatedComponent
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#1FBFFF",
+              "borderRadius": 5,
+              "flex": 0.25,
+              "height": 40,
+              "justifyContent": "center",
+            },
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          onPress={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#1FBFFF",
+              "borderRadius": 5,
+              "flex": 0.25,
+              "height": 40,
+              "justifyContent": "center",
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+              ],
+            }
+          }
+          underlayColor="black"
+        >
+          <Component
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#1FBFFF",
+                "borderRadius": 5,
+                "flex": 0.25,
+                "height": 40,
+                "justifyContent": "center",
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#1FBFFF",
+                  "borderRadius": 5,
+                  "flex": 0.25,
+                  "height": 40,
+                  "justifyContent": "center",
+                  "transform": Array [
+                    Object {
+                      "scale": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <AnimatedComponent
+                style={
+                  Array [
+                    Object {
+                      "color": "white",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "transform": Array [
+                        Object {
+                          "scale": 1,
+                        },
+                      ],
+                    },
+                  ]
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": 16,
+                      "transform": Array [
+                        Object {
+                          "scale": 1,
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 16,
+                        "transform": Array [
+                          Object {
+                            "scale": 1,
+                          },
+                        ],
+                      }
+                    }
+                  >
+                     Search 
+                  </Text>
+                </Text>
+              </AnimatedComponent>
+            </View>
+          </Component>
+        </TouchableHighlight>
+      </AnimatedComponent>
+    </View>
+  </Component>
+</SearchForm>
 `;
