@@ -11,7 +11,7 @@ describe('home screen', () => {
 
   it('should render correctly', () => {
     const mockNavigationProp = {state: {params: {data: '1'}}}
-    const wrapper = mount(
+    const wrapper = shallow(
       <HomeScreen
         navigation={mockNavigationProp}
         loading={false}
@@ -26,7 +26,7 @@ describe('home screen', () => {
 
   it('should render correctly when wrapped with redux', () => {
     const mockNavigationProp = {state: {params: {data: '1'}}}
-    const wrapper = mount(
+    const wrapper = shallow(
     <ReduxWrappedHomeScreen
       store={store}
       navigation={mockNavigationProp}

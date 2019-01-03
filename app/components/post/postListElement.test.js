@@ -14,16 +14,16 @@ describe('post list element', () => {
   });
 
   it('should call onPressItem when pressed', () => {
-    const mockFn = jest.fn().mockName('mockedFunction');
+    const onPressItem = jest.fn().mockName('mockedFunction');
 
     const wrapper = mount(
-      <PostListElement item={PostMock} onPressItem={mockFn} />
+      <PostListElement item={PostMock} onPressItem={onPressItem} />
     );
 
     const element = wrapper.find('TouchableHighlight').first();
     element.props().onPress();
 
-    expect(mockFn).toHaveBeenCalled();
+    expect(onPressItem).toHaveBeenCalled();
   });
 
 });

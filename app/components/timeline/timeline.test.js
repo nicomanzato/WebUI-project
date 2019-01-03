@@ -7,10 +7,11 @@ import { shallow, mount, ReactWrapper } from 'enzyme';
 
 describe('post screen', () => {
 
-  it('should render correctly', () => {
+  it('should render correctly when done loading', () => {
     const wrapper = shallow(
       <Timeline
         data={[PostMock, PostMock2, PostMock3]}
+        loading={false}
         onComponentMount={() => {}}
       />
     );
@@ -18,7 +19,7 @@ describe('post screen', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render correctly', () => {
+  it('should render correctly when loading', () => {
     const wrapper = shallow(
       <Timeline
         data={[]}

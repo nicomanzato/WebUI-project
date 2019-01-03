@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`post screen should render correctly 1`] = `
+exports[`post screen should render correctly when done loading 1`] = `
 <Component
   style={
     Object {
@@ -471,7 +471,7 @@ exports[`post screen should render correctly 1`] = `
 </Component>
 `;
 
-exports[`post screen should render correctly 2`] = `
+exports[`post screen should render correctly when loading 1`] = `
 <Component
   style={
     Object {

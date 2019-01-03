@@ -15,28 +15,26 @@ describe('config item', () => {
       />
     );
 
-    expect(wrapper.find(ConfigItem)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should call onChange when pressed', () => {
 
-    const mockFn = jest.fn().mockName('mockedFunction');
+    const onChange = jest.fn().mockName('mockedFunction');
 
     const wrapper = mount(
       <ConfigItem
         title='Test title'
-        onChange={mockFn}
+        onChange={onChange}
         value={false}
       />
     );
 
-    const configItem = wrapper
-      .find(CheckBox)
-      .first();
+    const configItem = wrapper.find(CheckBox).first();
 
     configItem.props().onValueChange();
 
-    expect(mockFn).toHaveBeenCalled();
+    expect(onChange).toHaveBeenCalled();
   });
 
 });

@@ -49,8 +49,7 @@ describe('config list', () => {
         />
     );
 
-    const configItems = wrapper
-      .find('ConfigItem');
+    const configItems = wrapper.find('ConfigItem');
 
     configItems.forEach((configItem) => {
       configItem.props().onChange();

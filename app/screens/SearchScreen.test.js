@@ -13,7 +13,7 @@ describe('search screen', () => {
 
   it('should render trends correctly', () => {
     const mockNavigationProp = {state: {params: {data: '1'}}}
-    const wrapper = mount(
+    const wrapper = shallow(
       <SearchScreen
         navigation={mockNavigationProp}
         loadingTrends={false}
@@ -31,9 +31,29 @@ describe('search screen', () => {
      expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render activity indicator correctly', () => {
+    const mockNavigationProp = {state: {params: {data: '1'}}}
+    const wrapper = shallow(
+      <SearchScreen
+        navigation={mockNavigationProp}
+        loadingTrends={true}
+        trends={{}}
+        requestTrendsLoad={() => {}}
+
+        searchKeyword={''}
+        hasSearched={false}
+        loadingSearch={false}
+        searchResult={{}}
+        loadingMoreSearchResults={false}
+      />
+     );
+
+     expect(wrapper).toMatchSnapshot();
+  });
+
   it('should render trends correctly when wrapped with redux', () => {
     const mockNavigationProp = {state: {params: {data: '1'}}}
-    const wrapper = mount(
+    const wrapper = shallow(
       <ReduxWrappedSearchScreen
         store={store}
         navigation={mockNavigationProp}

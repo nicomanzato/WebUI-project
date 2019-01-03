@@ -34,6 +34,10 @@ class Post extends React.PureComponent{
     return media;
   }
 
+  handleOnProfilePicPress = () => {
+    this.props.onProfilePicPress(this.props.item.user);
+  }
+
   render = () => {
     return (
       <View style={styles.post}>
@@ -41,7 +45,7 @@ class Post extends React.PureComponent{
           <View style={styles.profileView}>
             <TouchableHighlight
               underlayColor='#dddddd'
-              onPress={() => this.props.onProfilePicPress(this.props.item.user)}
+              onPress={this.handleOnProfilePicPress}
             >
               <Image
                 fadeDuration={0}

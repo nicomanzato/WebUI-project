@@ -15,4 +15,25 @@ describe('post list', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should call onProfilePicPress when pressed', () => {
+
+    const navigate = jest.fn().mockName('mockedFunction');
+    const dispatch = jest.fn().mockName('mockedFunction');
+    const navigationMock = {navigate: navigate, dispatch: dispatch}
+
+    const wrapper = mount(
+      <PostList
+        navigation={navigationMock}
+        data={[PostMock, PostMock2, PostMock3]}
+      />
+    );
+
+    const postListElement = wrapper.find('PostListElement').first();
+    postListElement.props().onProfilePicPress('112233');
+    postListElement.props().onPressItem('112233');
+
+    expect(dispatch).toHaveBeenCalled();
+    expect(navigate).toHaveBeenCalled();
+  });
+
 });
