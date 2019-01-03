@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`post component should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontSize": 15,
+      "fontWeight": "400",
+    }
+  }
+>
+  Por una medida de Trump, Rusia advirtió que "hay peligro" de una guerra nuclear: "Puede morir toda la civilización"… https://t.co/WG9oBkfoFF
+</Text>
+`;

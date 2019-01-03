@@ -9,7 +9,7 @@ import {
   ScrollView
 } from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
-import SocialInteraction from './socialInteraction'
+import Post from './post';
 
 const postDetails = (props) => {
 
@@ -33,53 +33,18 @@ const postDetails = (props) => {
 
   return (
    <ScrollView>
-     <View style={styles.post}>
 
-       <View style={styles.profileView}>
-         <View>
-           <Image
-            source={{uri: item.user.profile_image_url_https}}
-            style={styles.profilePic}/>
-         </View>
-         <View style={styles.usernameTitle}>
-           <View>
-             <Text style={styles.profileUsername}>{props.item.user.name}</Text>
-             {props.item.user.verified === true &&
-             <Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF"/>
-             }
-           </View>
-           <View>
-             <Text style={styles.profileScreenName}>@{item.user.screen_name}</Text>
-           </View>
-         </View>
+     <Post item={props.item}/>
+
+     <View style={styles.socialInteractionContainer}>
+       <View style={[styles.socialInteractionElement, {backgroundColor: '#F20E49'}]}>
+         <Ionicons name="ios-heart-outline" size={32} color="white"/>
        </View>
-       <View style={styles.contentView}>
-         <View style={styles.textView}>
-           <Text style={styles.postContent}>
-             {item.text}
-           </Text>
-         </View>
-
-         { media }
-
-         <View style={styles.dateView}>
-           <Text> {date}</Text>
-         </View>
-         <View style={styles.separator}/>
-         <SocialInteraction retweetCount={item.retweet_count} favoriteCount={item.favorite_count} />
-         <View style={styles.separator}/>
+       <View style={[styles.socialInteractionElement, {backgroundColor: '#26B943'}]}>
+         <Ionicons name="ios-chatboxes-outline" size={32} color="white"/>
        </View>
-
-       <View style={styles.socialInteractionContainer}>
-         <View style={[styles.socialInteractionElement, {backgroundColor: '#F20E49'}]}>
-           <Ionicons name="ios-heart-outline" size={32} color="white"/>
-         </View>
-         <View style={[styles.socialInteractionElement, {backgroundColor: '#26B943'}]}>
-           <Ionicons name="ios-chatboxes-outline" size={32} color="white"/>
-         </View>
-         <View style={[styles.socialInteractionElement, {backgroundColor: '#06B3E7'}]}>
-           <Ionicons name="ios-share-alt" size={32} color="white"/>
-         </View>
+       <View style={[styles.socialInteractionElement, {backgroundColor: '#06B3E7'}]}>
+         <Ionicons name="ios-share-alt" size={32} color="white"/>
        </View>
      </View>
    </ScrollView>

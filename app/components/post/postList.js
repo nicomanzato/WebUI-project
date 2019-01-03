@@ -10,32 +10,34 @@ import {
 
 import PostListElement from './postListElement'
 
-const PostList = (props) => {
+class PostList extends React.PureComponent{
 
-  const handleOnProfilePicPress = (user) => {
-    props.navigation.navigate('UserProfile', {userId: user.id_str});
+  handleOnProfilePicPress = (user) => {
+    this.props.navigation.navigate('UserProfile', {userId: user.id_str});
   }
 
-  const handleOnPressItem = (item) => {
-    props.navigation.dispatch({ type: 'Post', data: item.id_str});
+  handleOnPressItem = (item) => {
+    this.props.navigation.dispatch({ type: 'Post', data: item.id_str});
   };
 
-  const renderItem = ({item, index}) => {
+  renderItem = ({item, index}) => {
     return (
-     <PostListElement item={item} navigation={props.navigation} onProfilePicPress={handleOnProfilePicPress} onPressItem={handleOnPressItem} />
+     <PostListElement item={item} navigation={this.props.navigation} onProfilePicPress={this.handleOnProfilePicPress} onPressItem={this.handleOnPressItem} />
     );
   }
 
-  return (
-    <FlatList
-      data={props.data}
-      renderItem={renderItem}
-      refreshing={props.refreshing}
-      onRefresh={props.onRefresh}
-      onEndReachedThreshold={5}
-      onEndReached={props.onEndReached}
-      keyExtractor={(item, index) => index.toString()}/>
-  );
+  render = () => {
+    return (
+      <FlatList
+        data={this.props.data}
+        renderItem={this.renderItem}
+        refreshing={this.props.refreshing}
+        onRefresh={this.props.onRefresh}
+        onEndReachedThreshold={5}
+        onEndReached={this.props.onEndReached}
+        keyExtractor={(item, index) => index.toString()}/>
+    );
+  }
 }
 
 export default PostList

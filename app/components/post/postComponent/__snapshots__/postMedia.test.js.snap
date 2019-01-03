@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`post component should render correctly 1`] = `
+<Component>
+  <Image
+    fadeDuration={0}
+    key="1076097964253298700"
+    source={
+      Object {
+        "uri": "https://pbs.twimg.com/media/Du8RZabWwAA5fiX.jpg",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 10,
+        "height": 250,
+        "resizeMode": "contain",
+      }
+    }
+  />
+</Component>
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`post component should render correctly 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 0.2,
+    }
+  }
+>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    delayPressOut={100}
+    underlayColor="#dddddd"
+  >
+    <Image
+      fadeDuration={0}
+      source={
+        Object {
+          "uri": "https://pbs.twimg.com/profile_images/1053387941752369152/r4pGBF3K_normal.jpg",
+        }
+      }
+      style={
+        Object {
+          "alignSelf": "center",
+          "borderRadius": 25,
+          "height": 50,
+          "resizeMode": "contain",
+          "width": 50,
+        }
+      }
+    />
+  </TouchableHighlight>
+</Component>
+`;

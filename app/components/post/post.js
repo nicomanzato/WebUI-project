@@ -10,28 +10,15 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import SocialInteraction from './socialInteraction'
+import {PostContent} from './postComponent/postContent'
+import {PostMedia} from './postComponent/postMedia'
+import {PostProfilePicture} from './postComponent/postProfilePicture'
+import {PostUserInformation} from './postComponent/postUserInformation'
 
 class Post extends React.PureComponent{
 
   constructor(props){
     super(props);
-  }
-
-  renderMedia = () => {
-    let media;
-    if (this.props.item.entities.media) {
-      media = this.props.item.entities.media.map((image) => {
-        return(
-          <Image
-            source={{uri: image.media_url_https}}
-            style={styles.postImage}
-            fadeDuration={0}
-            key={image.id}/>
-        );
-      });
-    }
-
-    return media;
   }
 
   handleOnProfilePicPress = () => {
@@ -42,31 +29,11 @@ class Post extends React.PureComponent{
     return (
       <View style={styles.post}>
         <View style={styles.row}>
-          <View style={styles.profileView}>
-            <TouchableHighlight
-              underlayColor='#dddddd'
-              onPress={this.handleOnProfilePicPress}
-            >
-              <Image
-                fadeDuration={0}
-                source={{uri: this.props.item.user.profile_image_url_https}}
-                style={styles.profilePic}/>
-            </TouchableHighlight>
-          </View>
+          <PostProfilePicture user={this.props.item.user} onProfilePicPress={this.handleOnProfilePicPress}/>
           <View style={styles.contentView}>
-            <View style={styles.usernameTitle}>
-              <Text style={styles.profileUsername}>{this.props.item.user.name}</Text>
-              {this.props.item.user.verified === true &&
-                <Ionicons name="ios-checkmark-circle" size={16} color="#1FBFFF" />
-              }
-              <Text style={styles.profileScreenName}> @{this.props.item.user.screen_name}</Text>
-            </View>
-            <Text style={styles.postContent}>
-              {this.props.item.text}
-            </Text>
-            <View>
-              { this.renderMedia() }
-            </View>
+            <PostUserInformation user={this.props.item.user}/>
+            <PostContent post={this.props.item} />
+            <PostMedia post={this.props.item} />
             <SocialInteraction
               favoriteCount={this.props.item.favorite_count}
               retweetCount={this.props.item.retweet_count}
@@ -86,32 +53,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  profileView: {
-    flex: 0.2,
-  },
-
   contentView: {
     flex: 0.8,
-  },
-
-  usernameTitle: {
-    flexDirection: 'row',
-  },
-
-  profileUsername: {
-    fontWeight: "600",
-  },
-
-  profileScreenName: {
-    color: 'grey'
-  },
-
-  profilePic: {
-    resizeMode: 'contain',
-    alignSelf: 'center',
-    height: 50,
-    width: 50,
-    borderRadius: 25,
   },
 
   post: {
@@ -120,14 +63,4 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 
-  postContent:{
-    fontSize: 15,
-    fontWeight: "400"
-  },
-
-  postImage: {
-    borderRadius: 10,
-    resizeMode: 'contain',
-    height: 250
-  },
 });

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>3/5</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -84,7 +84,9 @@
 39
 40
 41
-42</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+42
+43
+44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -96,31 +98,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,32 +141,34 @@ import {
 &nbsp;
 import PostListElement from './postListElement'
 &nbsp;
-const PostList = (props) =&gt; {
+class PostList extends React.PureComponent{
 &nbsp;
-  const handleOnProfilePicPress = (user) =&gt; {
-    props.navigation.navigate('UserProfile', {userId: user.id_str});
+  handleOnProfilePicPress = <span class="fstat-no" title="function not covered" >(u</span>ser) =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.props.navigation.navigate('UserProfile', {userId: user.id_str});</span>
   }
 &nbsp;
-  const handleOnPressItem = (item) =&gt; {
-    props.navigation.dispatch({ type: 'Post', data: item.id_str});
+  handleOnPressItem = <span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.props.navigation.dispatch({ type: 'Post', data: item.id_str});</span>
   };
 &nbsp;
-  const renderItem = ({item, index}) =&gt; {
+  renderItem = ({item, index}) =&gt; {
     return (
-     &lt;PostListElement item={item} navigation={props.navigation} onProfilePicPress={handleOnProfilePicPress} onPressItem={handleOnPressItem} /&gt;
+     &lt;PostListElement item={item} navigation={this.props.navigation} onProfilePicPress={this.handleOnProfilePicPress} onPressItem={this.handleOnPressItem} /&gt;
     );
   }
 &nbsp;
-  return (
-    &lt;FlatList
-      data={props.data}
-      renderItem={renderItem}
-      refreshing={props.refreshing}
-      onRefresh={props.onRefresh}
-      onEndReachedThreshold={5}
-      onEndReached={props.onEndReached}
-      keyExtractor={(item, index) =&gt; index.toString()}/&gt;
-  );
+  render = () =&gt; {
+    return (
+      &lt;FlatList
+        data={this.props.data}
+        renderItem={this.renderItem}
+        refreshing={this.props.refreshing}
+        onRefresh={this.props.onRefresh}
+        onEndReachedThreshold={5}
+        onEndReached={this.props.onEndReached}
+        keyExtractor={(item, index) =&gt; index.toString()}/&gt;
+    );
+  }
 }
 &nbsp;
 export default PostList
@@ -172,7 +178,7 @@ export default PostList
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jan 03 2019 14:58:55 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jan 03 2019 16:43:49 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="..\..\..\..\prettify.js"></script>
