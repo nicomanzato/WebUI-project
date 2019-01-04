@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fade animation should render correctly 1`] = `
+<AnimatedComponent
+  style={
+    Array [
+      Object {
+        "opacity": 0,
+        "transform": Array [
+          Object {
+            "scale": 1.1,
+          },
+        ],
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+     This is a test 
+  </Text>
+</AnimatedComponent>
+`;
+
+exports[`fade animation should render correctly 2`] = `
+<AnimatedComponent
+  style={
+    Array [
+      Object {
+        "opacity": 0,
+        "transform": Array [
+          Object {
+            "scale": 1.1,
+          },
+        ],
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+     This is a test 
+  </Text>
+</AnimatedComponent>
+`;

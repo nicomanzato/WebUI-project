@@ -31,7 +31,7 @@ class Post extends React.PureComponent{
         <View style={styles.row}>
           <PostProfilePicture user={this.props.item.user} onProfilePicPress={this.handleOnProfilePicPress}/>
           <View style={styles.contentView}>
-            <PostUserInformation user={this.props.item.user}/>
+            <PostUserInformation user={this.props.item.user} />
             <PostContent post={this.props.item} />
             <PostMedia post={this.props.item} />
             <SocialInteraction

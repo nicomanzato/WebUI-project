@@ -32,31 +32,30 @@ const postDetails = (props) => {
   const date = formatDate(item.created_at);
 
   return (
-   <ScrollView>
-
-     <Post item={props.item}/>
-
-     <View style={styles.socialInteractionContainer}>
-       <View style={[styles.socialInteractionElement, {backgroundColor: '#F20E49'}]}>
-         <Ionicons name="ios-heart-outline" size={32} color="white"/>
-       </View>
-       <View style={[styles.socialInteractionElement, {backgroundColor: '#26B943'}]}>
-         <Ionicons name="ios-chatboxes-outline" size={32} color="white"/>
-       </View>
-       <View style={[styles.socialInteractionElement, {backgroundColor: '#06B3E7'}]}>
-         <Ionicons name="ios-share-alt" size={32} color="white"/>
-       </View>
-     </View>
-   </ScrollView>
+    <ScrollView>
+      <Post item={props.item}/>
+      <View style={styles.dateView}>
+        <Text> {date} </Text>
+      </View>
+      <View style={styles.separator} />
+      <View style={styles.socialInteractionContainer}>
+        <View style={[styles.socialInteractionElement, {backgroundColor: '#F20E49'}]}>
+          <Ionicons name="ios-heart-outline" size={32} color="white"/>
+        </View>
+        <View style={[styles.socialInteractionElement, {backgroundColor: '#26B943'}]}>
+          <Ionicons name="ios-chatboxes-outline" size={32} color="white"/>
+        </View>
+        <View style={[styles.socialInteractionElement, {backgroundColor: '#06B3E7'}]}>
+          <Ionicons name="ios-share-alt" size={32} color="white"/>
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
 const formatDate = (date) => {
-
   return date.slice(11, 16).concat(' - ' + date.slice(8, 10))
    .concat(' ' + date.slice(4, 7) + '.').concat(' ' + date.slice(28, 30));
-
-
 };
 
 export default postDetails;
@@ -157,7 +156,7 @@ const styles = StyleSheet.create({
   dateView: {
     paddingTop: 10,
     marginBottom: 10,
-
+    justifyContent: 'center',
   },
   interactionText: {
     fontSize: 15,

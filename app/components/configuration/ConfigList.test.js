@@ -19,7 +19,7 @@ describe('config list', () => {
         configToggleHaveDefaultInformation={() => {}}
         configToggleContainsLink={() => {}}
         configToggleTextTruncated={() => {}}
-        />
+      />
     );
 
     expect(wrapper).toMatchSnapshot();
@@ -46,7 +46,7 @@ describe('config list', () => {
         configToggleHaveDefaultInformation={mockConfigToggleHaveDefaultInformation}
         configToggleContainsLink={mockConfigToggleContainsLink}
         configToggleTextTruncated={mockConfigToggleTextTruncated}
-        />
+      />
     );
 
     const configItems = wrapper.find('ConfigItem');

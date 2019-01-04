@@ -32,7 +32,7 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(react-native|react-navigation-redux-helpers|react-navigation|react-native-safe-area-view|react-navigation-tabs|react-native-tab-view|@expo|expo|sinon)/)"
     ],
-    "collectCoverage": false,
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
