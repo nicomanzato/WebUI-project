@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1546618246920" clover="3.2.0">
-  <project timestamp="1546618246921" name="All files">
+<coverage generated="1546619032362" clover="3.2.0">
+  <project timestamp="1546619032363" name="All files">
     <metrics statements="517" coveredstatements="468" conditionals="139" coveredconditionals="104" methods="165" coveredmethods="140" elements="821" coveredelements="712" complexity="0" loc="517" ncloc="517" packages="22" files="51" classes="51">
       <package name="WebUI-project">
         <metrics statements="22" coveredstatements="21" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="3"/>
@@ -378,11 +378,11 @@
           <line num="3" count="10" type="stmt"/>
           <line num="4" count="10" type="stmt"/>
           <line num="5" count="10" type="stmt"/>
-          <line num="8" count="3" type="stmt"/>
-          <line num="12" count="3" type="stmt"/>
-          <line num="16" count="3" type="stmt"/>
-          <line num="20" count="3" type="stmt"/>
-          <line num="24" count="3" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="20" count="2" type="stmt"/>
+          <line num="24" count="2" type="stmt"/>
         </file>
         <file name="configurationReducer.js" path="C:\Users\nicolas.manzato\webUI-bootcamp\WebUI-project\app\store\configuration\configurationReducer.js">
           <metrics statements="14" coveredstatements="14" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
@@ -646,10 +646,10 @@
           <line num="2" count="9" type="stmt"/>
           <line num="3" count="9" type="stmt"/>
           <line num="4" count="9" type="stmt"/>
-          <line num="7" count="2" type="stmt"/>
-          <line num="11" count="3" type="stmt"/>
-          <line num="15" count="3" type="stmt"/>
-          <line num="19" count="2" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="11" count="2" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="19" count="1" type="stmt"/>
         </file>
         <file name="trendReducer.js" path="C:\Users\nicolas.manzato\webUI-bootcamp\WebUI-project\app\store\trend\trendReducer.js">
           <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
@@ -694,11 +694,11 @@
           <line num="2" count="11" type="stmt"/>
           <line num="3" count="11" type="stmt"/>
           <line num="5" count="11" type="stmt"/>
-          <line num="6" count="2" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
           <line num="9" count="11" type="stmt"/>
-          <line num="10" count="3" type="stmt"/>
+          <line num="10" count="2" type="stmt"/>
           <line num="13" count="11" type="stmt"/>
-          <line num="14" count="3" type="stmt"/>
+          <line num="14" count="2" type="stmt"/>
         </file>
         <file name="userReducer.js" path="C:\Users\nicolas.manzato\webUI-bootcamp\WebUI-project\app\store\user\userReducer.js">
           <metrics statements="10" coveredstatements="10" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>

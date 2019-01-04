@@ -11,26 +11,26 @@ describe('trend reducer', () => {
   it('should handle REQUEST_TRENDS_LOAD', () => {
     const expectedResult = Object.assign({}, trendState, {loadingTrends: true});
 
-    expect(TrendReducer(trendState, actions.requestTrendsLoad())).toEqual(expectedResult);
+    expect(TrendReducer(trendState, { type: actions.REQUEST_TRENDS_LOAD })).toEqual(expectedResult);
   });
 
   it('should handle SUCCESS_TRENDS_LOAD', () => {
     const trendList = [TrendMock, TrendMock, TrendMock];
     const expectedResult = Object.assign({}, trendState, {trends: trendList, loadingTrends: false});
 
-    expect(TrendReducer(trendState, actions.successTrendsLoad(trendList))).toEqual(expectedResult);
+    expect(TrendReducer(trendState, { type: actions.SUCCESS_TRENDS_LOAD, data: trendList })).toEqual(expectedResult);
   });
 
   it('should handle FAILURE_TRENDS_LOAD', () => {
     const errorMessage = 'something bad happened';
     const expectedResult = Object.assign({}, trendState, {hasFailed: true, failureError: errorMessage});
 
-    expect(TrendReducer(trendState, actions.failureTrendsLoad(errorMessage))).toEqual(expectedResult);
+    expect(TrendReducer(trendState, {type: actions.FAILURE_TRENDS_LOAD, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 
   it('should handle RESET_TRENDS_LOAD', () => {
     const expectedResult = Object.assign({}, trendState, {trends: [], loadingTrends: false});
 
-    expect(TrendReducer(trendState, actions.resetTrends())).toEqual(expectedResult);
+    expect(TrendReducer(trendState, {type: actions.RESET_TRENDS})).toEqual(expectedResult);
   });
 });

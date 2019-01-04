@@ -10,31 +10,31 @@ describe('configuration reducer', () => {
   it('should handle CONFIG_TOGGLE_VERIFIED_ONLY', () => {
     const expectedResult = Object.assign({}, configurationState, { configVerifiedOnly: !configurationState.configVerifiedOnly });
 
-    expect(ConfigurationReducer(configurationState, actions.configToggleVerifiedOnly())).toEqual(expectedResult);
+    expect(ConfigurationReducer(configurationState, {type: actions.CONFIG_TOGGLE_VERIFIED_ONLY})).toEqual(expectedResult);
   });
 
   it('should handle CONFIG_TOGGLE_DO_NOT_FOLLOW', () => {
     const expectedResult = Object.assign({}, configurationState, { configDoNotFollow: !configurationState.configDoNotFollow });
 
-    expect(ConfigurationReducer(configurationState, actions.configToggleDoNotFollow())).toEqual(expectedResult);
+    expect(ConfigurationReducer(configurationState, {type: actions.CONFIG_TOGGLE_DO_NOT_FOLLOW})).toEqual(expectedResult);
   });
 
   it('should handle CONFIG_TOGGLE_HAVE_DEFAULT_INFORMATION', () => {
     const expectedResult = Object.assign({}, configurationState, { configHaveDefaultInformation: !configurationState.configHaveDefaultInformation });
 
-    expect(ConfigurationReducer(configurationState, actions.configToggleHaveDefaultInformation())).toEqual(expectedResult);
+    expect(ConfigurationReducer(configurationState, {type: actions.CONFIG_TOGGLE_HAVE_DEFAULT_INFORMATION})).toEqual(expectedResult);
   });
 
   it('should handle CONFIG_TOGGLE_CONTAINS_LINK', () => {
     const expectedResult = Object.assign({}, configurationState, { configContainsLink: !configurationState.configContainsLink });
 
-    expect(ConfigurationReducer(configurationState, actions.configToggleContainsLink())).toEqual(expectedResult);
+    expect(ConfigurationReducer(configurationState, {type: actions.CONFIG_TOGGLE_CONTAINS_LINK})).toEqual(expectedResult);
   });
 
   it('should handle CONFIG_TOGGLE_TEXT_TRUNCATED', () => {
     const expectedResult = Object.assign({}, configurationState, {configTextTruncated: !configurationState.configTextTruncated});
 
-    expect(ConfigurationReducer(configurationState, actions.configToggleTextTruncated())).toEqual(expectedResult);
+    expect(ConfigurationReducer(configurationState, {type: actions.CONFIG_TOGGLE_TEXT_TRUNCATED})).toEqual(expectedResult);
   });
 
 });

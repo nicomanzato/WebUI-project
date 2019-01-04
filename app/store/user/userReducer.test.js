@@ -12,20 +12,20 @@ describe('user reducer', () => {
     const userId = '111222333';
     const expectedResult = Object.assign({}, userState, {isLoadingUserProfile: true, userId: userId});
 
-    expect(UserReducer(userState, actions.requestUserProfile(userId))).toEqual(expectedResult);
+    expect(UserReducer(userState, {type: actions.REQUEST_USER_PROFILE, userId: '111222333'})).toEqual(expectedResult);
   });
 
   it('should handle SUCCESS_USER_PROFILE', () => {
     const userProfile = UserProfileMock;
     const expectedResult = Object.assign({}, userState, {isLoadingUserProfile: false, user: userProfile});
 
-    expect(UserReducer(userState, actions.successUserProfile(userProfile))).toEqual(expectedResult);
+    expect(UserReducer(userState, {type: actions.SUCCESS_USER_PROFILE, data: userProfile})).toEqual(expectedResult);
   });
 
   it('should handle FAILURE_USER_PROFILE', () => {
     const errorMessage = 'something bad happened';
     const expectedResult = Object.assign({}, userState, {hasFailed: true, failureError: errorMessage});
 
-    expect(UserReducer(userState, actions.failureUserProfile(errorMessage))).toEqual(expectedResult);
+    expect(UserReducer(userState, {type: actions.FAILURE_USER_PROFILE, errorDetail: errorMessage})).toEqual(expectedResult);
   });
 });
